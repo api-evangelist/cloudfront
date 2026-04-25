@@ -1,0 +1,63 @@
+aid: cloudfront
+name: CloudFront
+description: >-
+  CloudFront is Amazon Web Services' content delivery network (CDN) for
+  delivering data, video, applications, and APIs globally with low latency.
+  This repository is the short-form profile for AWS CloudFront; the
+  canonical AWS service profile lives at amazon-cloudfront in the API
+  Evangelist Network. CloudFront's API is part of the AWS Service Reference
+  and exposes operations for distributions, origins, cache behaviors,
+  invalidations, origin access identities, functions, and Lambda@Edge.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-04-25'
+specificationVersion: '0.19'
+x-type: company
+x-alias-of: amazon-cloudfront
+tags:
+  - Alias
+  - AWS
+  - CDN
+  - Caching
+  - Content Delivery
+  - Edge Computing
+  - Lambda@Edge
+  - Network
+apis:
+  - aid: cloudfront:canonical
+    name: AWS CloudFront API (canonical)
+    tags:
+      - Canonical
+      - REST
+      - AWS
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://cloudfront.amazonaws.com
+    humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+    properties:
+      - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+        type: Documentation
+      - url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
+        type: Developer Guide
+    description: >-
+      The AWS CloudFront REST API exposes operations for managing
+      distributions (CreateDistribution, GetDistribution, UpdateDistribution,
+      DeleteDistribution, ListDistributions), origins, cache policies,
+      invalidations, origin access identities and OAC, key groups,
+      CloudFront Functions, Lambda@Edge associations, real-time log configs
+      and field-level encryption. AWS Signature v4 authentication.
+common:
+  - type: Website
+    url: https://aws.amazon.com/cloudfront/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/cloudfront/
+  - type: Pricing
+    url: https://aws.amazon.com/cloudfront/pricing/
+  - type: Status
+    url: https://health.aws.amazon.com/health/status
+  - type: Canonical
+    url: https://github.com/api-evangelist/amazon-cloudfront
+maintainers:
+  - FN: Kin Lane
+    email: kinlane@gmail.com
