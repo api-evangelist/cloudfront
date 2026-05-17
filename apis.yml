@@ -14,7 +14,7 @@ url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main
 created: '2024-01-01'
 modified: '2026-04-25'
 specificationVersion: '0.19'
-x-type: company
+kind: company
 x-alias-of: amazon-cloudfront
 tags:
   - Alias
@@ -54,7 +54,7 @@ common:
     url: https://docs.aws.amazon.com/cloudfront/
   - type: Pricing
     url: https://aws.amazon.com/cloudfront/pricing/
-  - type: Status
+  - type: StatusPage
     url: https://health.aws.amazon.com/health/status
   - type: Canonical
     url: https://github.com/api-evangelist/amazon-cloudfront
