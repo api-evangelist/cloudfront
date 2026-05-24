@@ -1,0 +1,239 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront API
+  description: |
+    Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront
+    REST API (API version 2020-05-31). CloudFront is AWS's global content
+    delivery network. Requests are signed with AWS Signature Version 4 using
+    the `cloudfront` service name and the `us-east-1` region. This document
+    covers commonly used distribution, invalidation, origin access control,
+    cache policy, function, and public key operations; CloudFront exposes
+    over 100 additional operations not enumerated here.
+  version: '2020-05-31'
+  contact:
+    name: AWS CloudFront
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+servers:
+  - url: https://cloudfront.amazonaws.com
+security:
+  - sigv4: []
+paths:
+  /2020-05-31/distribution:
+    get:
+      summary: ListDistributions
+      operationId: listDistributions
+      tags: [Distributions]
+      parameters:
+        - in: query
+          name: Marker
+          schema: { type: string }
+        - in: query
+          name: MaxItems
+          schema: { type: integer }
+      responses:
+        '200': { description: A list of distributions }
+    post:
+      summary: CreateDistribution
+      operationId: createDistribution
+      tags: [Distributions]
+      responses:
+        '201': { description: Distribution created }
+  /2020-05-31/distribution/{Id}:
+    parameters:
+      - in: path
+        name: Id
+        required: true
+        schema: { type: string }
+    get:
+      summary: GetDistribution
+      operationId: getDistribution
+      tags: [Distributions]
+      responses:
+        '200': { description: Distribution details }
+    delete:
+      summary: DeleteDistribution
+      operationId: deleteDistribution
+      tags: [Distributions]
+      parameters:
+        - in: header
+          name: If-Match
+          schema: { type: string }
+      responses:
+        '204': { description: Distribution deleted }
+  /2020-05-31/distribution/{Id}/config:
+    parameters:
+      - in: path
+        name: Id
+        required: true
+        schema: { type: string }
+    get:
+      summary: GetDistributionConfig
+      operationId: getDistributionConfig
+      tags: [Distributions]
+      responses:
+        '200': { description: Distribution config }
+    put:
+      summary: UpdateDistribution
+      operationId: updateDistribution
+      tags: [Distributions]
+      parameters:
+        - in: header
+          name: If-Match
+          schema: { type: string }
+      responses:
+        '200': { description: Distribution updated }
+  /2020-05-31/distribution/{DistributionId}/invalidation:
+    parameters:
+      - in: path
+        name: DistributionId
+        required: true
+        schema: { type: string }
+    get:
+      summary: ListInvalidations
+      operationId: listInvalidations
+      tags: [Invalidations]
+      responses:
+        '200': { description: List of invalidations }
+    post:
+      summary: CreateInvalidation
+      operationId: createInvalidation
+      tags: [Invalidations]
+      responses:
+        '201': { description: Invalidation created }
+  /2020-05-31/distribution/{DistributionId}/invalidation/{Id}:
+    parameters:
+      - in: path
+        name: DistributionId
+        required: true
+        schema: { type: string }
+      - in: path
+        name: Id
+        required: true
+        schema: { type: string }
+    get:
+      summary: GetInvalidation
+      operationId: getInvalidation
+      tags: [Invalidations]
+      responses:
+        '200': { description: Invalidation details }
+  /2020-05-31/origin-access-control:
+    get:
+      summary: ListOriginAccessControls
+      operationId: listOriginAccessControls
+      tags: [OriginAccessControl]
+      responses:
+        '200': { description: List of OACs }
+    post:
+      summary: CreateOriginAccessControl
+      operationId: createOriginAccessControl
+      tags: [OriginAccessControl]
+      responses:
+        '201': { description: OAC created }
+  /2020-05-31/origin-access-control/{Id}:
+    parameters:
+      - in: path
+        name: Id
+        required: true
+        schema: { type: string }
+    get:
+      summary: GetOriginAccessControl
+      operationId: getOriginAccessControl
+      tags: [OriginAccessControl]
+      responses:
+        '200': { description: OAC details }
+    delete:
+      summary: DeleteOriginAccessControl
+      operationId: deleteOriginAccessControl
+      tags: [OriginAccessControl]
+      parameters:
+        - in: header
+          name: If-Match
+          schema: { type: string }
+      responses:
+        '204': { description: OAC deleted }
+  /2020-05-31/cache-policy:
+    get:
+      summary: ListCachePolicies
+      operationId: listCachePolicies
+      tags: [CachePolicies]
+      responses:
+        '200': { description: List of cache policies }
+    post:
+      summary: CreateCachePolicy
+      operationId: createCachePolicy
+      tags: [CachePolicies]
+      responses:
+        '201': { description: Cache policy created }
+  /2020-05-31/cache-policy/{Id}:
+    parameters:
+      - in: path
+        name: Id
+        required: true
+        schema: { type: string }
+    get:
+      summary: GetCachePolicy
+      operationId: getCachePolicy
+      tags: [CachePolicies]
+      responses:
+        '200': { description: Cache policy details }
+    delete:
+      summary: DeleteCachePolicy
+      operationId: deleteCachePolicy
+      tags: [CachePolicies]
+      responses:
+        '204': { description: Cache policy deleted }
+  /2020-05-31/function:
+    get:
+      summary: ListFunctions
+      operationId: listFunctions
+      tags: [Functions]
+      responses:
+        '200': { description: List of functions }
+    post:
+      summary: CreateFunction
+      operationId: createFunction
+      tags: [Functions]
+      responses:
+        '201': { description: Function created }
+  /2020-05-31/function/{Name}:
+    parameters:
+      - in: path
+        name: Name
+        required: true
+        schema: { type: string }
+    get:
+      summary: DescribeFunction
+      operationId: describeFunction
+      tags: [Functions]
+      responses:
+        '200': { description: Function details }
+    delete:
+      summary: DeleteFunction
+      operationId: deleteFunction
+      tags: [Functions]
+      responses:
+        '204': { description: Function deleted }
+  /2020-05-31/public-key:
+    get:
+      summary: ListPublicKeys
+      operationId: listPublicKeys
+      tags: [PublicKeys]
+      responses:
+        '200': { description: List of public keys }
+    post:
+      summary: CreatePublicKey
+      operationId: createPublicKey
+      tags: [PublicKeys]
+      responses:
+        '201': { description: Public key created }
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        AWS Signature Version 4. Signing service name is `cloudfront`,
+        signing region is `us-east-1`. Authorization is supplied via
+        `Authorization` and `X-Amz-Date` headers (and `X-Amz-Security-Token`
+        when using temporary credentials).
