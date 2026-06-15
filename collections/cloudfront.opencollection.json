@@ -1,0 +1,445 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront API",
+    "version": "2020-05-31"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Distributions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListDistributions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution",
+            "params": [
+              {
+                "name": "Marker",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxItems",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListDistributions"
+        },
+        {
+          "info": {
+            "name": "CreateDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution"
+          },
+          "docs": "CreateDistribution"
+        },
+        {
+          "info": {
+            "name": "GetDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetDistribution"
+        },
+        {
+          "info": {
+            "name": "DeleteDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteDistribution"
+        },
+        {
+          "info": {
+            "name": "GetDistributionConfig",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id/config",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetDistributionConfig"
+        },
+        {
+          "info": {
+            "name": "UpdateDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id/config",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "UpdateDistribution"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Invalidations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListInvalidations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "ListInvalidations"
+        },
+        {
+          "info": {
+            "name": "CreateInvalidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "CreateInvalidation"
+        },
+        {
+          "info": {
+            "name": "GetInvalidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation/:Id",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetInvalidation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OriginAccessControl",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListOriginAccessControls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control"
+          },
+          "docs": "ListOriginAccessControls"
+        },
+        {
+          "info": {
+            "name": "CreateOriginAccessControl",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control"
+          },
+          "docs": "CreateOriginAccessControl"
+        },
+        {
+          "info": {
+            "name": "GetOriginAccessControl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetOriginAccessControl"
+        },
+        {
+          "info": {
+            "name": "DeleteOriginAccessControl",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control/:Id",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteOriginAccessControl"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CachePolicies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListCachePolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+          },
+          "docs": "ListCachePolicies"
+        },
+        {
+          "info": {
+            "name": "CreateCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+          },
+          "docs": "CreateCachePolicy"
+        },
+        {
+          "info": {
+            "name": "GetCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetCachePolicy"
+        },
+        {
+          "info": {
+            "name": "DeleteCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteCachePolicy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Functions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListFunctions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/function"
+          },
+          "docs": "ListFunctions"
+        },
+        {
+          "info": {
+            "name": "CreateFunction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/function"
+          },
+          "docs": "CreateFunction"
+        },
+        {
+          "info": {
+            "name": "DescribeFunction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/function/:Name",
+            "params": [
+              {
+                "name": "Name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DescribeFunction"
+        },
+        {
+          "info": {
+            "name": "DeleteFunction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/function/:Name",
+            "params": [
+              {
+                "name": "Name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteFunction"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PublicKeys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListPublicKeys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+          },
+          "docs": "ListPublicKeys"
+        },
+        {
+          "info": {
+            "name": "CreatePublicKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+          },
+          "docs": "CreatePublicKey"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
