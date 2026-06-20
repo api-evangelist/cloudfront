@@ -9,7 +9,7 @@ description: >-
   and exposes operations for distributions, origins, cache behaviors,
   invalidations, origin access identities, functions, and Lambda@Edge.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-04-25'
@@ -32,7 +32,7 @@ apis:
       - Canonical
       - REST
       - AWS
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://cloudfront.amazonaws.com
     humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
     properties:
