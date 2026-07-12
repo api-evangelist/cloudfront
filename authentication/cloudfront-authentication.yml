@@ -1,0 +1,20 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cloudfront-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: sigv4
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: |-
+    AWS Signature Version 4. Signing service name is `cloudfront`,
+    signing region is `us-east-1`. Authorization is supplied via
+    `Authorization` and `X-Amz-Date` headers (and `X-Amz-Security-Token`
+    when using temporary credentials).
+  sources:
+  - openapi/cloudfront-openapi.yml
