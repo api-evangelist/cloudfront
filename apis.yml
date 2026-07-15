@@ -48,6 +48,8 @@ apis:
       CloudFront Functions, Lambda@Edge associations, real-time log configs
       and field-level encryption. AWS Signature v4 authentication.
 common:
+  - type: AgenticAccess
+    url: agentic-access/cloudfront-agentic-access.yml
   - type: TrustCenter
     url: security/cloudfront-trust-center.yml
   - type: VulnerabilityDisclosure
