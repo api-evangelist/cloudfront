@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront CachePolicies Distributions API
+  description: 'Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront
+
+    REST API (API version 2020-05-31). CloudFront is AWS''s global content
+
+    delivery network. Requests are signed with AWS Signature Version 4 using
+
+    the `cloudfront` service name and the `us-east-1` region. This document
+
+    covers commonly used distribution, invalidation, origin access control,
+
+    cache policy, function, and public key operations; CloudFront exposes
+
+    over 100 additional operations not enumerated here.
+
+    '
+  version: '2020-05-31'
+  contact:
+    name: AWS CloudFront
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+servers:
+- url: https://cloudfront.amazonaws.com
+security:
+- sigv4: []
+tags:
+- name: Distributions
+paths:
+  /2020-05-31/distribution:
+    get:
+      summary: ListDistributions
+      operationId: listDistributions
+      tags:
+      - Distributions
+      parameters:
+      - in: query
+        name: Marker
+        schema:
+          type: string
+      - in: query
+        name: MaxItems
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: A list of distributions
+    post:
+      summary: CreateDistribution
+      operationId: createDistribution
+      tags:
+      - Distributions
+      responses:
+        '201':
+          description: Distribution created
+  /2020-05-31/distribution/{Id}:
+    parameters:
+    - in: path
+      name: Id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: GetDistribution
+      operationId: getDistribution
+      tags:
+      - Distributions
+      responses:
+        '200':
+          description: Distribution details
+    delete:
+      summary: DeleteDistribution
+      operationId: deleteDistribution
+      tags:
+      - Distributions
+      parameters:
+      - in: header
+        name: If-Match
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Distribution deleted
+  /2020-05-31/distribution/{Id}/config:
+    parameters:
+    - in: path
+      name: Id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: GetDistributionConfig
+      operationId: getDistributionConfig
+      tags:
+      - Distributions
+      responses:
+        '200':
+          description: Distribution config
+    put:
+      summary: UpdateDistribution
+      operationId: updateDistribution
+      tags:
+      - Distributions
+      parameters:
+      - in: header
+        name: If-Match
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Distribution updated
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'AWS Signature Version 4. Signing service name is `cloudfront`,
+
+        signing region is `us-east-1`. Authorization is supplied via
+
+        `Authorization` and `X-Amz-Date` headers (and `X-Amz-Security-Token`
+
+        when using temporary credentials).
+
+        '

@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront CachePolicies API
+  description: 'Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront
+
+    REST API (API version 2020-05-31). CloudFront is AWS''s global content
+
+    delivery network. Requests are signed with AWS Signature Version 4 using
+
+    the `cloudfront` service name and the `us-east-1` region. This document
+
+    covers commonly used distribution, invalidation, origin access control,
+
+    cache policy, function, and public key operations; CloudFront exposes
+
+    over 100 additional operations not enumerated here.
+
+    '
+  version: '2020-05-31'
+  contact:
+    name: AWS CloudFront
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+servers:
+- url: https://cloudfront.amazonaws.com
+security:
+- sigv4: []
+tags:
+- name: CachePolicies
+paths:
+  /2020-05-31/cache-policy:
+    get:
+      summary: ListCachePolicies
+      operationId: listCachePolicies
+      tags:
+      - CachePolicies
+      responses:
+        '200':
+          description: List of cache policies
+    post:
+      summary: CreateCachePolicy
+      operationId: createCachePolicy
+      tags:
+      - CachePolicies
+      responses:
+        '201':
+          description: Cache policy created
+  /2020-05-31/cache-policy/{Id}:
+    parameters:
+    - in: path
+      name: Id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: GetCachePolicy
+      operationId: getCachePolicy
+      tags:
+      - CachePolicies
+      responses:
+        '200':
+          description: Cache policy details
+    delete:
+      summary: DeleteCachePolicy
+      operationId: deleteCachePolicy
+      tags:
+      - CachePolicies
+      responses:
+        '204':
+          description: Cache policy deleted
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'AWS Signature Version 4. Signing service name is `cloudfront`,
+
+        signing region is `us-east-1`. Authorization is supplied via
+
+        `Authorization` and `X-Amz-Date` headers (and `X-Amz-Security-Token`
+
+        when using temporary credentials).
+
+        '
