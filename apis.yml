@@ -9,7 +9,19 @@ description: >-
   and exposes operations for distributions, origins, cache behaviors,
   invalidations, origin access identities, functions, and Lambda@Edge.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloudfront.png
 url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-04-25'
@@ -26,27 +38,85 @@ tags:
   - Lambda@Edge
   - Network
 apis:
-  - aid: cloudfront:canonical
-    name: AWS CloudFront API (canonical)
-    tags:
-      - Canonical
-      - REST
-      - AWS
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://cloudfront.amazonaws.com
-    humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
-    properties:
-      - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
-        type: Documentation
-      - url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
-        type: Developer Guide
-    description: >-
-      The AWS CloudFront REST API exposes operations for managing
-      distributions (CreateDistribution, GetDistribution, UpdateDistribution,
-      DeleteDistribution, ListDistributions), origins, cache policies,
-      invalidations, origin access identities and OAC, key groups,
-      CloudFront Functions, Lambda@Edge associations, real-time log configs
-      and field-level encryption. AWS Signature v4 authentication.
+- aid: cloudfront:canonical
+  name: AWS CloudFront API (canonical)
+  tags:
+  - Canonical
+  - REST
+  - AWS
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://cloudfront.amazonaws.com
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  properties:
+  - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+    type: Documentation
+  - url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
+    type: Developer Guide
+  description: >-
+    The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution,
+    UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations,
+    origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations, real-time
+    log configs and field-level encryption. AWS Signature v4 authentication.
+- aid: cloudfront:cloudfront-cachepolicies-api
+  name: CloudFront CachePolicies API
+  description: The CachePolicies API from CloudFront — 2 operation(s) for cachepolicies.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - CachePolicies
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-cachepolicies-api-openapi.yml
+- aid: cloudfront:cloudfront-distributions-api
+  name: CloudFront Distributions API
+  description: The Distributions API from CloudFront — 3 operation(s) for distributions.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Distributions
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-distributions-api-openapi.yml
+- aid: cloudfront:cloudfront-functions-api
+  name: CloudFront Functions API
+  description: The Functions API from CloudFront — 2 operation(s) for functions.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Functions
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-functions-api-openapi.yml
+- aid: cloudfront:cloudfront-invalidations-api
+  name: CloudFront Invalidations API
+  description: The Invalidations API from CloudFront — 2 operation(s) for invalidations.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Invalidations
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-invalidations-api-openapi.yml
+- aid: cloudfront:cloudfront-originaccesscontrol-api
+  name: CloudFront OriginAccessControl API
+  description: The OriginAccessControl API from CloudFront — 2 operation(s) for originaccesscontrol.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - OriginAccessControl
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-originaccesscontrol-api-openapi.yml
+- aid: cloudfront:cloudfront-publickeys-api
+  name: CloudFront PublicKeys API
+  description: The PublicKeys API from CloudFront — 1 operation(s) for publickeys.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - PublicKeys
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-publickeys-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/cloudfront-agentic-access.yml
