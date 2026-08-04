@@ -1,0 +1,24 @@
+{
+  "provider": "cloudfront",
+  "sources": [
+    "cloudfront-cachepolicies-api-openapi.yml",
+    "cloudfront-distributions-api-openapi.yml",
+    "cloudfront-functions-api-openapi.yml",
+    "cloudfront-invalidations-api-openapi.yml",
+    "cloudfront-originaccesscontrol-api-openapi.yml",
+    "cloudfront-publickeys-api-openapi.yml"
+  ],
+  "outputs": [
+    "cloudfront-cachepolicies-api-openapi.yml",
+    "cloudfront-distributions-api-openapi.yml",
+    "cloudfront-functions-api-openapi.yml",
+    "cloudfront-invalidations-api-openapi.yml",
+    "cloudfront-originaccesscontrol-api-openapi.yml",
+    "cloudfront-publickeys-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
