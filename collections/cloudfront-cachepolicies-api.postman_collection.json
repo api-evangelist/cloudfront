@@ -1,0 +1,353 @@
+{
+  "item": [
+    {
+      "id": "b997330f-2da9-40fd-aac7-d239206acc77",
+      "name": "CachePolicies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6bfc34ca-9c80-4305-bdc8-9ed5e225beaf",
+          "name": "ListCachePolicies",
+          "request": {
+            "name": "ListCachePolicies",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "cache-policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "665d869e-879c-48f7-9623-e4418ddae23e",
+              "name": "List of cache policies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "cache-policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b21dd46-832e-4134-b7c6-bf45b74d4977",
+          "name": "CreateCachePolicy",
+          "request": {
+            "name": "CreateCachePolicy",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "cache-policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "006e8b13-8230-47d3-acfa-e65854451ecd",
+              "name": "Cache policy created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "cache-policy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c264fcc-203c-4a11-9406-1c9ecaca49b6",
+          "name": "GetCachePolicy",
+          "request": {
+            "name": "GetCachePolicy",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "cache-policy",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52b20683-6075-4bd2-9700-8161f12a890d",
+              "name": "Cache policy details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "cache-policy",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "549e20fd-b8aa-4004-b610-b85c0c095302",
+          "name": "DeleteCachePolicy",
+          "request": {
+            "name": "DeleteCachePolicy",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "cache-policy",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5610088-e5f8-4794-94c7-507c6611fdc7",
+              "name": "Cache policy deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "cache-policy",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cloudfront.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7010c7a3-b35c-4c95-bd07-75af47f9846f",
+    "name": "Amazon CloudFront CachePolicies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront\nREST API (API version 2020-05-31). CloudFront is AWS's global content\ndelivery network. Requests are signed with AWS Signature Version 4 using\nthe `cloudfront` service name and the `us-east-1` region. This document\ncovers commonly used distribution, invalidation, origin access control,\ncache policy, function, and public key operations; CloudFront exposes\nover 100 additional operations not enumerated here.\n\n\nContact Support:\n Name: AWS CloudFront",
+      "type": "text/plain"
+    }
+  }
+}

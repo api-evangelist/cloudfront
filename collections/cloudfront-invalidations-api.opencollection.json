@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront CachePolicies Invalidations API",
+    "version": "2020-05-31"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invalidations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListInvalidations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "ListInvalidations"
+        },
+        {
+          "info": {
+            "name": "CreateInvalidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "CreateInvalidation"
+        },
+        {
+          "info": {
+            "name": "GetInvalidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation/:Id",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetInvalidation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

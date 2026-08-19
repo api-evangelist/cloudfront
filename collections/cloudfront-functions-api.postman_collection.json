@@ -1,0 +1,353 @@
+{
+  "item": [
+    {
+      "id": "df5eb9fc-6809-4fd7-835c-6677d07e52f6",
+      "name": "Functions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4cf07d19-0080-4efe-a084-bda2575ad0ab",
+          "name": "ListFunctions",
+          "request": {
+            "name": "ListFunctions",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3030cea-8f53-4d93-83d3-094cd1650f94",
+              "name": "List of functions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a88a6b6-f8f4-4490-a495-df44cd4e74bc",
+          "name": "CreateFunction",
+          "request": {
+            "name": "CreateFunction",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76ab30d2-2609-4914-b0a2-b03482aed152",
+              "name": "Function created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54956f98-0048-4c96-9ec2-f256a5713a16",
+          "name": "DescribeFunction",
+          "request": {
+            "name": "DescribeFunction",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function",
+                ":Name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66beaa08-0323-4da9-a53f-2a46a5ec91f6",
+              "name": "Function details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function",
+                    ":Name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f656260b-0630-491a-95c5-450c8b1edd5e",
+          "name": "DeleteFunction",
+          "request": {
+            "name": "DeleteFunction",
+            "description": {},
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function",
+                ":Name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dd91041-dbff-4a70-bf89-29bad184278c",
+              "name": "Function deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function",
+                    ":Name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cloudfront.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "35926bdf-f520-4812-8935-e5d16541cb45",
+    "name": "Amazon CloudFront CachePolicies Functions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront\nREST API (API version 2020-05-31). CloudFront is AWS's global content\ndelivery network. Requests are signed with AWS Signature Version 4 using\nthe `cloudfront` service name and the `us-east-1` region. This document\ncovers commonly used distribution, invalidation, origin access control,\ncache policy, function, and public key operations; CloudFront exposes\nover 100 additional operations not enumerated here.\n\n\nContact Support:\n Name: AWS CloudFront",
+      "type": "text/plain"
+    }
+  }
+}

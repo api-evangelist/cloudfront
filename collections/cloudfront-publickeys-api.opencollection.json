@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront CachePolicies PublicKeys API",
+    "version": "2020-05-31"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PublicKeys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListPublicKeys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+          },
+          "docs": "ListPublicKeys"
+        },
+        {
+          "info": {
+            "name": "CreatePublicKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+          },
+          "docs": "CreatePublicKey"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront CachePolicies API",
+    "version": "2020-05-31"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CachePolicies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListCachePolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+          },
+          "docs": "ListCachePolicies"
+        },
+        {
+          "info": {
+            "name": "CreateCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+          },
+          "docs": "CreateCachePolicy"
+        },
+        {
+          "info": {
+            "name": "GetCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetCachePolicy"
+        },
+        {
+          "info": {
+            "name": "DeleteCachePolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteCachePolicy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

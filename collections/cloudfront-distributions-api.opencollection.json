@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront CachePolicies Distributions API",
+    "version": "2020-05-31"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Distributions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListDistributions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution",
+            "params": [
+              {
+                "name": "Marker",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxItems",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "ListDistributions"
+        },
+        {
+          "info": {
+            "name": "CreateDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution"
+          },
+          "docs": "CreateDistribution"
+        },
+        {
+          "info": {
+            "name": "GetDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetDistribution"
+        },
+        {
+          "info": {
+            "name": "DeleteDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteDistribution"
+        },
+        {
+          "info": {
+            "name": "GetDistributionConfig",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id/config",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetDistributionConfig"
+        },
+        {
+          "info": {
+            "name": "UpdateDistribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:Id/config",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "UpdateDistribution"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
