@@ -130,6 +130,9 @@ apis:
   - type: OpenAPI
     url: openapi/cloudfront-publickeys-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/cloudfront-capability-edges.yml
+    name: CloudFront Business Capability Map
   - type: AgenticAccess
     url: agentic-access/cloudfront-agentic-access.yml
   - type: TrustCenter

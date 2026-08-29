@@ -1,0 +1,25 @@
+slug: cloudfront
+provider: CloudFront
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Distributions
+  spec_file: cloudfront-distributions-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST /2020-05-31/distribution createDistribution 'CreateDistribution'; PUT .../config updateDistribution
+  reason: 'Creating and configuring CloudFront distributions provisions global content-delivery (network)
+    infrastructure — IT Infrastructure Management. Not telecom network operations: this is a cloud CDN
+    devtool, not an operator''s own network estate.'
