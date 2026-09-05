@@ -1,0 +1,70 @@
+generated: '2026-09-05'
+method: searched
+source: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+docs: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+name: aws cloudfront
+official: true
+note: >-
+  CloudFront ships no dedicated binary; it is a command group inside the AWS CLI.
+  The command surface tracks the API one-to-one (each operation becomes a
+  kebab-case subcommand), plus a small number of CLI-only convenience commands
+  that have no API equivalent - those are the interesting rows for an agent,
+  because they are work the CLI does that a raw API caller must do itself.
+install:
+  - method: installer
+    platforms: [macos, linux, windows]
+    url: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+  - method: homebrew
+    command: brew install awscli
+  - method: pip
+    command: pip install awscli
+  - method: container
+    command: docker run --rm -it amazon/aws-cli cloudfront list-distributions
+command_groups:
+  - group: distributions
+    commands: [create-distribution, create-distribution-with-tags, get-distribution, get-distribution-config, update-distribution, delete-distribution, list-distributions, copy-distribution, update-distribution-with-staging-config]
+  - group: invalidations
+    commands: [create-invalidation, get-invalidation, list-invalidations]
+  - group: cache-and-request-policies
+    commands: [create-cache-policy, get-cache-policy, update-cache-policy, delete-cache-policy, list-cache-policies, create-origin-request-policy, create-response-headers-policy]
+  - group: origin-access
+    commands: [create-origin-access-control, get-origin-access-control, update-origin-access-control, delete-origin-access-control, list-origin-access-controls, create-cloud-front-origin-access-identity]
+  - group: functions
+    commands: [create-function, describe-function, get-function, update-function, publish-function, test-function, delete-function, list-functions]
+  - group: keys-and-signing
+    commands: [create-public-key, get-public-key, update-public-key, delete-public-key, list-public-keys, create-key-group, list-key-groups]
+  - group: multi-tenant
+    commands: [create-distribution-tenant, get-distribution-tenant, list-distribution-tenants, create-connection-group, list-connection-groups]
+  - group: monitoring-and-logs
+    commands: [create-monitoring-subscription, get-monitoring-subscription, create-realtime-log-config, list-realtime-log-configs]
+  - group: tagging
+    commands: [tag-resource, untag-resource, list-tags-for-resource]
+cli_only_commands:
+  - command: aws cloudfront sign
+    note: >-
+      Signs a CloudFront URL for private content using a private key and key-pair
+      id. There is NO API operation for this - signing is a client-side
+      cryptographic operation, so an agent calling the REST API directly must
+      implement canned-policy signing itself.
+    docs: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/sign.html
+  - command: aws cloudfront wait distribution-deployed
+    note: >-
+      Polls GetDistribution until Status is Deployed. No API operation blocks;
+      an agent must poll. This is the reason a create/update flow is
+      multi-minute rather than instantaneous.
+key_flows:
+  - name: Update a distribution safely
+    steps:
+      - aws cloudfront get-distribution-config --id <ID>   # capture ETag
+      - edit the DistributionConfig JSON
+      - aws cloudfront update-distribution --id <ID> --distribution-config file://config.json --if-match <ETag>
+      - aws cloudfront wait distribution-deployed --id <ID>
+  - name: Purge cached content
+    steps:
+      - aws cloudfront create-invalidation --distribution-id <ID> --paths "/*"
+      - aws cloudfront get-invalidation --distribution-id <ID> --id <INVALIDATION_ID>
+  - name: Rehearse an edge function before publishing
+    steps:
+      - aws cloudfront test-function --name <NAME> --if-match <ETag> --event-object fileb://event.json --stage DEVELOPMENT
+      - aws cloudfront publish-function --name <NAME> --if-match <ETag>
+binary_package: packages/cloudfront-packages.yml

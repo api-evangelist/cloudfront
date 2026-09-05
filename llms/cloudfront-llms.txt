@@ -1,0 +1,404 @@
+# Amazon CloudFront API Reference
+
+## [Amazon CloudFront](https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome_Amazon_CloudFront.md)
+
+This is the Amazon CloudFront API Reference. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html).
+
+### Actions
+
+- [AssociateAlias](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.md)
+- [AssociateDistributionTenantWebACL](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionTenantWebACL.md): Associates the AWS WAF web ACL with a distribution tenant.
+- [AssociateDistributionWebACL](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionWebACL.md): Associates the AWS WAF web ACL with a distribution.
+- [CopyDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.md): Creates a staging distribution using the configuration of the provided primary distribution.
+- [CreateAnycastIpList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateAnycastIpList.md): Creates an Anycast static IP list.
+- [CreateCachePolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.md): Creates a cache policy.
+- [CreateCloudFrontOriginAccessIdentity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.md): Creates a new origin access identity.
+- [CreateConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionFunction.md): Creates a connection function.
+- [CreateConnectionGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionGroup.md): Creates a connection group.
+- [CreateContinuousDeploymentPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateContinuousDeploymentPolicy.md): Creates a continuous deployment policy that distributes traffic for a custom domain name to two different CloudFront distributions.
+- [CreateDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.md): Creates a CloudFront distribution.
+- [CreateDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionTenant.md): Creates a distribution tenant.
+- [CreateDistributionWithTags](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.md): Create a new distribution with tags.
+- [CreateFieldLevelEncryptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionConfig.md): Create a new field-level encryption configuration.
+- [CreateFieldLevelEncryptionProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionProfile.md): Create a field-level encryption profile.
+- [CreateFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFunction.md): Creates a CloudFront function.
+- [CreateInvalidation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.md): Create a new invalidation.
+- [CreateInvalidationForDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidationForDistributionTenant.md): Creates an invalidation for a distribution tenant.
+- [CreateKeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyGroup.md): Creates a key group that you can use with CloudFront signed URLs and signed cookies.
+- [CreateKeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyValueStore.md): Specifies the key value store resource to add to your account.
+- [CreateMonitoringSubscription](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateMonitoringSubscription.md): Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront distribution.
+- [CreateOriginAccessControl](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginAccessControl.md): Creates a new origin access control in CloudFront.
+- [CreateOriginRequestPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.md): Creates an origin request policy.
+- [CreatePublicKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.md): Uploads a public key to CloudFront that you can use with signed URLs and signed cookies, or with field-level encryption.
+- [CreateRealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateRealtimeLogConfig.md): Creates a real-time log configuration.
+- [CreateResponseHeadersPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateResponseHeadersPolicy.md): Creates a response headers policy.
+- [CreateStreamingDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.md): This API is deprecated.
+- [CreateStreamingDistributionWithTags](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.md): This API is deprecated.
+- [CreateTrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateTrustStore.md): Creates a trust store.
+- [CreateVpcOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateVpcOrigin.md): Create an Amazon CloudFront VPC origin.
+- [DeleteAnycastIpList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteAnycastIpList.md): Deletes an Anycast static IP list.
+- [DeleteCachePolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCachePolicy.md): Deletes a cache policy.
+- [DeleteCloudFrontOriginAccessIdentity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCloudFrontOriginAccessIdentity.md): Delete an origin access identity.
+- [DeleteConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionFunction.md): Deletes a connection function.
+- [DeleteConnectionGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionGroup.md): Deletes a connection group.
+- [DeleteContinuousDeploymentPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteContinuousDeploymentPolicy.md): Deletes a continuous deployment policy.
+- [DeleteDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.md): Delete a distribution.
+- [DeleteDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistributionTenant.md): Deletes a distribution tenant.
+- [DeleteFieldLevelEncryptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionConfig.md): Remove a field-level encryption configuration.
+- [DeleteFieldLevelEncryptionProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionProfile.md): Remove a field-level encryption profile.
+- [DeleteFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFunction.md): Deletes a CloudFront function.
+- [DeleteKeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteKeyGroup.md): Deletes a key group.
+- [DeleteKeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteKeyValueStore.md): Specifies the key value store to delete.
+- [DeleteMonitoringSubscription](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteMonitoringSubscription.md): Disables additional CloudWatch metrics for the specified CloudFront distribution.
+- [DeleteOriginAccessControl](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginAccessControl.md): Deletes a CloudFront origin access control.
+- [DeleteOriginRequestPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginRequestPolicy.md): Deletes an origin request policy.
+- [DeletePublicKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeletePublicKey.md): Remove a public key you previously added to CloudFront.
+- [DeleteRealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteRealtimeLogConfig.md): Deletes a real-time log configuration.
+- [DeleteResponseHeadersPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteResponseHeadersPolicy.md): Deletes a response headers policy.
+- [DeleteStreamingDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.md): Delete a streaming distribution.
+- [DeleteTrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteTrustStore.md): Deletes a trust store.
+- [DeleteVpcOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteVpcOrigin.md): Delete an Amazon CloudFront VPC origin.
+- [DescribeConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeConnectionFunction.md): Describes a connection function.
+- [DescribeFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeFunction.md): Gets configuration information and metadata about a CloudFront function, but not the function's code.
+- [DescribeKeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeKeyValueStore.md): Specifies the key value store and its configuration.
+- [DisassociateDistributionTenantWebACL](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionTenantWebACL.md): Disassociates a distribution tenant from the AWS WAF web ACL.
+- [DisassociateDistributionWebACL](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionWebACL.md): Disassociates a distribution from the AWS WAF web ACL.
+- [GetAnycastIpList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetAnycastIpList.md): Gets an Anycast static IP list.
+- [GetCachePolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicy.md): Gets a cache policy, including the following metadata:
+- [GetCachePolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicyConfig.md): Gets a cache policy configuration.
+- [GetCloudFrontOriginAccessIdentity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentity.md): Get the information about an origin access identity.
+- [GetCloudFrontOriginAccessIdentityConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentityConfig.md): Get the configuration information about an origin access identity.
+- [GetConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionFunction.md): Gets a connection function.
+- [GetConnectionGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroup.md): Gets information about a connection group.
+- [GetConnectionGroupByRoutingEndpoint](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroupByRoutingEndpoint.md): Gets information about a connection group by using the endpoint that you specify.
+- [GetContinuousDeploymentPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetContinuousDeploymentPolicy.md): Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the policy was last modified).
+- [GetContinuousDeploymentPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetContinuousDeploymentPolicyConfig.md): Gets configuration information about a continuous deployment policy.
+- [GetDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.md): Get the information about a distribution.
+- [GetDistributionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.md): Get the configuration information about a distribution.
+- [GetDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenant.md): Gets information about a distribution tenant.
+- [GetDistributionTenantByDomain](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenantByDomain.md): Gets information about a distribution tenant by the associated domain.
+- [GetFieldLevelEncryption](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryption.md): Get the field-level encryption configuration information.
+- [GetFieldLevelEncryptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionConfig.md): Get the field-level encryption configuration information.
+- [GetFieldLevelEncryptionProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfile.md): Get the field-level encryption profile information.
+- [GetFieldLevelEncryptionProfileConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfileConfig.md): Get the field-level encryption profile configuration information.
+- [GetFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFunction.md): Gets the code of a CloudFront function.
+- [GetInvalidation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.md): Get the information about an invalidation.
+- [GetInvalidationForDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidationForDistributionTenant.md): Gets information about a specific invalidation for a distribution tenant.
+- [GetKeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetKeyGroup.md): Gets a key group, including the date and time when the key group was last modified.
+- [GetKeyGroupConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetKeyGroupConfig.md): Gets a key group configuration.
+- [GetManagedCertificateDetails](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetManagedCertificateDetails.md): Gets details about the CloudFront managed ACM certificate.
+- [GetMonitoringSubscription](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetMonitoringSubscription.md): Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution.
+- [GetOriginAccessControl](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginAccessControl.md): Gets a CloudFront origin access control, including its unique identifier.
+- [GetOriginAccessControlConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginAccessControlConfig.md): Gets a CloudFront origin access control configuration.
+- [GetOriginRequestPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicy.md): Gets an origin request policy, including the following metadata:
+- [GetOriginRequestPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicyConfig.md): Gets an origin request policy configuration.
+- [GetPublicKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKey.md): Gets a public key.
+- [GetPublicKeyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKeyConfig.md): Gets a public key configuration.
+- [GetRealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetRealtimeLogConfig.md): Gets a real-time log configuration.
+- [GetResponseHeadersPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResponseHeadersPolicy.md): Gets a response headers policy, including metadata (the policy's identifier and the date and time when the policy was last modified).
+- [GetResponseHeadersPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResponseHeadersPolicyConfig.md): Gets a response headers policy configuration.
+- [GetStreamingDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistribution.md): Gets information about a specified RTMP distribution, including the distribution configuration.
+- [GetStreamingDistributionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistributionConfig.md): Get the configuration information about a streaming distribution.
+- [GetTrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetTrustStore.md): Gets a trust store.
+- [GetVpcOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetVpcOrigin.md): Get the details of an Amazon CloudFront VPC origin.
+- [ListAnycastIpLists](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListAnycastIpLists.md): Lists your Anycast static IP lists.
+- [ListCachePolicies](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCachePolicies.md): Gets a list of cache policies.
+- [ListCloudFrontOriginAccessIdentities](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCloudFrontOriginAccessIdentities.md): Lists origin access identities.
+- [ListConflictingAliases](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.md)
+- [ListConnectionFunctions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionFunctions.md): Lists connection functions.
+- [ListConnectionGroups](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionGroups.md): Lists the connection groups in your AWS account.
+- [ListContinuousDeploymentPolicies](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListContinuousDeploymentPolicies.md): Gets a list of the continuous deployment policies in your AWS account.
+- [ListDistributions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributions.md): List CloudFront distributions.
+- [ListDistributionsByAnycastIpListId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByAnycastIpListId.md): Lists the distributions in your account that are associated with the specified AnycastIpListId.
+- [ListDistributionsByCachePolicyId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.md): Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.
+- [ListDistributionsByConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionFunction.md): Lists distributions by connection function.
+- [ListDistributionsByConnectionMode](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionMode.md): Lists the distributions by the connection mode that you specify.
+- [ListDistributionsByKeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByKeyGroup.md): Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key group.
+- [ListDistributionsByOriginRequestPolicyId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByOriginRequestPolicyId.md): Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.
+- [ListDistributionsByRealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByRealtimeLogConfig.md): Gets a list of distributions that have a cache behavior that's associated with the specified real-time log configuration.
+- [ListDistributionsByResponseHeadersPolicyId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByResponseHeadersPolicyId.md): Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified response headers policy.
+- [ListDistributionsByTrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByTrustStore.md): Lists distributions by trust store.
+- [ListDistributionsByVpcOriginId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByVpcOriginId.md): List CloudFront distributions by their VPC origin ID.
+- [ListDistributionsByWebACLId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.md): List the distributions that are associated with a specified AWS WAF web ACL.
+- [ListDistributionTenants](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenants.md): Lists the distribution tenants in your AWS account.
+- [ListDistributionTenantsByCustomization](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenantsByCustomization.md): Lists distribution tenants by the customization that you specify.
+- [ListDomainConflicts](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.md)
+- [ListFieldLevelEncryptionConfigs](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionConfigs.md): List all field-level encryption configurations that have been created in CloudFront for this account.
+- [ListFieldLevelEncryptionProfiles](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionProfiles.md): Request a list of field-level encryption profiles that have been created in CloudFront for this account.
+- [ListFunctions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFunctions.md): Gets a list of all CloudFront functions in your AWS account.
+- [ListInvalidations](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidations.md): Lists invalidation batches.
+- [ListInvalidationsForDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidationsForDistributionTenant.md): Lists the invalidations for a distribution tenant.
+- [ListKeyGroups](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListKeyGroups.md): Gets a list of key groups.
+- [ListKeyValueStores](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListKeyValueStores.md): Specifies the key value stores to list.
+- [ListOriginAccessControls](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginAccessControls.md): Gets the list of CloudFront origin access controls (OACs) in this AWS account.
+- [ListOriginRequestPolicies](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginRequestPolicies.md): Gets a list of origin request policies.
+- [ListPublicKeys](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListPublicKeys.md): List all public keys that have been added to CloudFront for this account.
+- [ListRealtimeLogConfigs](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListRealtimeLogConfigs.md): Gets a list of real-time log configurations.
+- [ListResponseHeadersPolicies](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListResponseHeadersPolicies.md): Gets a list of response headers policies.
+- [ListStreamingDistributions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListStreamingDistributions.md): List streaming distributions.
+- [ListTagsForResource](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTagsForResource.md): List tags for a CloudFront resource.
+- [ListTrustStores](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTrustStores.md): Lists trust stores.
+- [ListVpcOrigins](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListVpcOrigins.md): List the CloudFront VPC origins in your account.
+- [PublishConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishConnectionFunction.md): Publishes a connection function.
+- [PublishFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishFunction.md): Publishes a CloudFront function by copying the function code from the DEVELOPMENT stage to LIVE.
+- [TagResource](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.md): Add tags to a CloudFront resource.
+- [TestConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestConnectionFunction.md): Tests a connection function.
+- [TestFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestFunction.md): Tests a CloudFront function.
+- [UntagResource](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.md): Remove tags from a CloudFront resource.
+- [UpdateAnycastIpList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateAnycastIpList.md): Updates an Anycast static IP list.
+- [UpdateCachePolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCachePolicy.md): Updates a cache policy configuration.
+- [UpdateCloudFrontOriginAccessIdentity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCloudFrontOriginAccessIdentity.md): Update an origin access identity.
+- [UpdateConnectionFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionFunction.md): Updates a connection function.
+- [UpdateConnectionGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionGroup.md): Updates a connection group.
+- [UpdateContinuousDeploymentPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateContinuousDeploymentPolicy.md): Updates a continuous deployment policy.
+- [UpdateDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.md): Updates the configuration for a CloudFront distribution.
+- [UpdateDistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionTenant.md): Updates a distribution tenant.
+- [UpdateDistributionWithStagingConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionWithStagingConfig.md): Copies the staging distribution's configuration to its corresponding primary distribution.
+- [UpdateDomainAssociation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.md)
+- [UpdateFieldLevelEncryptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionConfig.md): Update a field-level encryption configuration.
+- [UpdateFieldLevelEncryptionProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionProfile.md): Update a field-level encryption profile.
+- [UpdateFunction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFunction.md): Updates a CloudFront function.
+- [UpdateKeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateKeyGroup.md): Updates a key group.
+- [UpdateKeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateKeyValueStore.md): Specifies the key value store to update.
+- [UpdateOriginAccessControl](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginAccessControl.md): Updates a CloudFront origin access control.
+- [UpdateOriginRequestPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginRequestPolicy.md): Updates an origin request policy configuration.
+- [UpdatePublicKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdatePublicKey.md): Update public key information.
+- [UpdateRealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateRealtimeLogConfig.md): Updates a real-time log configuration.
+- [UpdateResponseHeadersPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateResponseHeadersPolicy.md): Updates a response headers policy.
+- [UpdateStreamingDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.md): Update a streaming distribution.
+- [UpdateTrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateTrustStore.md): Updates a trust store.
+- [UpdateVpcOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateVpcOrigin.md): Update an Amazon CloudFront VPC origin in your account.
+- [VerifyDnsConfiguration](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VerifyDnsConfiguration.md): Verify the DNS configuration for your domain names.
+
+### Data Types
+
+- [ActiveTrustedKeyGroups](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedKeyGroups.md): A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [ActiveTrustedSigners](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.md): A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [Aliases](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Aliases.md): A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+- [AliasICPRecordal](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AliasICPRecordal.md): AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+- [AllowedMethods](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AllowedMethods.md): A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
+- [AnycastIpList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AnycastIpList.md): An Anycast static IP list.
+- [AnycastIpListCollection](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AnycastIpListCollection.md): The Anycast static IP list collection.
+- [AnycastIpListSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AnycastIpListSummary.md): An abbreviated version of the structure.
+- [CaCertificatesBundleS3Location](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CaCertificatesBundleS3Location.md): The CA certificates bundle location in Amazon S3.
+- [CaCertificatesBundleSource](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CaCertificatesBundleSource.md): A CA certificates bundle source.
+- [CacheBehavior](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehavior.md): A complex type that describes how CloudFront processes requests.
+- [CacheBehaviors](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehaviors.md): A complex type that contains zero or more CacheBehavior elements.
+- [CachedMethods](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachedMethods.md): A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods.
+- [CachePolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicy.md): A cache policy.
+- [CachePolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyConfig.md): A cache policy configuration.
+- [CachePolicyCookiesConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyCookiesConfig.md): An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.
+- [CachePolicyHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyHeadersConfig.md): An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.
+- [CachePolicyList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyList.md): A list of cache policies.
+- [CachePolicyQueryStringsConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyQueryStringsConfig.md): An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.
+- [CachePolicySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicySummary.md): Contains a cache policy.
+- [CacheTagConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheTagConfig.md): A complex type that specifies the HTTP header name from which CloudFront extracts cache tags from origin responses.
+- [Certificate](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Certificate.md): The AWS Certificate Manager (ACM) certificate associated with your distribution.
+- [CloudFrontOriginAccessIdentity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentity.md): CloudFront origin access identity.
+- [CloudFrontOriginAccessIdentityConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.md): Origin access identity configuration.
+- [CloudFrontOriginAccessIdentityList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityList.md): Lists the origin access identities for CloudFront.Send a GET request to the /CloudFront API version/origin-access-identity/cloudfront resource.
+- [CloudFrontOriginAccessIdentitySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentitySummary.md): Summary of the information about a CloudFront origin access identity.
+- [ConflictingAlias](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConflictingAlias.md): An alias (also called a CNAME) and the CloudFront standard distribution and AWS account ID that it's associated with.
+- [ConflictingAliasesList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConflictingAliasesList.md): A list of aliases (also called CNAMEs) and the CloudFront standard distributions and AWS accounts that they are associated with.
+- [ConnectionFunctionAssociation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionFunctionAssociation.md): A connection function association.
+- [ConnectionFunctionSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionFunctionSummary.md): A connection function summary.
+- [ConnectionFunctionTestResult](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionFunctionTestResult.md): A connection function test result.
+- [ConnectionGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroup.md): The connection group for your distribution tenants.
+- [ConnectionGroupAssociationFilter](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroupAssociationFilter.md): Contains information about what CloudFront resources your connection groups are associated with.
+- [ConnectionGroupSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroupSummary.md): A summary that contains details about your connection groups.
+- [ContentTypeProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContentTypeProfile.md): A field-level encryption content type profile.
+- [ContentTypeProfileConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContentTypeProfileConfig.md): The configuration for a field-level encryption content type-profile mapping.
+- [ContentTypeProfiles](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContentTypeProfiles.md): Field-level encryption content type-profile.
+- [ContinuousDeploymentPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentPolicy.md): A continuous deployment policy.
+- [ContinuousDeploymentPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentPolicyConfig.md): Contains the configuration for a continuous deployment policy.
+- [ContinuousDeploymentPolicyList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentPolicyList.md): Contains a list of continuous deployment policies.
+- [ContinuousDeploymentPolicySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentPolicySummary.md): A summary of the information about your continuous deployment policies.
+- [ContinuousDeploymentSingleHeaderConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentSingleHeaderConfig.md): This configuration determines which HTTP requests are sent to the staging distribution.
+- [ContinuousDeploymentSingleWeightConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ContinuousDeploymentSingleWeightConfig.md): Contains the percentage of traffic to send to a staging distribution.
+- [CookieNames](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CookieNames.md): Contains a list of cookie names.
+- [CookiePreference](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CookiePreference.md): This field is deprecated.
+- [CustomErrorResponse](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CustomErrorResponse.md): A complex type that controls:
+- [CustomErrorResponses](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CustomErrorResponses.md): A complex type that controls:
+- [CustomHeaders](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CustomHeaders.md): A complex type that contains the list of Custom Headers for each origin.
+- [Customizations](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Customizations.md): Customizations for the distribution tenant.
+- [CustomOriginConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CustomOriginConfig.md): A custom origin.
+- [DefaultCacheBehavior](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DefaultCacheBehavior.md): A complex type that describes the default cache behavior if you don't specify a CacheBehavior element or if request URLs don't match any of the values of PathPattern in CacheBehavior elements.
+- [Distribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Distribution.md): A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
+- [DistributionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.md): A distribution configuration.
+- [DistributionConfigWithTags](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfigWithTags.md): A distribution Configuration and a list of tags to be associated with the distribution.
+- [DistributionIdList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionIdList.md): A list of distribution IDs.
+- [DistributionList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionList.md): A distribution list.
+- [DistributionResourceId](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionResourceId.md): The IDs for the distribution resources.
+- [DistributionSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionSummary.md): A summary of the information about a CloudFront distribution.
+- [DistributionTenant](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionTenant.md): The distribution tenant.
+- [DistributionTenantAssociationFilter](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionTenantAssociationFilter.md): Filter by the associated distribution ID or connection group ID.
+- [DistributionTenantSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionTenantSummary.md): A summary of the information about a distribution tenant.
+- [DnsConfiguration](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DnsConfiguration.md): The DNS configuration for your domain names.
+- [DomainConflict](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DomainConflict.md): Contains information about the domain conflict.
+- [DomainItem](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DomainItem.md): The domain for the specified distribution tenant.
+- [DomainResult](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DomainResult.md): The details about the domain result.
+- [EncryptionEntities](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_EncryptionEntities.md): Complex data type for field-level encryption profiles that includes all of the encryption entities.
+- [EncryptionEntity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_EncryptionEntity.md): Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.
+- [EndPoint](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_EndPoint.md): Contains information about the Amazon Kinesis data stream where you're sending real-time log data in a real-time log configuration.
+- [FieldLevelEncryption](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryption.md): A complex data type that includes the profile configurations and other options specified for field-level encryption.
+- [FieldLevelEncryptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionConfig.md): A complex data type that includes the profile configurations specified for field-level encryption.
+- [FieldLevelEncryptionList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionList.md): List of field-level encryption configurations.
+- [FieldLevelEncryptionProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionProfile.md): A complex data type for field-level encryption profiles.
+- [FieldLevelEncryptionProfileConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionProfileConfig.md): A complex data type of profiles for the field-level encryption.
+- [FieldLevelEncryptionProfileList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionProfileList.md): List of field-level encryption profiles.
+- [FieldLevelEncryptionProfileSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionProfileSummary.md): The field-level encryption profile summary.
+- [FieldLevelEncryptionSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldLevelEncryptionSummary.md): A summary of a field-level encryption item.
+- [FieldPatterns](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FieldPatterns.md): A complex data type that includes the field patterns to match for field-level encryption.
+- [ForwardedValues](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ForwardedValues.md)
+- [FunctionAssociation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionAssociation.md): A CloudFront function that is associated with a cache behavior in a CloudFront distribution.
+- [FunctionAssociations](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionAssociations.md): A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution.
+- [FunctionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionConfig.md): Contains configuration information about a CloudFront function.
+- [FunctionList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionList.md): A list of CloudFront functions.
+- [FunctionMetadata](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionMetadata.md): Contains metadata about a CloudFront function.
+- [FunctionSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_FunctionSummary.md): Contains configuration information and metadata about a CloudFront function.
+- [GeoRestriction](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GeoRestriction.md): A complex type that controls the countries in which your content is distributed.
+- [GeoRestrictionCustomization](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GeoRestrictionCustomization.md): The customizations that you specified for the distribution tenant for geographic restrictions.
+- [GrpcConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GrpcConfig.md): Amazon CloudFront supports gRPC, an open-source remote procedure call (RPC) framework built on HTTP/2. gRPC offers bi-directional streaming and binary protocol that buffers payloads, making it suitable for applications that require low latency communications.
+- [Headers](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Headers.md): Contains a list of HTTP header names.
+- [ImportSource](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ImportSource.md): The import source for the key value store.
+- [Invalidation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Invalidation.md): An invalidation.
+- [InvalidationBatch](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_InvalidationBatch.md): An invalidation batch.
+- [InvalidationList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_InvalidationList.md): The InvalidationList complex type describes the list of invalidation objects.
+- [InvalidationSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_InvalidationSummary.md): A summary of an invalidation request.
+- [IpamCidrConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_IpamCidrConfig.md): Configuration for an IPAM CIDR that defines a specific IP address range, IPAM pool, and associated Anycast IP address.
+- [IpamConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_IpamConfig.md): The configuration IPAM settings that includes the quantity of CIDR configurations and the list of IPAM CIDR configurations.
+- [KeyGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyGroup.md): A key group.
+- [KeyGroupConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyGroupConfig.md): A key group configuration.
+- [KeyGroupList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyGroupList.md): A list of key groups.
+- [KeyGroupSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyGroupSummary.md): Contains information about a key group.
+- [KeyPairIds](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyPairIds.md): A list of CloudFront key pair identifiers.
+- [KeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyValueStore.md): The key value store.
+- [KeyValueStoreAssociation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyValueStoreAssociation.md): The key value store association.
+- [KeyValueStoreAssociations](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyValueStoreAssociations.md): The key value store associations.
+- [KeyValueStoreList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KeyValueStoreList.md): The key value store list.
+- [KGKeyPairIds](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KGKeyPairIds.md): A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [KinesisStreamConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_KinesisStreamConfig.md): Contains information about the Amazon Kinesis data stream where you are sending real-time log data.
+- [LambdaFunctionAssociation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_LambdaFunctionAssociation.md): A complex type that contains a Lambda@Edge function association.
+- [LambdaFunctionAssociations](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_LambdaFunctionAssociations.md): A complex type that specifies a list of Lambda@Edge functions associations for a cache behavior.
+- [LoggingConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_LoggingConfig.md): A complex type that specifies whether access logs are written for the distribution.
+- [ManagedCertificateDetails](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ManagedCertificateDetails.md): Contains details about the CloudFront managed ACM certificate.
+- [ManagedCertificateRequest](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ManagedCertificateRequest.md): An object that represents the request for the Amazon CloudFront managed ACM certificate.
+- [MonitoringSubscription](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_MonitoringSubscription.md): A monitoring subscription.
+- [Origin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Origin.md): An origin.
+- [OriginAccessControl](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginAccessControl.md): A CloudFront origin access control, including its unique identifier.
+- [OriginAccessControlConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginAccessControlConfig.md): A CloudFront origin access control configuration.
+- [OriginAccessControlList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginAccessControlList.md): A list of CloudFront origin access controls.
+- [OriginAccessControlSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginAccessControlSummary.md): A CloudFront origin access control.
+- [OriginCustomHeader](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginCustomHeader.md): A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
+- [OriginGroup](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginGroup.md): An origin group includes two origins (a primary origin and a secondary origin to failover to) and a failover criteria that you specify.
+- [OriginGroupFailoverCriteria](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginGroupFailoverCriteria.md): A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
+- [OriginGroupMember](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginGroupMember.md): An origin in an origin group.
+- [OriginGroupMembers](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginGroupMembers.md): A complex data type for the origins included in an origin group.
+- [OriginGroups](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginGroups.md): A complex data type for the origin groups specified for a distribution.
+- [OriginMtlsConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginMtlsConfig.md): Configures mutual TLS authentication between CloudFront and your origin server.
+- [OriginRequestPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicy.md): An origin request policy.
+- [OriginRequestPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyConfig.md): An origin request policy configuration.
+- [OriginRequestPolicyCookiesConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyCookiesConfig.md): An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.
+- [OriginRequestPolicyHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyHeadersConfig.md): An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.
+- [OriginRequestPolicyList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyList.md): A list of origin request policies.
+- [OriginRequestPolicyQueryStringsConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicyQueryStringsConfig.md): An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.
+- [OriginRequestPolicySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginRequestPolicySummary.md): Contains an origin request policy.
+- [Origins](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Origins.md): Contains information about the origins for this distribution.
+- [OriginShield](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginShield.md): CloudFront Origin Shield.
+- [OriginSslProtocols](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_OriginSslProtocols.md): A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
+- [Parameter](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Parameter.md): A list of parameter values to add to the resource.
+- [ParameterDefinition](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ParameterDefinition.md): A list of parameter values to add to the resource.
+- [ParameterDefinitionSchema](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ParameterDefinitionSchema.md): An object that contains information about the parameter definition.
+- [ParametersInCacheKeyAndForwardedToOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ParametersInCacheKeyAndForwardedToOrigin.md): This object determines the values that CloudFront includes in the cache key.
+- [Paths](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Paths.md): A complex type that contains information about the objects that you want to invalidate using paths and tags.
+- [PublicKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublicKey.md): A public key that you can use with signed URLs and signed cookies, or with field-level encryption.
+- [PublicKeyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublicKeyConfig.md): Configuration information about a public key that you can use with signed URLs and signed cookies, or with field-level encryption.
+- [PublicKeyList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublicKeyList.md): A list of public keys that you can use with signed URLs and signed cookies, or with field-level encryption.
+- [PublicKeySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublicKeySummary.md): Contains information about a public key.
+- [QueryArgProfile](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_QueryArgProfile.md): Query argument-profile mapping for field-level encryption.
+- [QueryArgProfileConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_QueryArgProfileConfig.md): Configuration for query argument-profile mapping for field-level encryption.
+- [QueryArgProfiles](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_QueryArgProfiles.md): Query argument-profile mapping for field-level encryption.
+- [QueryStringCacheKeys](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_QueryStringCacheKeys.md): This field is deprecated.
+- [QueryStringNames](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_QueryStringNames.md): Contains a list of query string names.
+- [RealtimeLogConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_RealtimeLogConfig.md): A real-time log configuration.
+- [RealtimeLogConfigs](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_RealtimeLogConfigs.md): A list of real-time log configurations.
+- [RealtimeMetricsSubscriptionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_RealtimeMetricsSubscriptionConfig.md): A subscription configuration for additional CloudWatch metrics.
+- [ResponseHeadersPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicy.md): A response headers policy.
+- [ResponseHeadersPolicyAccessControlAllowHeaders](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyAccessControlAllowHeaders.md): A list of HTTP header names that CloudFront includes as values for the Access-Control-Allow-Headers HTTP response header.
+- [ResponseHeadersPolicyAccessControlAllowMethods](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyAccessControlAllowMethods.md): A list of HTTP methods that CloudFront includes as values for the Access-Control-Allow-Methods HTTP response header.
+- [ResponseHeadersPolicyAccessControlAllowOrigins](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyAccessControlAllowOrigins.md): A list of origins (domain names) that CloudFront can use as the value for the Access-Control-Allow-Origin HTTP response header.
+- [ResponseHeadersPolicyAccessControlExposeHeaders](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyAccessControlExposeHeaders.md): A list of HTTP headers that CloudFront includes as values for the Access-Control-Expose-Headers HTTP response header.
+- [ResponseHeadersPolicyConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyConfig.md): A response headers policy configuration.
+- [ResponseHeadersPolicyContentSecurityPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyContentSecurityPolicy.md): The policy directives and their values that CloudFront includes as values for the Content-Security-Policy HTTP response header.
+- [ResponseHeadersPolicyContentTypeOptions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyContentTypeOptions.md): Determines whether CloudFront includes the X-Content-Type-Options HTTP response header with its value set to nosniff.
+- [ResponseHeadersPolicyCorsConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyCorsConfig.md): A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).
+- [ResponseHeadersPolicyCustomHeader](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyCustomHeader.md): An HTTP response header name and its value.
+- [ResponseHeadersPolicyCustomHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyCustomHeadersConfig.md): A list of HTTP response header names and their values.
+- [ResponseHeadersPolicyFrameOptions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyFrameOptions.md): Determines whether CloudFront includes the X-Frame-Options HTTP response header and the header's value.
+- [ResponseHeadersPolicyList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyList.md): A list of response headers policies.
+- [ResponseHeadersPolicyReferrerPolicy](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyReferrerPolicy.md): Determines whether CloudFront includes the Referrer-Policy HTTP response header and the header's value.
+- [ResponseHeadersPolicyRemoveHeader](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyRemoveHeader.md): The name of an HTTP header that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.
+- [ResponseHeadersPolicyRemoveHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyRemoveHeadersConfig.md): A list of HTTP header names that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.
+- [ResponseHeadersPolicySecurityHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicySecurityHeadersConfig.md): A configuration for a set of security-related HTTP response headers.
+- [ResponseHeadersPolicyServerTimingHeadersConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyServerTimingHeadersConfig.md): A configuration for enabling the Server-Timing header in HTTP responses sent from CloudFront.
+- [ResponseHeadersPolicyStrictTransportSecurity](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyStrictTransportSecurity.md): Determines whether CloudFront includes the Strict-Transport-Security HTTP response header and the header's value.
+- [ResponseHeadersPolicySummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicySummary.md): Contains a response headers policy.
+- [ResponseHeadersPolicyXSSProtection](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ResponseHeadersPolicyXSSProtection.md): Determines whether CloudFront includes the X-XSS-Protection HTTP response header and the header's value.
+- [Restrictions](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Restrictions.md): A complex type that identifies ways in which you want to restrict distribution of your content.
+- [S3Origin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_S3Origin.md): A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+- [S3OriginConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_S3OriginConfig.md): A complex type that contains information about the Amazon S3 origin.
+- [SessionStickinessConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_SessionStickinessConfig.md): Session stickiness provides the ability to define multiple requests from a single viewer as a single session.
+- [Signer](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Signer.md): A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [StagingDistributionDnsNames](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StagingDistributionDnsNames.md): The CloudFront domain name of the staging distribution.
+- [StatusCodes](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StatusCodes.md): A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.
+- [StreamingDistribution](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingDistribution.md): A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
+- [StreamingDistributionConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingDistributionConfig.md): The RTMP distribution's configuration information.
+- [StreamingDistributionConfigWithTags](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingDistributionConfigWithTags.md): A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
+- [StreamingDistributionList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingDistributionList.md): A streaming distribution list.
+- [StreamingDistributionSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingDistributionSummary.md): A summary of the information for a CloudFront streaming distribution.
+- [StreamingLoggingConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StreamingLoggingConfig.md): A complex type that controls whether access logs are written for this streaming distribution.
+- [StringSchemaConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_StringSchemaConfig.md): The configuration for a string schema.
+- [Tag](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Tag.md): A complex type that contains Tag key and Tag value.
+- [TagKeys](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagKeys.md): A complex type that contains zero or more Tag elements.
+- [Tags](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Tags.md): A complex type that contains zero or more Tag elements.
+- [TenantConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TenantConfig.md)
+- [TestResult](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestResult.md): Contains the result of testing a CloudFront function with TestFunction.
+- [TrafficConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrafficConfig.md): The traffic configuration of your continuous deployment.
+- [TrustedKeyGroups](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrustedKeyGroups.md): A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [TrustedSigners](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrustedSigners.md): A list of AWS accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
+- [TrustStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrustStore.md): A trust store.
+- [TrustStoreConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrustStoreConfig.md): A trust store configuration.
+- [TrustStoreSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TrustStoreSummary.md): A trust store summary.
+- [ValidationTokenDetail](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ValidationTokenDetail.md): Contains details about the validation token.
+- [ViewerCertificate](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.md): A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
+- [ViewerMtlsConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerMtlsConfig.md): A viewer mTLS configuration.
+- [VpcOrigin](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VpcOrigin.md): An Amazon CloudFront VPC origin.
+- [VpcOriginConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VpcOriginConfig.md): An Amazon CloudFront VPC origin configuration.
+- [VpcOriginEndpointConfig](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VpcOriginEndpointConfig.md): An Amazon CloudFront VPC origin endpoint configuration.
+- [VpcOriginList](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VpcOriginList.md): A list of CloudFront VPC origins.
+- [VpcOriginSummary](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VpcOriginSummary.md): A summary of the CloudFront VPC origin.
+- [WebAclCustomization](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_WebAclCustomization.md): The AWS WAF web ACL customization specified for the distribution tenant.
+
+## [Amazon CloudFront KeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome_Amazon_CloudFront_KeyValueStore.md)
+
+You can use Amazon CloudFront KeyValueStore to view and update data in a key value store resource. For more information, see [Using CloudFront KeyValueStore](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html)in the Amazon CloudFront Developer Guide.
+
+### Actions
+
+- [DeleteKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_DeleteKey.md): Deletes the key-value pair specified by the key.
+- [DescribeKeyValueStore](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_DescribeKeyValueStore.md): Returns metadata information about the key value store.
+- [GetKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_GetKey.md): Returns a key-value pair.
+- [ListKeys](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_ListKeys.md): Returns a list of key-value pairs.
+- [PutKey](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_PutKey.md): Creates a new key-value pair or replaces the value of an existing key.
+- [UpdateKeys](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_UpdateKeys.md): Puts or deletes multiple key-value pairs in a single, all-or-nothing operation.
+
+### Data Types
+
+- [DeleteKeyRequestListItem](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_DeleteKeyRequestListItem.md): List item for keys to delete.
+- [ListKeysResponseListItem](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_ListKeysResponseListItem.md): A key-value pair.
+- [PutKeyRequestListItem](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_kvs_PutKeyRequestListItem.md): List item for key-value pair to put.
+
+## Common
+
+- [Common Parameters](https://docs.aws.amazon.com/cloudfront/latest/APIReference/CommonParameters.md)
+- [Common Error Types](https://docs.aws.amazon.com/cloudfront/latest/APIReference/CommonErrors.md)

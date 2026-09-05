@@ -1,0 +1,94 @@
+generated: '2026-09-05'
+method: searched
+source: https://aws.amazon.com/cloudfront/pricing/
+docs:
+  - https://aws.amazon.com/cloudfront/pricing/
+  - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/flat-rate-pricing-plan.md
+currency: USD
+billing_period: monthly
+plan_count: 5
+note: >-
+  CloudFront now sells two ways. The historic model is pure pay-as-you-go
+  (per-GB data transfer out and per-10,000 requests, by geography, with a
+  perpetual free tier). Since 2025-11-18 it also sells flat-rate plans that bundle
+  CloudFront with AWS WAF, Shield DDoS protection, Route 53 DNS, CloudWatch Logs
+  ingestion, a TLS certificate, edge compute and S3 storage credits for one
+  monthly price with NO overage charges. Prices below are read from the pricing
+  page; the allowance tables are read from the developer-guide page. Each
+  flat-rate plan covers ONE distribution with up to one apex domain.
+plans:
+  - name: Pay-as-you-go
+    price: 0
+    price_display: usage-based
+    billing_period: monthly
+    included_quota:
+      data_transfer_out: 1 TB/month (perpetual AWS Free Tier)
+      requests: 10,000,000 HTTP/HTTPS requests per month (perpetual AWS Free Tier)
+      invalidations: 1,000 paths per month
+    overage: Per-GB data transfer out and per-10,000 requests, priced by edge location geography; volume tiers reduce the unit price.
+    limits:
+      note: Standard CloudFront service quotas apply; see rate-limits/cloudfront-rate-limits.yml.
+    url: https://aws.amazon.com/cloudfront/pricing/
+  - name: Free
+    price: 0
+    price_display: $0/month
+    billing_period: monthly
+    included_quota:
+      requests: 1,000,000/month
+      data_transfer: 100 GB/month
+      dns_query_allowance: 1,000,000/month (Route 53, additional records)
+    overage: None. AWS states there are no overage charges regardless of how far usage exceeds the allowance.
+    limits:
+      distributions: 1
+      apex_domains: 1
+    note: For hobbyists, learners and developers getting started.
+  - name: Pro
+    price: 15
+    price_display: $15/month
+    billing_period: monthly
+    included_quota:
+      requests: 10,000,000/month
+      data_transfer: 50 TB/month
+      dns_query_allowance: 5,000,000/month
+    overage: None.
+    limits:
+      distributions: 1
+      apex_domains: 1
+    note: Small websites, blogs and applications.
+  - name: Business
+    price: 200
+    price_display: $200/month
+    billing_period: monthly
+    included_quota:
+      requests: 125,000,000/month
+      data_transfer: 50 TB/month
+      dns_query_allowance: 20,000,000/month
+    overage: None.
+    limits:
+      distributions: 1
+      apex_domains: 1
+    note: Protect and accelerate business applications.
+  - name: Premium
+    price: 1000
+    price_display: $1,000/month (configurable to $10,000)
+    billing_period: monthly
+    included_quota:
+      requests: 500,000,000/month (configurable up to 6,000,000,000)
+      data_transfer: 50 TB/month (configurable up to 600 TB)
+      dns_query_allowance: 100,000,000/month
+    overage: None.
+    limits:
+      distributions: 1
+      apex_domains: 1
+    usage_levels:
+      - {data_transfer: 50 TB, requests: 500 M, price: 1000}
+      - {data_transfer: 75 TB, requests: 750 M, price: 1450}
+      - {data_transfer: 125 TB, requests: 1.25 B, price: 2250}
+      - {data_transfer: 200 TB, requests: 2 B, price: 3500}
+      - {data_transfer: 350 TB, requests: 3.5 B, price: 6000}
+      - {data_transfer: 600 TB, requests: 6 B, price: 10000}
+    note: >-
+      Above 6 B requests or 600 TB per month AWS directs the buyer to sales for
+      custom pricing. Blocked DDoS traffic and requests blocked by AWS WAF do not
+      count against the allowance.
+enterprise_contact: https://aws.amazon.com/contact-us/sales-support/

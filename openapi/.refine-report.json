@@ -19,6 +19,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "cloudfront-cachepolicies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-distributions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-functions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-invalidations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-originaccesscontrol-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-publickeys-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

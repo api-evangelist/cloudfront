@@ -1,11 +1,22 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/cloudfront-openapi.yml
+generated: '2026-09-05'
+method: searched
+source: openapi/_original/cloudfront-openapi.yml + smithy/cloudfront-2020-05-31.json
+docs: https://docs.aws.amazon.com/cloudfront/latest/APIReference/CommonParameters.html
 summary:
   types:
   - apiKey
   api_key_in:
   - header
+  oauth2_flows: []
+  note: >-
+    CloudFront has NO OAuth and NO OpenID Connect surface — /.well-known/openid-configuration
+    and /.well-known/oauth-authorization-server returned 404 on all five probed hosts
+    (well-known/cloudfront-well-known.yml). Authorization is IAM policy evaluated
+    against a SigV4-signed request, so there is no scope vocabulary and scopes/ is
+    deliberately absent from this repo. The unit of permission is an IAM action
+    (cloudfront:CreateDistribution and 166 siblings), enumerated by AWS in the
+    machine-readable AWS Service Reference saved at
+    smithy/cloudfront-aws-service-reference.json.
 schemes:
 - name: sigv4
   type: apiKey
@@ -13,8 +24,35 @@ schemes:
   parameter: Authorization
   description: |-
     AWS Signature Version 4. Signing service name is `cloudfront`,
-    signing region is `us-east-1`. Authorization is supplied via
+    signing region is `us-east-1` regardless of the caller's location —
+    CloudFront is a global service. Authorization is supplied via
     `Authorization` and `X-Amz-Date` headers (and `X-Amz-Security-Token`
     when using temporary credentials).
+  smithy_trait: aws.auth#sigv4
   sources:
-  - openapi/cloudfront-openapi.yml
+  - openapi/_original/cloudfront-openapi.yml
+  - smithy/cloudfront-2020-05-31.json
+credentials:
+  kinds:
+    - IAM user long-lived access key (access key id + secret access key)
+    - IAM role temporary credentials via STS (adds X-Amz-Security-Token)
+    - IAM Identity Center / SSO session credentials
+  rotation: Managed by IAM; AWS publishes no CloudFront-specific key lifetime.
+authorization:
+  model: iam-policy
+  actions_reference: https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudfront.html
+  machine_readable_actions: smithy/cloudfront-aws-service-reference.json
+  managed_policies:
+    - CloudFrontFullAccess
+    - CloudFrontReadOnlyAccess
+  note: >-
+    The AWS Service Reference document (probed 200 at
+    https://servicereference.us-east-1.amazonaws.com/v1/cloudfront/cloudfront.json
+    on 2026-09-05) is the authoritative machine-readable list of CloudFront IAM
+    actions, the resources each acts on, and the condition keys available — the
+    closest thing CloudFront has to a published scope catalog.
+endpoints:
+  standard: https://cloudfront.amazonaws.com
+  dualstack: https://cloudfront.global.api.aws
+  fips: https://cloudfront-fips.global.api.aws
+  china: https://cloudfront.cn-northwest-1.amazonaws.com.cn

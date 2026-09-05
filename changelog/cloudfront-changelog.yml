@@ -1,0 +1,42 @@
+generated: '2026-09-05'
+method: searched
+source: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/WhatsNew.html
+docs: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/WhatsNew.html
+feed: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/amazon-cf-doc-releases.rss
+scheme: dated-document-history
+current_version: '2020-05-31'
+note: >-
+  CloudFront's changelog is a documentation history table, not an API release
+  log: rows are dated and linked to the doc page that changed, with no version
+  number and no breaking/non-breaking marker. Breaking-vs-additive below is our
+  reading of the row, not an AWS label. Recent window only; the full table runs
+  back to 2008. Read 2026-09-05.
+entries:
+  - date: '2025-11-24'
+    breaking: false
+    additions: [mutual TLS (viewer), connection logs, Connection Functions, BYOIP via IPAM]
+    highlights: >-
+      Largest recent release. Adds viewer mTLS, and with it the CreateTrustStore /
+      ListTrustStores / DeleteDistributionsByTrustStore surface and the
+      Connection Function operations (CreateConnectionFunction,
+      PublishConnectionFunction, TestConnectionFunction) now present in the model.
+      Also adds a connection-id field to standard and real-time access logs.
+  - date: '2025-11-20'
+    breaking: false
+    additions: [CloudFront Functions origin-modification parameters, CBOR Web Token (CWT) support, general helper methods]
+    highlights: >-
+      hostHeader, sni, allowedCertificateNames and originOverrides parameters for
+      the origin modification helpers in CloudFront Functions.
+  - date: '2025-11-18'
+    breaking: false
+    additions: [flat-rate pricing plans, CloudFrontFullAccess / CloudFrontReadOnlyAccess managed policy updates]
+    highlights: >-
+      Distributions can be subscribed to a flat-rate pricing plan (Free / Pro /
+      Business / Premium). The managed IAM policies were widened to cover AWS
+      Pricing Plan Manager and WAF Web ACL creation.
+  - date: '2025-11-05'
+    breaking: false
+    additions: [Anycast static IPs IPv4-only or dualstack, VPC origin sharing across AWS accounts]
+    highlights: >-
+      VPC origins can be put in an AWS RAM resource share, letting origins and
+      distributions live in different accounts.

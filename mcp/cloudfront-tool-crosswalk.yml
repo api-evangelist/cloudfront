@@ -1,0 +1,530 @@
+generated: '2026-09-05'
+method: derived
+source: mcp/cloudfront-mcp.yml (live tools/list, 2026-09-05) x smithy/cloudfront-2020-05-31.json (AWS
+  first-party model, 167 operations) x openapi/*.yml
+note: 'CloudFront has no per-operation MCP tool surface. AWS''s MCP servers expose a generic AWS executor
+  and a documentation reader, so the crosswalk is deliberately lopsided: one tool fans out to the entire
+  CloudFront operation set, and 167 REST operations have no named tool. Recording that is the point —
+  it is a real surface divergence, not a mapping gap to paper over.'
+surfaces:
+  openapi:
+    files:
+    - openapi/cloudfront-cachepolicies-api-openapi.yml
+    - openapi/cloudfront-distributions-api-openapi.yml
+    - openapi/cloudfront-functions-api-openapi.yml
+    - openapi/cloudfront-invalidations-api-openapi.yml
+    - openapi/cloudfront-originaccesscontrol-api-openapi.yml
+    - openapi/cloudfront-publickeys-api-openapi.yml
+    operations: 23
+    note: API Evangelist best-effort subset; see smithy for the full contract.
+  smithy:
+    file: smithy/cloudfront-2020-05-31.json
+    operations: 167
+    gated: false
+    note: AWS first-party Smithy JSON AST, github.com/aws/api-models-aws.
+  mcp:
+    url: https://aws-mcp.us-east-1.api.aws/mcp
+    tools_list: 200 anonymous
+    gated: tool execution requires SigV4 / IAM credentials
+  graphql: null
+crosswalk:
+- tool: aws___run_script
+  category: execution
+  rest:
+  - AssociateAlias
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - CreateAnycastIpList
+  - CreateCachePolicy
+  - CreateCloudFrontOriginAccessIdentity
+  - CreateConnectionFunction
+  - CreateConnectionGroup
+  - CreateContinuousDeploymentPolicy
+  - CreateDistribution
+  - CreateDistributionTenant
+  - CreateDistributionWithTags
+  - CreateFieldLevelEncryptionConfig
+  - CreateFieldLevelEncryptionProfile
+  - CreateFunction
+  - CreateInvalidation
+  - CreateInvalidationForDistributionTenant
+  - CreateKeyGroup
+  - CreateKeyValueStore
+  - CreateMonitoringSubscription
+  - CreateOriginAccessControl
+  - CreateOriginRequestPolicy
+  - CreatePublicKey
+  - CreateRealtimeLogConfig
+  - CreateResponseHeadersPolicy
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+  - CreateTrustStore
+  - CreateVpcOrigin
+  - DeleteAnycastIpList
+  - DeleteCachePolicy
+  - DeleteCloudFrontOriginAccessIdentity
+  - DeleteConnectionFunction
+  - DeleteConnectionGroup
+  - DeleteContinuousDeploymentPolicy
+  - DeleteDistribution
+  - DeleteDistributionTenant
+  - DeleteFieldLevelEncryptionConfig
+  - DeleteFieldLevelEncryptionProfile
+  - DeleteFunction
+  - DeleteKeyGroup
+  - DeleteKeyValueStore
+  - DeleteMonitoringSubscription
+  - DeleteOriginAccessControl
+  - DeleteOriginRequestPolicy
+  - DeletePublicKey
+  - DeleteRealtimeLogConfig
+  - DeleteResourcePolicy
+  - DeleteResponseHeadersPolicy
+  - DeleteStreamingDistribution
+  - DeleteTrustStore
+  - DeleteVpcOrigin
+  - DescribeConnectionFunction
+  - DescribeFunction
+  - DescribeKeyValueStore
+  - DisassociateDistributionTenantWebACL
+  - DisassociateDistributionWebACL
+  - GetAnycastIpList
+  - GetCachePolicy
+  - GetCachePolicyConfig
+  - GetCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentityConfig
+  - GetConnectionFunction
+  - GetConnectionGroup
+  - GetConnectionGroupByRoutingEndpoint
+  - GetContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicyConfig
+  - GetDistribution
+  - GetDistributionConfig
+  - GetDistributionTenant
+  - GetDistributionTenantByDomain
+  - GetFieldLevelEncryption
+  - GetFieldLevelEncryptionConfig
+  - GetFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfileConfig
+  - GetFunction
+  - GetInvalidation
+  - GetInvalidationForDistributionTenant
+  - GetKeyGroup
+  - GetKeyGroupConfig
+  - GetManagedCertificateDetails
+  - GetMonitoringSubscription
+  - GetOriginAccessControl
+  - GetOriginAccessControlConfig
+  - GetOriginRequestPolicy
+  - GetOriginRequestPolicyConfig
+  - GetPublicKey
+  - GetPublicKeyConfig
+  - GetRealtimeLogConfig
+  - GetResourcePolicy
+  - GetResponseHeadersPolicy
+  - GetResponseHeadersPolicyConfig
+  - GetStreamingDistribution
+  - GetStreamingDistributionConfig
+  - GetTrustStore
+  - GetVpcOrigin
+  - ListAnycastIpLists
+  - ListCachePolicies
+  - ListCloudFrontOriginAccessIdentities
+  - ListConflictingAliases
+  - ListConnectionFunctions
+  - ListConnectionGroups
+  - ListContinuousDeploymentPolicies
+  - ListDistributionTenants
+  - ListDistributionTenantsByCustomization
+  - ListDistributions
+  - ListDistributionsByAnycastIpListId
+  - ListDistributionsByCachePolicyId
+  - ListDistributionsByConnectionFunction
+  - ListDistributionsByConnectionMode
+  - ListDistributionsByKeyGroup
+  - ListDistributionsByOriginRequestPolicyId
+  - ListDistributionsByOwnedResource
+  - ListDistributionsByRealtimeLogConfig
+  - ListDistributionsByResponseHeadersPolicyId
+  - ListDistributionsByTrustStore
+  - ListDistributionsByVpcOriginId
+  - ListDistributionsByWebACLId
+  - ListDomainConflicts
+  - ListFieldLevelEncryptionConfigs
+  - ListFieldLevelEncryptionProfiles
+  - ListFunctions
+  - ListInvalidations
+  - ListInvalidationsForDistributionTenant
+  - ListKeyGroups
+  - ListKeyValueStores
+  - ListOriginAccessControls
+  - ListOriginRequestPolicies
+  - ListPublicKeys
+  - ListRealtimeLogConfigs
+  - ListResponseHeadersPolicies
+  - ListStreamingDistributions
+  - ListTagsForResource
+  - ListTrustStores
+  - ListVpcOrigins
+  - PublishConnectionFunction
+  - PublishFunction
+  - PutResourcePolicy
+  - TagResource
+  - TestConnectionFunction
+  - TestFunction
+  - UntagResource
+  - UpdateAnycastIpList
+  - UpdateCachePolicy
+  - UpdateCloudFrontOriginAccessIdentity
+  - UpdateConnectionFunction
+  - UpdateConnectionGroup
+  - UpdateContinuousDeploymentPolicy
+  - UpdateDistribution
+  - UpdateDistributionTenant
+  - UpdateDistributionWithStagingConfig
+  - UpdateDomainAssociation
+  - UpdateFieldLevelEncryptionConfig
+  - UpdateFieldLevelEncryptionProfile
+  - UpdateFunction
+  - UpdateKeyGroup
+  - UpdateKeyValueStore
+  - UpdateOriginAccessControl
+  - UpdateOriginRequestPolicy
+  - UpdatePublicKey
+  - UpdateRealtimeLogConfig
+  - UpdateResponseHeadersPolicy
+  - UpdateStreamingDistribution
+  - UpdateTrustStore
+  - UpdateVpcOrigin
+  - VerifyDnsConfiguration
+  binding: generic-executor
+  confidence: medium
+  note: 'Executes Python with call_boto3, so every CloudFront operation in the Smithy model is reachable
+    through it. The tool inherits NO CloudFront inputSchema — its inputSchema is a script body — so an
+    agent must know the boto3 cloudfront call shape itself. Confidence is medium for that reason: the
+    reachability is certain, the per-operation contract is not carried by the tool.'
+- tool: aws___read_documentation
+  category: documentation
+  rest: []
+  binding: docs
+  confidence: high
+  note: Allow-listed prefixes include docs.aws.amazon.com, so the CloudFront API Reference and Developer
+    Guide are fetchable verbatim.
+- tool: aws___search_documentation
+  category: documentation
+  rest: []
+  binding: docs
+  confidence: high
+- tool: aws___retrieve_skill
+  category: documentation
+  rest: []
+  binding: docs
+  confidence: medium
+  note: Returns AWS-authored workflow/reference skills; whether a CloudFront skill exists was not enumerated
+    (the tool requires a skill name).
+mcp_only:
+- tool: aws___get_presigned_url
+  reason: Amazon S3 surface, not CloudFront. No CloudFront operation corresponds.
+- tool: aws___get_tasks
+  reason: MCP-server-side long-running task poller. No CloudFront operation corresponds.
+- tool: aws___list_regions
+  reason: AWS account/partition metadata. CloudFront is a global service and exposes no region list operation.
+- tool: aws___get_regional_availability
+  reason: AWS service availability metadata, served by the MCP server, not by any CloudFront API operation.
+rest_only:
+- capability: Alia
+  operations:
+  - AssociateAlias
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: AnycastIpList
+  operations:
+  - CreateAnycastIpList
+  - DeleteAnycastIpList
+  - GetAnycastIpList
+  - ListAnycastIpLists
+  - UpdateAnycastIpList
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: CachePolicie
+  operations:
+  - ListCachePolicies
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: CachePolicy
+  operations:
+  - CreateCachePolicy
+  - DeleteCachePolicy
+  - GetCachePolicy
+  - GetCachePolicyConfig
+  - UpdateCachePolicy
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: CloudFrontOriginAccessIdentitie
+  operations:
+  - ListCloudFrontOriginAccessIdentities
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: CloudFrontOriginAccessIdentity
+  operations:
+  - CreateCloudFrontOriginAccessIdentity
+  - DeleteCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentityConfig
+  - UpdateCloudFrontOriginAccessIdentity
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ConflictingAliase
+  operations:
+  - ListConflictingAliases
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ConnectionFunction
+  operations:
+  - CreateConnectionFunction
+  - DeleteConnectionFunction
+  - DescribeConnectionFunction
+  - GetConnectionFunction
+  - ListConnectionFunctions
+  - PublishConnectionFunction
+  - TestConnectionFunction
+  - UpdateConnectionFunction
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ConnectionGroup
+  operations:
+  - CreateConnectionGroup
+  - DeleteConnectionGroup
+  - GetConnectionGroup
+  - ListConnectionGroups
+  - UpdateConnectionGroup
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ConnectionGroupByRoutingEndpoint
+  operations:
+  - GetConnectionGroupByRoutingEndpoint
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ContinuousDeploymentPolicie
+  operations:
+  - ListContinuousDeploymentPolicies
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ContinuousDeploymentPolicy
+  operations:
+  - CreateContinuousDeploymentPolicy
+  - DeleteContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicyConfig
+  - UpdateContinuousDeploymentPolicy
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: Distribution
+  operations:
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionTenant
+  - CreateDistributionWithTags
+  - DeleteDistribution
+  - DeleteDistributionTenant
+  - DisassociateDistributionTenantWebACL
+  - DisassociateDistributionWebACL
+  - GetDistribution
+  - GetDistributionConfig
+  - GetDistributionTenant
+  - GetDistributionTenantByDomain
+  - ListDistributionTenants
+  - ListDistributionTenantsByCustomization
+  - ListDistributions
+  - ListDistributionsByAnycastIpListId
+  - ListDistributionsByCachePolicyId
+  - ListDistributionsByConnectionFunction
+  - ListDistributionsByConnectionMode
+  - ListDistributionsByKeyGroup
+  - ListDistributionsByOriginRequestPolicyId
+  - ListDistributionsByOwnedResource
+  - ListDistributionsByRealtimeLogConfig
+  - ListDistributionsByResponseHeadersPolicyId
+  - ListDistributionsByTrustStore
+  - ListDistributionsByVpcOriginId
+  - ListDistributionsByWebACLId
+  - UpdateDistribution
+  - UpdateDistributionTenant
+  - UpdateDistributionWithStagingConfig
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: DnsConfiguration
+  operations:
+  - VerifyDnsConfiguration
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: DomainAssociation
+  operations:
+  - UpdateDomainAssociation
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: DomainConflict
+  operations:
+  - ListDomainConflicts
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: FieldLevelEncryption
+  operations:
+  - CreateFieldLevelEncryptionConfig
+  - DeleteFieldLevelEncryptionConfig
+  - GetFieldLevelEncryption
+  - GetFieldLevelEncryptionConfig
+  - ListFieldLevelEncryptionConfigs
+  - UpdateFieldLevelEncryptionConfig
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: FieldLevelEncryptionProfile
+  operations:
+  - CreateFieldLevelEncryptionProfile
+  - DeleteFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfileConfig
+  - ListFieldLevelEncryptionProfiles
+  - UpdateFieldLevelEncryptionProfile
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: Function
+  operations:
+  - CreateFunction
+  - DeleteFunction
+  - DescribeFunction
+  - GetFunction
+  - ListFunctions
+  - PublishFunction
+  - TestFunction
+  - UpdateFunction
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: Invalidation
+  operations:
+  - CreateInvalidation
+  - GetInvalidation
+  - ListInvalidations
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: InvalidationForDistributionTenant
+  operations:
+  - CreateInvalidationForDistributionTenant
+  - GetInvalidationForDistributionTenant
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: InvalidationsForDistributionTenant
+  operations:
+  - ListInvalidationsForDistributionTenant
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: KeyGroup
+  operations:
+  - CreateKeyGroup
+  - DeleteKeyGroup
+  - GetKeyGroup
+  - GetKeyGroupConfig
+  - ListKeyGroups
+  - UpdateKeyGroup
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: KeyValueStore
+  operations:
+  - CreateKeyValueStore
+  - DeleteKeyValueStore
+  - DescribeKeyValueStore
+  - ListKeyValueStores
+  - UpdateKeyValueStore
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ManagedCertificateDetail
+  operations:
+  - GetManagedCertificateDetails
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: MonitoringSubscription
+  operations:
+  - CreateMonitoringSubscription
+  - DeleteMonitoringSubscription
+  - GetMonitoringSubscription
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: OriginAccessControl
+  operations:
+  - CreateOriginAccessControl
+  - DeleteOriginAccessControl
+  - GetOriginAccessControl
+  - GetOriginAccessControlConfig
+  - ListOriginAccessControls
+  - UpdateOriginAccessControl
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: OriginRequestPolicie
+  operations:
+  - ListOriginRequestPolicies
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: OriginRequestPolicy
+  operations:
+  - CreateOriginRequestPolicy
+  - DeleteOriginRequestPolicy
+  - GetOriginRequestPolicy
+  - GetOriginRequestPolicyConfig
+  - UpdateOriginRequestPolicy
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: PublicKey
+  operations:
+  - CreatePublicKey
+  - DeletePublicKey
+  - GetPublicKey
+  - GetPublicKeyConfig
+  - ListPublicKeys
+  - UpdatePublicKey
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: RealtimeLog
+  operations:
+  - CreateRealtimeLogConfig
+  - DeleteRealtimeLogConfig
+  - GetRealtimeLogConfig
+  - ListRealtimeLogConfigs
+  - UpdateRealtimeLogConfig
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: Resource
+  operations:
+  - TagResource
+  - UntagResource
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ResourcePolicy
+  operations:
+  - DeleteResourcePolicy
+  - GetResourcePolicy
+  - PutResourcePolicy
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ResponseHeadersPolicie
+  operations:
+  - ListResponseHeadersPolicies
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: ResponseHeadersPolicy
+  operations:
+  - CreateResponseHeadersPolicy
+  - DeleteResponseHeadersPolicy
+  - GetResponseHeadersPolicy
+  - GetResponseHeadersPolicyConfig
+  - UpdateResponseHeadersPolicy
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: StreamingDistribution
+  operations:
+  - CreateStreamingDistribution
+  - DeleteStreamingDistribution
+  - GetStreamingDistribution
+  - GetStreamingDistributionConfig
+  - ListStreamingDistributions
+  - UpdateStreamingDistribution
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: StreamingDistributionWithTag
+  operations:
+  - CreateStreamingDistributionWithTags
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: TagsForResource
+  operations:
+  - ListTagsForResource
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: TrustStore
+  operations:
+  - CreateTrustStore
+  - DeleteTrustStore
+  - GetTrustStore
+  - ListTrustStores
+  - UpdateTrustStore
+  reason: No named MCP tool; reachable only through aws___run_script.
+- capability: VpcOrigin
+  operations:
+  - CreateVpcOrigin
+  - DeleteVpcOrigin
+  - GetVpcOrigin
+  - ListVpcOrigins
+  - UpdateVpcOrigin
+  reason: No named MCP tool; reachable only through aws___run_script.
+coverage:
+  tools_named: 8
+  tools_bound: 4
+  mcp_only: 4
+  rest_operations_total: 167
+  rest_operations_with_named_tool: 0
+  rest_operations_reachable_via_generic_executor: 167
+  openapi_operations_in_repo: 23

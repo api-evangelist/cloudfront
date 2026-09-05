@@ -1,0 +1,97 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  Public package registries (registry.npmjs.org, pypi.org, rubygems.org,
+  api.nuget.org, repo1.maven.org, proxy.golang.org, crates.io, packagist.org),
+  read 2026-09-05. Amazon does not publish a CloudFront-only SDK for every
+  language: CloudFront is a service client inside the AWS SDK family, so the
+  package below is the CloudFront client where AWS ships one (JS, .NET, Java,
+  Ruby, Rust, Go) and the umbrella SDK where CloudFront is a sub-client
+  (Python/boto3, PHP).
+note: >-
+  Every entry is first-party AWS. Versions and dates are read from each
+  registry's metadata endpoint on 2026-09-05; all eight were published within
+  the last 16 days, so there is no abandonment signal in the CloudFront SDK
+  surface.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-cloudfront"
+    url: https://www.npmjs.com/package/@aws-sdk/client-cloudfront
+    install: npm install @aws-sdk/client-cloudfront
+    official: true
+    version: 3.1127.0
+    published: '2026-09-04'
+    scope: cloudfront-only
+  - language: python
+    registry: pypi
+    name: boto3
+    url: https://pypi.org/project/boto3/
+    install: pip install boto3
+    official: true
+    version: 1.43.89
+    published: '2026-09-04'
+    scope: aws-wide
+    note: >-
+      CloudFront is reached as boto3.client('cloudfront'); AWS publishes no
+      standalone CloudFront package on PyPI.
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-cloudfront
+    url: https://rubygems.org/gems/aws-sdk-cloudfront
+    install: gem install aws-sdk-cloudfront
+    official: true
+    version: 1.152.0
+    published: '2026-08-20'
+    scope: cloudfront-only
+  - language: dotnet
+    registry: nuget
+    name: AWSSDK.CloudFront
+    url: https://www.nuget.org/packages/AWSSDK.CloudFront/
+    install: dotnet add package AWSSDK.CloudFront
+    official: true
+    version: 4.0.101.2
+    published: '2026-09-04'
+    scope: cloudfront-only
+  - language: java
+    registry: maven
+    name: software.amazon.awssdk:cloudfront
+    url: https://central.sonatype.com/artifact/software.amazon.awssdk/cloudfront
+    install: 'implementation("software.amazon.awssdk:cloudfront:2.54.13")'
+    official: true
+    version: 2.54.13
+    published: '2026-09-04'
+    scope: cloudfront-only
+    note: >-
+      Read from repo1.maven.org/maven2/software/amazon/awssdk/cloudfront/maven-metadata.xml
+      (lastUpdated 20260904205454); search.maven.org's solr endpoint timed out.
+  - language: go
+    registry: gomodules
+    name: github.com/aws/aws-sdk-go-v2/service/cloudfront
+    url: https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudfront
+    install: go get github.com/aws/aws-sdk-go-v2/service/cloudfront
+    official: true
+    version: v1.72.0
+    published: '2026-09-04'
+    scope: cloudfront-only
+  - language: rust
+    registry: crates
+    name: aws-sdk-cloudfront
+    url: https://crates.io/crates/aws-sdk-cloudfront
+    install: cargo add aws-sdk-cloudfront
+    official: true
+    version: 1.130.0
+    published: '2026-09-04'
+    scope: cloudfront-only
+  - language: php
+    registry: packagist
+    name: aws/aws-sdk-php
+    url: https://packagist.org/packages/aws/aws-sdk-php
+    install: composer require aws/aws-sdk-php
+    official: true
+    version: 3.394.9
+    published: '2026-09-04'
+    scope: aws-wide
+    note: >-
+      CloudFront is reached as Aws\CloudFront\CloudFrontClient; AWS publishes no
+      standalone CloudFront package on Packagist.

@@ -1,0 +1,179 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html and
+  the CloudFront Developer Guide (docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/),
+  cross-derived from smithy/cloudfront-2020-05-31.json
+docs: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+protocol:
+  style: REST-XML
+  wire_format: application/xml
+  smithy_protocol: aws.protocols#restXml
+  note: >-
+    CloudFront predates AWS's JSON protocols. Requests and responses are XML
+    under the namespace http://cloudfront.amazonaws.com/doc/2020-05-31/. An
+    agent that assumes JSON will fail on every call.
+authentication:
+  style: aws-sigv4
+  service_name: cloudfront
+  signing_region: us-east-1
+  headers: [Authorization, X-Amz-Date, X-Amz-Security-Token]
+  note: >-
+    CloudFront is a global service; requests are always signed for us-east-1
+    regardless of where the caller sits. Authorization is IAM-policy based, not
+    scope based - there is no OAuth surface, so scopes/ is deliberately absent.
+  artifact: authentication/cloudfront-authentication.yml
+idempotency:
+  supported: true
+  mechanism: CallerReference
+  style: caller-supplied unique value in the request body (not a header)
+  header: null
+  coverage: partial
+  scope:
+    - CopyDistribution
+    - CreateCloudFrontOriginAccessIdentity
+    - CreateDistribution
+    - CreateDistributionWithTags
+    - CreateFieldLevelEncryptionConfig
+    - CreateFieldLevelEncryptionProfile
+    - CreateInvalidation
+    - CreateInvalidationForDistributionTenant
+    - CreatePublicKey
+    - CreateStreamingDistribution
+    - CreateStreamingDistributionWithTags
+    - UpdateCloudFrontOriginAccessIdentity
+    - UpdateDistribution
+    - UpdateFieldLevelEncryptionConfig
+    - UpdateFieldLevelEncryptionProfile
+    - UpdatePublicKey
+    - UpdateStreamingDistribution
+  retention: not published
+  semantics: >-
+    A replayed request carrying a CallerReference already seen, with byte-identical
+    config (whitespace ignored), returns the SAME response as the original. A replay
+    with the same CallerReference but different config returns a 409
+    …AlreadyExists error rather than mutating anything.
+  note: >-
+    coverage is `partial`, not `full`, and the gap is the point: 17 of the 95
+    mutating operations in the model carry CallerReference. The other 78 - every
+    Delete, every Tag/Untag, PublishFunction, TestFunction, the policy and
+    key-value-store writes, the newer DistributionTenant / ConnectionGroup /
+    TrustStore surface - have no replay token at all. Those instead rely on
+    ETag/If-Match optimistic concurrency (see below), which prevents a LOST
+    UPDATE but does not make a retry safe: a retried DeleteDistribution whose
+    first attempt succeeded returns NoSuchDistribution, not a replayed success.
+  evidence: smithy/cloudfront-2020-05-31.json (17 operations whose input carries CallerReference)
+concurrency:
+  style: optimistic
+  mechanism: ETag + If-Match
+  spec: RFC 7232
+  read_header: ETag
+  write_header: If-Match
+  operations_requiring_if_match: 51
+  structures_returning_etag: 91
+  note: >-
+    The standard CloudFront write loop is Get…Config (capture ETag) -> mutate ->
+    Update…/Delete… with If-Match set to that ETag. A stale ETag returns
+    PreconditionFailed (HTTP 412). This is the single most important convention
+    for an agent driving CloudFront: a write without If-Match is rejected.
+reversibility:
+  grade: documented
+  note: >-
+    CloudFront publishes reversal PATHS for the association and tagging surfaces
+    and a genuine staged-rollout rollback, but publishes NO time window for any
+    of them, and its two most consequential writes - DeleteDistribution and
+    CreateInvalidation - have no reversal at all. Graded `documented` rather than
+    `verified` for that reason. NO WINDOW IS ASSERTED HERE because AWS states
+    none.
+  surfaces:
+    - write: AssociateDistributionWebACL
+      reversal: DisassociateDistributionWebACL
+      window: not stated
+      docs: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionWebACL.html
+    - write: AssociateDistributionTenantWebACL
+      reversal: DisassociateDistributionTenantWebACL
+      window: not stated
+    - write: TagResource
+      reversal: UntagResource
+      window: not stated
+    - write: UpdateDistribution
+      reversal: UpdateDistribution
+      window: not stated
+      note: >-
+        Reversal is re-applying the previous DistributionConfig. The caller must
+        have kept it - CloudFront exposes no configuration history operation, so
+        an agent that did not snapshot GetDistributionConfig before writing
+        cannot roll back.
+    - write: UpdateDistributionWithStagingConfig
+      reversal: UpdateDistributionWithStagingConfig / UpdateContinuousDeploymentPolicy
+      window: not stated
+      note: >-
+        Continuous deployment is the one first-class rollback CloudFront ships:
+        changes are validated on a staging distribution and promoted; the policy
+        can be disabled to send all traffic back to the primary config.
+      docs: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/continuous-deployment.html
+    - write: DeleteDistribution
+      reversal: none
+      window: not applicable
+      note: >-
+        Irreversible. A distribution must be disabled and fully deployed before
+        it can be deleted, and there is no undelete; the domain name is not
+        recoverable.
+    - write: CreateInvalidation
+      reversal: none
+      window: not applicable
+      note: >-
+        Irreversible and billable. An invalidation cannot be cancelled once
+        submitted; the cache entries are gone and will be re-fetched from origin.
+dry_run:
+  supported: partial
+  operations: [TestFunction, TestConnectionFunction, VerifyDnsConfiguration]
+  note: >-
+    TestFunction runs a CloudFront Function against a supplied event object and
+    returns the computed result WITHOUT publishing it - a real rehearsal surface
+    for the edge-compute path. There is no dry-run for distribution,
+    invalidation, or policy writes.
+  docs: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestFunction.html
+pagination:
+  style: marker
+  request_params: [Marker, MaxItems]
+  response_fields: [<Resource>List.NextMarker, <Resource>List.IsTruncated, <Resource>List.Quantity, <Resource>List.Items]
+  paginated_operations: 17
+  note: >-
+    Marker is opaque; pass the previous response's NextMarker. IsTruncated is
+    the loop condition. MaxItems is a page-size hint, not a guarantee.
+versioning:
+  scheme: date-in-path
+  current: '2020-05-31'
+  note: >-
+    Every path is prefixed with the API version date, e.g.
+    /2020-05-31/distribution. AWS adds operations to the same dated version
+    rather than cutting a new one; the version has been stable since 2020.
+  artifact: lifecycle/cloudfront-lifecycle.yml
+request_tracing:
+  header: x-amzn-RequestId
+  response_field: ErrorResponse/RequestId
+  note: Returned on both success and error; quote it to AWS Support.
+error_envelope:
+  format: aws-restxml
+  rfc9457: false
+  artifact: errors/cloudfront-error-codes.yml
+rate_limit_signaling:
+  headers: []
+  status_on_exhaustion: 400
+  note: >-
+    CloudFront's control plane returns modeled 400 quota errors (the TooMany…
+    family, 57 of them) rather than a 429 with RateLimit headers. There is no
+    Retry-After. An agent must map the specific TooMany… code to the quota it
+    hit; see rate-limits/cloudfront-rate-limits.yml.
+  artifact: rate-limits/cloudfront-rate-limits.yml
+metadata:
+  mechanism: AWS resource tags
+  operations: [TagResource, UntagResource, ListTagsForResource]
+  note: Tags are key/value; 50 tags per distribution.
+cross_links:
+  errors: errors/cloudfront-error-codes.yml
+  lifecycle: lifecycle/cloudfront-lifecycle.yml
+  authentication: authentication/cloudfront-authentication.yml
+  rate_limits: rate-limits/cloudfront-rate-limits.yml
+  data_model: data-model/cloudfront-data-model.yml

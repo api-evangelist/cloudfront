@@ -1,0 +1,109 @@
+generated: '2026-09-05'
+method: searched
+source: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html
+docs: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html
+limit_count: 12
+note: >-
+  Two different things are called a limit here and an agent must not confuse them.
+  (1) DATA-PLANE limits govern viewer traffic through a distribution - requests
+  per second, data transfer rate. (2) CONTROL-PLANE quotas govern how many
+  CloudFront resources an account may hold. AWS publishes both. What AWS does NOT
+  publish is a control-plane API CALL rate: there is no documented
+  requests-per-second ceiling on CreateDistribution or ListDistributions, and no
+  429 / RateLimit-* / Retry-After signalling anywhere in the first-party Smithy
+  model. Exhaustion surfaces instead as a modeled HTTP 400 with a specific
+  TooMany… error code (57 of them) or 413 (BatchTooLarge,
+  EntitySizeLimitExceeded, FunctionSizeLimitExceeded). That is the runtime
+  signal an agent actually gets.
+response_headers:
+  rate_limit_headers: []
+  retry_after: false
+  note: >-
+    None. Probed the model and the docs; CloudFront returns no RateLimit-*,
+    X-RateLimit-*, or Retry-After header on quota exhaustion.
+status_on_exhaustion: 400
+status_on_oversized_request: 413
+error_mapping: errors/cloudfront-error-codes.yml
+limits:
+  - name: Requests per second per distribution
+    scope: per-distribution
+    plane: data
+    limit: 250000
+    unit: requests/second
+    window: '1s'
+    adjustable: true
+    note: Does not apply to distributions on a flat-rate pricing plan.
+  - name: Data transfer rate per distribution
+    scope: per-distribution
+    plane: data
+    limit: 150
+    unit: Gbps
+    adjustable: true
+    note: Does not apply to distributions on a flat-rate pricing plan.
+  - name: Invalidation paths or tags
+    scope: per-account
+    plane: control
+    limit: 150
+    unit: paths or tags/second
+    window: '1s'
+    adjustable: false
+    error_code: TooManyInvalidationsInProgress
+  - name: Wildcard invalidations
+    scope: per-account
+    plane: control
+    limit: 1
+    unit: wildcard invalidation/second
+    window: '1s'
+    adjustable: false
+  - name: Distributions per AWS account
+    scope: per-account
+    plane: control
+    limit: 500
+    adjustable: true
+    error_code: TooManyDistributions
+  - name: Alternate domain names (CNAMEs) per distribution
+    scope: per-distribution
+    plane: control
+    limit: 100
+    adjustable: true
+    error_code: TooManyDistributionCNAMEs
+  - name: Cache behaviors per distribution
+    scope: per-distribution
+    plane: control
+    limit: 75
+    adjustable: false
+    error_code: TooManyCacheBehaviors
+  - name: Origins per distribution
+    scope: per-distribution
+    plane: control
+    limit: 100
+    adjustable: true
+    error_code: TooManyOrigins
+  - name: Custom cache policies per AWS account
+    scope: per-account
+    plane: control
+    limit: 20
+    adjustable: true
+    error_code: TooManyCachePolicies
+  - name: Origin access controls per AWS account
+    scope: per-account
+    plane: control
+    limit: 100
+    adjustable: true
+    error_code: TooManyOriginAccessControls
+  - name: Maximum length of a request or origin response (headers + query strings, excluding body)
+    scope: per-request
+    plane: data
+    limit: 32768
+    unit: bytes
+    adjustable: false
+  - name: Key value store update payload
+    scope: per-request
+    plane: control
+    limit: 50
+    unit: keys or 3 MB, whichever comes first
+    adjustable: false
+    error_code: EntitySizeLimitExceeded
+quota_increase:
+  url: https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html
+  cli: aws service-quotas request-service-quota-increase

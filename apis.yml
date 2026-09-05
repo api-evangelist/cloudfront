@@ -37,7 +37,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloudfront.png
 url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-04-25'
+modified: '2026-09-05'
 specificationVersion: '0.23'
 kind: company
 x-alias-of: amazon-cloudfront
@@ -65,6 +65,11 @@ apis:
     type: Documentation
   - url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
     type: Developer Guide
+  - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+    type: APIReference
+  - url: smithy/cloudfront-2020-05-31.json
+    type: Smithy
+    name: AWS CloudFront Smithy 2.0 model (167 operations)
   description: >-
     The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution,
     UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations,
@@ -80,6 +85,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-cachepolicies-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-cachepolicies-api-overlay.yaml
 - aid: cloudfront:cloudfront-distributions-api
   name: CloudFront Distributions API
   description: The Distributions API from CloudFront — 3 operation(s) for distributions.
@@ -90,6 +97,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-distributions-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-distributions-api-overlay.yaml
 - aid: cloudfront:cloudfront-functions-api
   name: CloudFront Functions API
   description: The Functions API from CloudFront — 2 operation(s) for functions.
@@ -100,6 +109,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-functions-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-functions-api-overlay.yaml
 - aid: cloudfront:cloudfront-invalidations-api
   name: CloudFront Invalidations API
   description: The Invalidations API from CloudFront — 2 operation(s) for invalidations.
@@ -110,6 +121,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-invalidations-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-invalidations-api-overlay.yaml
 - aid: cloudfront:cloudfront-originaccesscontrol-api
   name: CloudFront OriginAccessControl API
   description: The OriginAccessControl API from CloudFront — 2 operation(s) for originaccesscontrol.
@@ -120,6 +133,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-originaccesscontrol-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-originaccesscontrol-api-overlay.yaml
 - aid: cloudfront:cloudfront-publickeys-api
   name: CloudFront PublicKeys API
   description: The PublicKeys API from CloudFront — 1 operation(s) for publickeys.
@@ -130,6 +145,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cloudfront-publickeys-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-publickeys-api-overlay.yaml
 common:
   - type: CapabilityMap
     url: capabilities/cloudfront-capability-edges.yml
@@ -154,6 +171,77 @@ common:
     url: https://health.aws.amazon.com/health/status
   - type: Canonical
     url: https://github.com/api-evangelist/amazon-cloudfront
+  - type: Packages
+    url: packages/cloudfront-packages.yml
+  - type: SDKs
+    url: packages/cloudfront-packages.yml
+    name: First-party AWS SDK clients for CloudFront
+  - type: WellKnown
+    url: well-known/cloudfront-well-known.yml
+  - type: SecurityTxt
+    url: https://aws.amazon.com/.well-known/security.txt
+  - type: MCPServer
+    url: mcp/cloudfront-mcp.yml
+  - type: ToolCrosswalk
+    url: mcp/cloudfront-tool-crosswalk.yml
+  - type: LLMsTxt
+    url: llms/cloudfront-llms.txt
+  - type: Conformance
+    url: conformance/cloudfront-conformance.yml
+  - type: Compliance
+    url: https://aws.amazon.com/compliance/programs/
+  - type: ErrorCatalog
+    url: errors/cloudfront-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/cloudfront-lifecycle.yml
+  - type: Conventions
+    url: conventions/cloudfront-conventions.yml
+  - type: Idempotency
+    url: conventions/cloudfront-conventions.yml
+    name: CallerReference replay protection (partial coverage) + ETag/If-Match concurrency
+  - type: ChangeLog
+    url: changelog/cloudfront-changelog.yml
+  - type: CLI
+    url: cli/cloudfront-cli.yml
+  - type: DataModel
+    url: data-model/cloudfront-data-model.yml
+  - type: Plans
+    url: plans/cloudfront-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cloudfront-rate-limits.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: Security
+    url: https://aws.amazon.com/security/vulnerability-reporting/
+  - type: DeveloperPortal
+    url: https://aws.amazon.com/developer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html
+  - type: Support
+    url: https://aws.amazon.com/contact-us/
+  - type: Blog
+    url: https://aws.amazon.com/blogs/networking-and-content-delivery/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: SignUp
+    url: https://portal.aws.amazon.com/billing/signup
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: SLA
+    url: https://aws.amazon.com/cloudfront/sla/
+  - type: FAQ
+    url: https://aws.amazon.com/cloudfront/faqs/
 maintainers:
   - FN: Kin Lane
     email: kinlane@gmail.com
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 29
+  pass: local-v3
+x-parent: aws
+x-relationship: product

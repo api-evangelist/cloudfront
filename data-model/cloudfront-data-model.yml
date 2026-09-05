@@ -1,0 +1,550 @@
+generated: '2026-09-05'
+method: derived
+source: smithy/cloudfront-2020-05-31.json (AWS first-party model, harvested 2026-09-05)
+note: Entities are grouped from the 167 modeled operation names; relationships[] are read from DistributionConfig
+  members and the documented id-reference fields in the model. CloudFront ids are opaque service-assigned strings
+  (e.g. E1ABCDEFGHIJKL) with no type prefix, so an id alone does not tell an agent what it points at - the operation
+  that returned it does. Every mutable entity is versioned by an ETag returned on read and required as If-Match
+  on write.
+id_scheme:
+  style: opaque-service-assigned
+  prefixed: false
+  concurrency: ETag + If-Match (RFC 7232)
+  note: 91 modeled structures return an ETag; 51 request structures require IfMatch.
+entities:
+- name: Alia
+  operations:
+  - AssociateAlias
+  methods:
+  - PUT
+  identified_by: Id (opaque string)
+- name: AnycastIpList
+  operations:
+  - CreateAnycastIpList
+  - DeleteAnycastIpList
+  - GetAnycastIpList
+  - ListAnycastIpLists
+  - UpdateAnycastIpList
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: CachePolicy
+  operations:
+  - CreateCachePolicy
+  - DeleteCachePolicy
+  - GetCachePolicy
+  - GetCachePolicyConfig
+  - ListCachePolicies
+  - UpdateCachePolicy
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: CloudFrontOriginAccessIdentity
+  operations:
+  - CreateCloudFrontOriginAccessIdentity
+  - DeleteCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentityConfig
+  - ListCloudFrontOriginAccessIdentities
+  - UpdateCloudFrontOriginAccessIdentity
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: ConflictingAliase
+  operations:
+  - ListConflictingAliases
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: ConnectionFunction
+  operations:
+  - CreateConnectionFunction
+  - DeleteConnectionFunction
+  - DescribeConnectionFunction
+  - GetConnectionFunction
+  - ListConnectionFunctions
+  - PublishConnectionFunction
+  - TestConnectionFunction
+  - UpdateConnectionFunction
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: ConnectionGroup
+  operations:
+  - CreateConnectionGroup
+  - DeleteConnectionGroup
+  - GetConnectionGroup
+  - ListConnectionGroups
+  - UpdateConnectionGroup
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: ConnectionGroupByRoutingEndpoint
+  operations:
+  - GetConnectionGroupByRoutingEndpoint
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: ContinuousDeploymentPolicy
+  operations:
+  - CreateContinuousDeploymentPolicy
+  - DeleteContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicyConfig
+  - ListContinuousDeploymentPolicies
+  - UpdateContinuousDeploymentPolicy
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: Distribution
+  operations:
+  - CopyDistribution
+  - CreateDistribution
+  - DeleteDistribution
+  - GetDistribution
+  - GetDistributionConfig
+  - ListDistributions
+  - ListDistributionsByAnycastIpListId
+  - ListDistributionsByCachePolicyId
+  - ListDistributionsByConnectionFunction
+  - ListDistributionsByConnectionMode
+  - ListDistributionsByKeyGroup
+  - ListDistributionsByOriginRequestPolicyId
+  - ListDistributionsByOwnedResource
+  - ListDistributionsByRealtimeLogConfig
+  - ListDistributionsByResponseHeadersPolicyId
+  - ListDistributionsByTrustStore
+  - ListDistributionsByVpcOriginId
+  - ListDistributionsByWebACLId
+  - UpdateDistribution
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: DistributionTenant
+  operations:
+  - CreateDistributionTenant
+  - DeleteDistributionTenant
+  - GetDistributionTenant
+  - ListDistributionTenants
+  - UpdateDistributionTenant
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: DistributionTenantByDomain
+  operations:
+  - GetDistributionTenantByDomain
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: DistributionTenantWebACL
+  operations:
+  - AssociateDistributionTenantWebACL
+  - DisassociateDistributionTenantWebACL
+  methods:
+  - PUT
+  identified_by: Id (opaque string)
+- name: DistributionTenantsByCustomization
+  operations:
+  - ListDistributionTenantsByCustomization
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: DistributionWebACL
+  operations:
+  - AssociateDistributionWebACL
+  - DisassociateDistributionWebACL
+  methods:
+  - PUT
+  identified_by: Id (opaque string)
+- name: DistributionWithStaging
+  operations:
+  - UpdateDistributionWithStagingConfig
+  methods:
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: DistributionWithTag
+  operations:
+  - CreateDistributionWithTags
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: DnsConfiguration
+  operations:
+  - VerifyDnsConfiguration
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: DomainAssociation
+  operations:
+  - UpdateDomainAssociation
+  methods:
+  - POST
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: DomainConflict
+  operations:
+  - ListDomainConflicts
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: FieldLevelEncryption
+  operations:
+  - CreateFieldLevelEncryptionConfig
+  - DeleteFieldLevelEncryptionConfig
+  - GetFieldLevelEncryption
+  - GetFieldLevelEncryptionConfig
+  - ListFieldLevelEncryptionConfigs
+  - UpdateFieldLevelEncryptionConfig
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: FieldLevelEncryptionProfile
+  operations:
+  - CreateFieldLevelEncryptionProfile
+  - DeleteFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfileConfig
+  - ListFieldLevelEncryptionProfiles
+  - UpdateFieldLevelEncryptionProfile
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: Function
+  operations:
+  - CreateFunction
+  - DeleteFunction
+  - DescribeFunction
+  - GetFunction
+  - ListFunctions
+  - PublishFunction
+  - TestFunction
+  - UpdateFunction
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: Invalidation
+  operations:
+  - CreateInvalidation
+  - GetInvalidation
+  - ListInvalidations
+  methods:
+  - GET
+  - POST
+  identified_by: Id (opaque string)
+- name: InvalidationForDistributionTenant
+  operations:
+  - CreateInvalidationForDistributionTenant
+  - GetInvalidationForDistributionTenant
+  methods:
+  - GET
+  - POST
+  identified_by: Id (opaque string)
+- name: InvalidationsForDistributionTenant
+  operations:
+  - ListInvalidationsForDistributionTenant
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: KeyGroup
+  operations:
+  - CreateKeyGroup
+  - DeleteKeyGroup
+  - GetKeyGroup
+  - GetKeyGroupConfig
+  - ListKeyGroups
+  - UpdateKeyGroup
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: KeyValueStore
+  operations:
+  - CreateKeyValueStore
+  - DeleteKeyValueStore
+  - DescribeKeyValueStore
+  - ListKeyValueStores
+  - UpdateKeyValueStore
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: ManagedCertificateDetail
+  operations:
+  - GetManagedCertificateDetails
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: MonitoringSubscription
+  operations:
+  - CreateMonitoringSubscription
+  - DeleteMonitoringSubscription
+  - GetMonitoringSubscription
+  methods:
+  - DELETE
+  - GET
+  - POST
+  identified_by: Id (opaque string)
+- name: OriginAccessControl
+  operations:
+  - CreateOriginAccessControl
+  - DeleteOriginAccessControl
+  - GetOriginAccessControl
+  - GetOriginAccessControlConfig
+  - ListOriginAccessControls
+  - UpdateOriginAccessControl
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: OriginRequestPolicy
+  operations:
+  - CreateOriginRequestPolicy
+  - DeleteOriginRequestPolicy
+  - GetOriginRequestPolicy
+  - GetOriginRequestPolicyConfig
+  - ListOriginRequestPolicies
+  - UpdateOriginRequestPolicy
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: PublicKey
+  operations:
+  - CreatePublicKey
+  - DeletePublicKey
+  - GetPublicKey
+  - GetPublicKeyConfig
+  - ListPublicKeys
+  - UpdatePublicKey
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: RealtimeLog
+  operations:
+  - CreateRealtimeLogConfig
+  - DeleteRealtimeLogConfig
+  - GetRealtimeLogConfig
+  - ListRealtimeLogConfigs
+  - UpdateRealtimeLogConfig
+  methods:
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: Resource
+  operations:
+  - TagResource
+  - UntagResource
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: ResourcePolicy
+  operations:
+  - DeleteResourcePolicy
+  - GetResourcePolicy
+  - PutResourcePolicy
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: ResponseHeadersPolicy
+  operations:
+  - CreateResponseHeadersPolicy
+  - DeleteResponseHeadersPolicy
+  - GetResponseHeadersPolicy
+  - GetResponseHeadersPolicyConfig
+  - ListResponseHeadersPolicies
+  - UpdateResponseHeadersPolicy
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: StreamingDistribution
+  operations:
+  - CreateStreamingDistribution
+  - DeleteStreamingDistribution
+  - GetStreamingDistribution
+  - GetStreamingDistributionConfig
+  - ListStreamingDistributions
+  - UpdateStreamingDistribution
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: StreamingDistributionWithTag
+  operations:
+  - CreateStreamingDistributionWithTags
+  methods:
+  - POST
+  identified_by: Id (opaque string)
+- name: TagsForResource
+  operations:
+  - ListTagsForResource
+  methods:
+  - GET
+  identified_by: Id (opaque string)
+- name: TrustStore
+  operations:
+  - CreateTrustStore
+  - DeleteTrustStore
+  - GetTrustStore
+  - ListTrustStores
+  - UpdateTrustStore
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+- name: VpcOrigin
+  operations:
+  - CreateVpcOrigin
+  - DeleteVpcOrigin
+  - GetVpcOrigin
+  - ListVpcOrigins
+  - UpdateVpcOrigin
+  methods:
+  - DELETE
+  - GET
+  - POST
+  - PUT
+  identified_by: Id (opaque string) + ETag for conditional write
+relationships:
+- from: Distribution
+  to: Aliase
+  type: has_many
+  via: Aliases
+- from: Distribution
+  to: DefaultRootObject
+  type: belongs_to
+  via: DefaultRootObject
+- from: Distribution
+  to: Origin
+  type: has_many
+  via: Origins
+- from: Distribution
+  to: CacheBehavior
+  type: has_many
+  via: CacheBehaviors
+- from: Distribution
+  to: CustomErrorResponse
+  type: has_many
+  via: CustomErrorResponses
+- from: Distribution
+  to: WebACL
+  type: belongs_to
+  via: WebACLId
+- from: Distribution
+  to: ContinuousDeploymentPolicy
+  type: belongs_to
+  via: ContinuousDeploymentPolicyId
+- from: Distribution
+  to: CachePolicy
+  type: belongs_to
+  via: DefaultCacheBehavior.CachePolicyId
+- from: Distribution
+  to: OriginRequestPolicy
+  type: belongs_to
+  via: DefaultCacheBehavior.OriginRequestPolicyId
+- from: Distribution
+  to: ResponseHeadersPolicy
+  type: belongs_to
+  via: DefaultCacheBehavior.ResponseHeadersPolicyId
+- from: Distribution
+  to: KeyGroup
+  type: belongs_to
+  via: TrustedKeyGroups.Items[]
+- from: Distribution
+  to: Function
+  type: belongs_to
+  via: DefaultCacheBehavior.FunctionAssociations.Items[].FunctionARN
+- from: Distribution
+  to: RealtimeLogConfig
+  type: belongs_to
+  via: DefaultCacheBehavior.RealtimeLogConfigArn
+- from: Origin
+  to: OriginAccessControl
+  type: belongs_to
+  via: Origins.Items[].OriginAccessControlId
+- from: Origin
+  to: VpcOrigin
+  type: belongs_to
+  via: Origins.Items[].VpcOriginConfig.VpcOriginId
+- from: Invalidation
+  to: Distribution
+  type: belongs_to
+  via: DistributionId (path)
+- from: KeyGroup
+  to: PublicKey
+  type: belongs_to
+  via: KeyGroupConfig.Items[]
+- from: FieldLevelEncryptionConfig
+  to: FieldLevelEncryptionProfile
+  type: belongs_to
+  via: ContentTypeProfileConfig…ProfileId
+- from: DistributionTenant
+  to: Distribution
+  type: belongs_to
+  via: DistributionId
+- from: DistributionTenant
+  to: ConnectionGroup
+  type: belongs_to
+  via: ConnectionGroupId
+- from: ConnectionGroup
+  to: AnycastIpList
+  type: belongs_to
+  via: AnycastIpListId
+- from: Distribution
+  to: TrustStore
+  type: belongs_to
+  via: ViewerCertificate / mTLS TrustStoreId
+counts:
+  entities: 42
+  relationships: 22
+  operations: 167

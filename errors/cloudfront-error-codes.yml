@@ -1,0 +1,1506 @@
+generated: '2026-09-05'
+method: derived
+source: smithy/cloudfront-2020-05-31.json (AWS first-party model, github.com/aws/api-models-aws, harvested 2026-09-05)
+format: aws-restxml
+envelope:
+  content_type: text/xml
+  root: ErrorResponse
+  fields:
+  - Error.Type
+  - Error.Code
+  - Error.Message
+  - RequestId
+  note: CloudFront is a REST-XML protocol service (aws.protocols#restXml). Errors are NOT RFC 9457 application/problem+json;
+    they are an XML ErrorResponse document whose Error/Code element carries the code below. A live unauthenticated
+    GET of https://cloudfront.amazonaws.com/ returned exactly this envelope with HTTP 404 on 2026-09-05.
+summary:
+  error_types: 152
+  by_status:
+    400: 92
+    401: 1
+    403: 1
+    404: 18
+    409: 35
+    412: 1
+    413: 3
+    500: 1
+  client_faults: 151
+  server_faults: 1
+note: 'Every entry is a modeled error shape declared by AWS in the CloudFront service model, with the HTTP status
+  AWS assigns it. Nothing here is inferred from prose. The 409 family (…AlreadyExists / …InUse) and the 400 quota
+  family (TooMany…) are the two clusters an agent must handle: the first is the visible edge of the CallerReference
+  idempotency contract (see conventions/), the second maps one-to-one onto the published quotas in rate-limits/.'
+errors:
+- code: CannotChangeImmutablePublicKeyFields
+  status: 400
+  fault: client
+  description: You can't change the value of a public key.
+  operations_count: 1
+  operations_sample:
+  - UpdatePublicKey
+- code: EntityLimitExceeded
+  status: 400
+  fault: client
+  description: The entity limit has been exceeded.
+  operations_count: 14
+  operations_sample:
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CreateAnycastIpList
+  - CreateConnectionFunction
+  - CreateConnectionGroup
+- code: FieldLevelEncryptionProfileSizeExceeded
+  status: 400
+  fault: client
+  description: The maximum size of a profile for field-level encryption was exceeded.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+  - UpdateFieldLevelEncryptionProfile
+- code: IllegalDelete
+  status: 400
+  fault: client
+  description: Deletion is not allowed for this entity.
+  operations_count: 6
+  operations_sample:
+  - DeleteAnycastIpList
+  - DeleteCachePolicy
+  - DeleteOriginRequestPolicy
+  - DeleteResourcePolicy
+  - DeleteResponseHeadersPolicy
+- code: IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior
+  status: 400
+  fault: client
+  description: The specified configuration for field-level encryption can't be associated with the specified cache
+    behavior.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: IllegalOriginAccessConfiguration
+  status: 400
+  fault: client
+  description: An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).
+  operations_count: 3
+  operations_sample:
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+- code: IllegalUpdate
+  status: 400
+  fault: client
+  description: The update contains modifications that are not allowed.
+  operations_count: 15
+  operations_sample:
+  - AssociateAlias
+  - PutResourcePolicy
+  - UpdateCachePolicy
+  - UpdateCloudFrontOriginAccessIdentity
+  - UpdateDistribution
+- code: InconsistentQuantities
+  status: 400
+  fault: client
+  description: The value of Quantity and the size of Items don't match.
+  operations_count: 26
+  operations_sample:
+  - CopyDistribution
+  - CreateCachePolicy
+  - CreateCloudFrontOriginAccessIdentity
+  - CreateContinuousDeploymentPolicy
+  - CreateDistribution
+- code: InvalidArgument
+  status: 400
+  fault: client
+  description: An argument is invalid.
+  operations_count: 115
+  operations_sample:
+  - AssociateAlias
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - CreateAnycastIpList
+- code: InvalidDefaultRootObject
+  status: 400
+  fault: client
+  description: The default root object file name is too big or contains an invalid character.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidDomainNameForOriginAccessControl
+  status: 400
+  fault: client
+  description: An origin access control is associated with an origin whose domain name is not supported.
+  operations_count: 3
+  operations_sample:
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+- code: InvalidErrorCode
+  status: 400
+  fault: client
+  description: An invalid error code was specified.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidForwardCookies
+  status: 400
+  fault: client
+  description: Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
+    list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names
+    is missing when expected.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidFunctionAssociation
+  status: 400
+  fault: client
+  description: A CloudFront function association is invalid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidGeoRestrictionParameter
+  status: 400
+  fault: client
+  description: The specified geo restriction parameter is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidHeadersForS3Origin
+  status: 400
+  fault: client
+  description: The headers specified are not valid for an Amazon S3 origin.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidIfMatchVersion
+  status: 400
+  fault: client
+  description: The If-Match version is missing or not valid.
+  operations_count: 51
+  operations_sample:
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - DeleteAnycastIpList
+  - DeleteCachePolicy
+- code: InvalidLambdaFunctionAssociation
+  status: 400
+  fault: client
+  description: The specified Lambda@Edge function association is invalid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidLocationCode
+  status: 400
+  fault: client
+  description: The location code specified is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidMinimumProtocolVersion
+  status: 400
+  fault: client
+  description: The minimum protocol version specified is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidOrigin
+  status: 400
+  fault: client
+  description: The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: InvalidOriginAccessControl
+  status: 400
+  fault: client
+  description: The origin access control is not valid.
+  operations_count: 8
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: InvalidOriginAccessIdentity
+  status: 400
+  fault: client
+  description: The origin access identity is not valid or doesn't exist.
+  operations_count: 8
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: InvalidOriginKeepaliveTimeout
+  status: 400
+  fault: client
+  description: The keep alive timeout specified for the origin is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidOriginReadTimeout
+  status: 400
+  fault: client
+  description: The read timeout specified for the origin is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidProtocolSettings
+  status: 400
+  fault: client
+  description: You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients
+    that support Server Name Indication (SNI).
+  operations_count: 3
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+- code: InvalidQueryStringParameters
+  status: 400
+  fault: client
+  description: The query string parameters specified are not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidRelativePath
+  status: 400
+  fault: client
+  description: The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidRequiredProtocol
+  status: 400
+  fault: client
+  description: This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
+    or omit the RequiredProtocols element from your distribution configuration.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidResponseCode
+  status: 400
+  fault: client
+  description: A response code is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidTTLOrder
+  status: 400
+  fault: client
+  description: The TTL order specified is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidTagging
+  status: 400
+  fault: client
+  description: The tagging specified is not valid.
+  operations_count: 11
+  operations_sample:
+  - CreateAnycastIpList
+  - CreateConnectionFunction
+  - CreateConnectionGroup
+  - CreateDistributionTenant
+  - CreateDistributionWithTags
+- code: InvalidViewerCertificate
+  status: 400
+  fault: client
+  description: A viewer certificate specified is not valid.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: InvalidWebACLId
+  status: 400
+  fault: client
+  description: A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF,
+    use the ACL ARN, for example arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a.
+    To specify a web ACL created using WAF Classic, use the ACL ID, for e
+  operations_count: 6
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - ListDistributionsByWebACLId
+  - UpdateDistribution
+- code: MissingBody
+  status: 400
+  fault: client
+  description: This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+  operations_count: 12
+  operations_sample:
+  - CopyDistribution
+  - CreateCloudFrontOriginAccessIdentity
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateInvalidation
+- code: QueryArgProfileEmpty
+  status: 400
+  fault: client
+  description: No profile specified for the field-level encryption query argument.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+  - UpdateFieldLevelEncryptionConfig
+- code: RealtimeLogConfigInUse
+  status: 400
+  fault: client
+  description: Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.
+  operations_count: 1
+  operations_sample:
+  - DeleteRealtimeLogConfig
+- code: TooLongCSPInResponseHeadersPolicy
+  status: 400
+  fault: client
+  description: The length of the Content-Security-Policy header value in the response headers policy exceeds the
+    maximum. For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateResponseHeadersPolicy
+  - UpdateResponseHeadersPolicy
+- code: TooManyCacheBehaviors
+  status: 400
+  fault: client
+  description: You cannot create more cache behaviors for the distribution.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyCachePolicies
+  status: 400
+  fault: client
+  description: You have reached the maximum number of cache policies for this Amazon Web Services account. For more
+    information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateCachePolicy
+- code: TooManyCertificates
+  status: 400
+  fault: client
+  description: You cannot create anymore custom SSL/TLS certificates.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyCloudFrontOriginAccessIdentities
+  status: 400
+  fault: client
+  description: Processing your request would cause you to exceed the maximum number of origin access identities
+    allowed.
+  operations_count: 1
+  operations_sample:
+  - CreateCloudFrontOriginAccessIdentity
+- code: TooManyContinuousDeploymentPolicies
+  status: 400
+  fault: client
+  description: You have reached the maximum number of continuous deployment policies for this Amazon Web Services
+    account.
+  operations_count: 1
+  operations_sample:
+  - CreateContinuousDeploymentPolicy
+- code: TooManyCookieNamesInWhiteList
+  status: 400
+  fault: client
+  description: Your request contains more cookie names in the whitelist than are allowed per cache behavior.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyCookiesInCachePolicy
+  status: 400
+  fault: client
+  description: The number of cookies in the cache policy exceeds the maximum. For more information, see Quotas (formerly
+    known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateCachePolicy
+  - UpdateCachePolicy
+- code: TooManyCookiesInOriginRequestPolicy
+  status: 400
+  fault: client
+  description: The number of cookies in the origin request policy exceeds the maximum. For more information, see
+    Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateOriginRequestPolicy
+  - UpdateOriginRequestPolicy
+- code: TooManyCustomHeadersInResponseHeadersPolicy
+  status: 400
+  fault: client
+  description: The number of custom headers in the response headers policy exceeds the maximum. For more information,
+    see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateResponseHeadersPolicy
+  - UpdateResponseHeadersPolicy
+- code: TooManyDistributionCNAMEs
+  status: 400
+  fault: client
+  description: Your request contains more CNAMEs than are allowed per distribution.
+  operations_count: 6
+  operations_sample:
+  - AssociateAlias
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+- code: TooManyDistributions
+  status: 400
+  fault: client
+  description: Processing your request would cause you to exceed the maximum number of distributions allowed.
+  operations_count: 3
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+- code: TooManyDistributionsAssociatedToCachePolicy
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified cache policy. For more
+    information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified configuration for field-level
+    encryption.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsAssociatedToKeyGroup
+  status: 400
+  fault: client
+  description: The number of distributions that reference this key group is more than the maximum allowed. For more
+    information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsAssociatedToOriginAccessControl
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified origin access control.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsAssociatedToOriginRequestPolicy
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified origin request policy.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsAssociatedToResponseHeadersPolicy
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified response headers policy.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsWithFunctionAssociations
+  status: 400
+  fault: client
+  description: You have reached the maximum number of distributions that are associated with a CloudFront function.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsWithLambdaAssociations
+  status: 400
+  fault: client
+  description: Processing your request would cause the maximum number of distributions with Lambda@Edge function
+    associations per owner to be exceeded.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyDistributionsWithSingleFunctionARN
+  status: 400
+  fault: client
+  description: The maximum number of distributions have been associated with the specified Lambda@Edge function.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyFieldLevelEncryptionConfigs
+  status: 400
+  fault: client
+  description: The maximum number of configurations for field-level encryption have been created.
+  operations_count: 1
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+- code: TooManyFieldLevelEncryptionContentTypeProfiles
+  status: 400
+  fault: client
+  description: The maximum number of content type profiles for field-level encryption have been created.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+  - UpdateFieldLevelEncryptionConfig
+- code: TooManyFieldLevelEncryptionEncryptionEntities
+  status: 400
+  fault: client
+  description: The maximum number of encryption entities for field-level encryption have been created.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+  - UpdateFieldLevelEncryptionProfile
+- code: TooManyFieldLevelEncryptionFieldPatterns
+  status: 400
+  fault: client
+  description: The maximum number of field patterns for field-level encryption have been created.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+  - UpdateFieldLevelEncryptionProfile
+- code: TooManyFieldLevelEncryptionProfiles
+  status: 400
+  fault: client
+  description: The maximum number of profiles for field-level encryption have been created.
+  operations_count: 1
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+- code: TooManyFieldLevelEncryptionQueryArgProfiles
+  status: 400
+  fault: client
+  description: The maximum number of query arg profiles for field-level encryption have been created.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+  - UpdateFieldLevelEncryptionConfig
+- code: TooManyFunctionAssociations
+  status: 400
+  fault: client
+  description: You have reached the maximum number of CloudFront function associations for this distribution. For
+    more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyFunctions
+  status: 400
+  fault: client
+  description: You have reached the maximum number of CloudFront functions for this Amazon Web Services account.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateFunction
+- code: TooManyHeadersInCachePolicy
+  status: 400
+  fault: client
+  description: The number of headers in the cache policy exceeds the maximum. For more information, see Quotas (formerly
+    known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateCachePolicy
+  - UpdateCachePolicy
+- code: TooManyHeadersInForwardedValues
+  status: 400
+  fault: client
+  description: Your request contains too many headers in forwarded values.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyHeadersInOriginRequestPolicy
+  status: 400
+  fault: client
+  description: The number of headers in the origin request policy exceeds the maximum. For more information, see
+    Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateOriginRequestPolicy
+  - UpdateOriginRequestPolicy
+- code: TooManyInvalidationsInProgress
+  status: 400
+  fault: client
+  description: You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation
+    objects.
+  operations_count: 2
+  operations_sample:
+  - CreateInvalidation
+  - CreateInvalidationForDistributionTenant
+- code: TooManyKeyGroups
+  status: 400
+  fault: client
+  description: You have reached the maximum number of key groups for this Amazon Web Services account. For more
+    information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateKeyGroup
+- code: TooManyKeyGroupsAssociatedToDistribution
+  status: 400
+  fault: client
+  description: The number of key groups referenced by this distribution is more than the maximum allowed. For more
+    information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyLambdaFunctionAssociations
+  status: 400
+  fault: client
+  description: Your request contains more Lambda@Edge function associations than are allowed per distribution.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyOriginAccessControls
+  status: 400
+  fault: client
+  description: The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateOriginAccessControl
+- code: TooManyOriginCustomHeaders
+  status: 400
+  fault: client
+  description: Your request contains too many origin custom headers.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyOriginGroupsPerDistribution
+  status: 400
+  fault: client
+  description: Processing your request would cause you to exceed the maximum number of origin groups allowed.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyOriginRequestPolicies
+  status: 400
+  fault: client
+  description: You have reached the maximum number of origin request policies for this Amazon Web Services account.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateOriginRequestPolicy
+- code: TooManyOrigins
+  status: 400
+  fault: client
+  description: You cannot create more origins for the distribution.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyPublicKeys
+  status: 400
+  fault: client
+  description: The maximum number of public keys for field-level encryption have been created. To create a new public
+    key, delete one of the existing keys.
+  operations_count: 1
+  operations_sample:
+  - CreatePublicKey
+- code: TooManyPublicKeysInKeyGroup
+  status: 400
+  fault: client
+  description: The number of public keys in this key group is more than the maximum allowed. For more information,
+    see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateKeyGroup
+  - UpdateKeyGroup
+- code: TooManyQueryStringParameters
+  status: 400
+  fault: client
+  description: Your request contains too many query string parameters.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TooManyQueryStringsInCachePolicy
+  status: 400
+  fault: client
+  description: The number of query strings in the cache policy exceeds the maximum. For more information, see Quotas
+    (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateCachePolicy
+  - UpdateCachePolicy
+- code: TooManyQueryStringsInOriginRequestPolicy
+  status: 400
+  fault: client
+  description: The number of query strings in the origin request policy exceeds the maximum. For more information,
+    see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateOriginRequestPolicy
+  - UpdateOriginRequestPolicy
+- code: TooManyRealtimeLogConfigs
+  status: 400
+  fault: client
+  description: You have reached the maximum number of real-time log configurations for this Amazon Web Services
+    account. For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateRealtimeLogConfig
+- code: TooManyRemoveHeadersInResponseHeadersPolicy
+  status: 400
+  fault: client
+  description: The number of headers in RemoveHeadersConfig in the response headers policy exceeds the maximum.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateResponseHeadersPolicy
+  - UpdateResponseHeadersPolicy
+- code: TooManyResponseHeadersPolicies
+  status: 400
+  fault: client
+  description: You have reached the maximum number of response headers policies for this Amazon Web Services account.
+    For more information, see Quotas (formerly known as limits) in the Amazon CloudFront Developer Guide.
+  operations_count: 1
+  operations_sample:
+  - CreateResponseHeadersPolicy
+- code: TooManyStreamingDistributionCNAMEs
+  status: 400
+  fault: client
+  description: Your request contains more CNAMEs than are allowed per distribution.
+  operations_count: 3
+  operations_sample:
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+  - UpdateStreamingDistribution
+- code: TooManyStreamingDistributions
+  status: 400
+  fault: client
+  description: Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
+  operations_count: 2
+  operations_sample:
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: TooManyTrustedSigners
+  status: 400
+  fault: client
+  description: Your request contains more trusted signers than are allowed per distribution.
+  operations_count: 8
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: TrustedKeyGroupDoesNotExist
+  status: 400
+  fault: client
+  description: The specified key group does not exist.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: TrustedSignerDoesNotExist
+  status: 400
+  fault: client
+  description: One or more of your trusted signers don't exist.
+  operations_count: 8
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: UnsupportedOperation
+  status: 400
+  fault: client
+  description: This operation is not supported in this Amazon Web Services Region.
+  operations_count: 40
+  operations_sample:
+  - CreateAnycastIpList
+  - CreateConnectionFunction
+  - CreateFunction
+  - CreateKeyValueStore
+  - CreateMonitoringSubscription
+- code: RealtimeLogConfigOwnerMismatch
+  status: 401
+  fault: client
+  description: The specified real-time log configuration belongs to a different Amazon Web Services account.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: AccessDenied
+  status: 403
+  fault: client
+  description: Access denied.
+  operations_count: 136
+  operations_sample:
+  - AssociateAlias
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - CreateAnycastIpList
+- code: EntityNotFound
+  status: 404
+  fault: client
+  description: The entity was not found.
+  operations_count: 58
+  operations_sample:
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CreateConnectionGroup
+  - CreateDistribution
+  - CreateDistributionTenant
+- code: NoSuchCachePolicy
+  status: 404
+  fault: client
+  description: The cache policy does not exist.
+  operations_count: 11
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteCachePolicy
+  - GetCachePolicy
+- code: NoSuchCloudFrontOriginAccessIdentity
+  status: 404
+  fault: client
+  description: The specified origin access identity does not exist.
+  operations_count: 4
+  operations_sample:
+  - DeleteCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentity
+  - GetCloudFrontOriginAccessIdentityConfig
+  - UpdateCloudFrontOriginAccessIdentity
+- code: NoSuchContinuousDeploymentPolicy
+  status: 404
+  fault: client
+  description: The continuous deployment policy doesn't exist.
+  operations_count: 8
+  operations_sample:
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicy
+  - GetContinuousDeploymentPolicyConfig
+- code: NoSuchDistribution
+  status: 404
+  fault: client
+  description: The specified distribution does not exist.
+  operations_count: 14
+  operations_sample:
+  - AssociateAlias
+  - CopyDistribution
+  - CreateInvalidation
+  - CreateMonitoringSubscription
+  - DeleteDistribution
+- code: NoSuchFieldLevelEncryptionConfig
+  status: 404
+  fault: client
+  description: The specified configuration for field-level encryption doesn't exist.
+  operations_count: 9
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteFieldLevelEncryptionConfig
+  - GetFieldLevelEncryption
+- code: NoSuchFieldLevelEncryptionProfile
+  status: 404
+  fault: client
+  description: The specified profile for field-level encryption doesn't exist.
+  operations_count: 6
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+  - DeleteFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfile
+  - GetFieldLevelEncryptionProfileConfig
+  - UpdateFieldLevelEncryptionConfig
+- code: NoSuchFunctionExists
+  status: 404
+  fault: client
+  description: The function does not exist.
+  operations_count: 6
+  operations_sample:
+  - DeleteFunction
+  - DescribeFunction
+  - GetFunction
+  - PublishFunction
+  - TestFunction
+- code: NoSuchInvalidation
+  status: 404
+  fault: client
+  description: The specified invalidation does not exist.
+  operations_count: 2
+  operations_sample:
+  - GetInvalidation
+  - GetInvalidationForDistributionTenant
+- code: NoSuchMonitoringSubscription
+  status: 404
+  fault: client
+  description: A monitoring subscription does not exist for the specified distribution.
+  operations_count: 2
+  operations_sample:
+  - DeleteMonitoringSubscription
+  - GetMonitoringSubscription
+- code: NoSuchOrigin
+  status: 404
+  fault: client
+  description: No origin exists with the specified Origin Id.
+  operations_count: 5
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - UpdateDistribution
+  - UpdateDistributionWithStagingConfig
+- code: NoSuchOriginAccessControl
+  status: 404
+  fault: client
+  description: The origin access control does not exist.
+  operations_count: 4
+  operations_sample:
+  - DeleteOriginAccessControl
+  - GetOriginAccessControl
+  - GetOriginAccessControlConfig
+  - UpdateOriginAccessControl
+- code: NoSuchOriginRequestPolicy
+  status: 404
+  fault: client
+  description: The origin request policy does not exist.
+  operations_count: 11
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteOriginRequestPolicy
+  - GetOriginRequestPolicy
+- code: NoSuchPublicKey
+  status: 404
+  fault: client
+  description: The specified public key doesn't exist.
+  operations_count: 6
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+  - DeletePublicKey
+  - GetPublicKey
+  - GetPublicKeyConfig
+  - UpdateFieldLevelEncryptionProfile
+- code: NoSuchRealtimeLogConfig
+  status: 404
+  fault: client
+  description: The real-time log configuration does not exist.
+  operations_count: 9
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteRealtimeLogConfig
+  - GetRealtimeLogConfig
+- code: NoSuchResource
+  status: 404
+  fault: client
+  description: A resource that was specified is not valid.
+  operations_count: 8
+  operations_sample:
+  - DeleteKeyGroup
+  - GetKeyGroup
+  - GetKeyGroupConfig
+  - ListDistributionsByKeyGroup
+  - ListTagsForResource
+- code: NoSuchResponseHeadersPolicy
+  status: 404
+  fault: client
+  description: The response headers policy does not exist.
+  operations_count: 11
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteResponseHeadersPolicy
+  - GetResponseHeadersPolicy
+- code: NoSuchStreamingDistribution
+  status: 404
+  fault: client
+  description: The specified streaming distribution does not exist.
+  operations_count: 4
+  operations_sample:
+  - DeleteStreamingDistribution
+  - GetStreamingDistribution
+  - GetStreamingDistributionConfig
+  - UpdateStreamingDistribution
+- code: CNAMEAlreadyExists
+  status: 409
+  fault: client
+  description: The CNAME specified is already defined for CloudFront.
+  operations_count: 10
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionTenant
+  - CreateDistributionWithTags
+  - CreateStreamingDistribution
+- code: CachePolicyAlreadyExists
+  status: 409
+  fault: client
+  description: A cache policy with this name already exists. You must provide a unique name. To modify an existing
+    cache policy, use UpdateCachePolicy.
+  operations_count: 2
+  operations_sample:
+  - CreateCachePolicy
+  - UpdateCachePolicy
+- code: CachePolicyInUse
+  status: 409
+  fault: client
+  description: Cannot delete the cache policy because it is attached to one or more cache behaviors.
+  operations_count: 1
+  operations_sample:
+  - DeleteCachePolicy
+- code: CannotDeleteEntityWhileInUse
+  status: 409
+  fault: client
+  description: The entity cannot be deleted while it is in use.
+  operations_count: 6
+  operations_sample:
+  - DeleteAnycastIpList
+  - DeleteConnectionFunction
+  - DeleteConnectionGroup
+  - DeleteKeyValueStore
+  - DeleteTrustStore
+- code: CannotUpdateEntityWhileInUse
+  status: 409
+  fault: client
+  description: The entity cannot be updated while it is in use.
+  operations_count: 1
+  operations_sample:
+  - UpdateVpcOrigin
+- code: CloudFrontOriginAccessIdentityAlreadyExists
+  status: 409
+  fault: client
+  description: If the CallerReference is a value you already sent in a previous request to create an identity but
+    the content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront returns
+    a CloudFrontOriginAccessIdentityAlreadyExists error.
+  operations_count: 1
+  operations_sample:
+  - CreateCloudFrontOriginAccessIdentity
+- code: CloudFrontOriginAccessIdentityInUse
+  status: 409
+  fault: client
+  description: The Origin Access Identity specified is already in use.
+  operations_count: 1
+  operations_sample:
+  - DeleteCloudFrontOriginAccessIdentity
+- code: ContinuousDeploymentPolicyAlreadyExists
+  status: 409
+  fault: client
+  description: A continuous deployment policy with this configuration already exists.
+  operations_count: 1
+  operations_sample:
+  - CreateContinuousDeploymentPolicy
+- code: ContinuousDeploymentPolicyInUse
+  status: 409
+  fault: client
+  description: You cannot delete a continuous deployment policy that is associated with a primary distribution.
+  operations_count: 4
+  operations_sample:
+  - CreateDistribution
+  - CreateDistributionWithTags
+  - DeleteContinuousDeploymentPolicy
+  - UpdateDistribution
+- code: DistributionAlreadyExists
+  status: 409
+  fault: client
+  description: The caller reference you attempted to create the distribution with is associated with another distribution.
+  operations_count: 3
+  operations_sample:
+  - CopyDistribution
+  - CreateDistribution
+  - CreateDistributionWithTags
+- code: DistributionNotDisabled
+  status: 409
+  fault: client
+  description: The specified CloudFront distribution is not disabled. You must disable the distribution before you
+    can delete it.
+  operations_count: 1
+  operations_sample:
+  - DeleteDistribution
+- code: EntityAlreadyExists
+  status: 409
+  fault: client
+  description: The entity already exists. You must provide a unique entity.
+  operations_count: 10
+  operations_sample:
+  - CreateAnycastIpList
+  - CreateConnectionFunction
+  - CreateConnectionGroup
+  - CreateDistributionTenant
+  - CreateKeyValueStore
+- code: FieldLevelEncryptionConfigAlreadyExists
+  status: 409
+  fault: client
+  description: The specified configuration for field-level encryption already exists.
+  operations_count: 1
+  operations_sample:
+  - CreateFieldLevelEncryptionConfig
+- code: FieldLevelEncryptionConfigInUse
+  status: 409
+  fault: client
+  description: The specified configuration for field-level encryption is in use.
+  operations_count: 1
+  operations_sample:
+  - DeleteFieldLevelEncryptionConfig
+- code: FieldLevelEncryptionProfileAlreadyExists
+  status: 409
+  fault: client
+  description: The specified profile for field-level encryption already exists.
+  operations_count: 2
+  operations_sample:
+  - CreateFieldLevelEncryptionProfile
+  - UpdateFieldLevelEncryptionProfile
+- code: FieldLevelEncryptionProfileInUse
+  status: 409
+  fault: client
+  description: The specified profile for field-level encryption is in use.
+  operations_count: 1
+  operations_sample:
+  - DeleteFieldLevelEncryptionProfile
+- code: FunctionAlreadyExists
+  status: 409
+  fault: client
+  description: A function with the same name already exists in this Amazon Web Services account. To create a function,
+    you must provide a unique name. To update an existing function, use UpdateFunction.
+  operations_count: 1
+  operations_sample:
+  - CreateFunction
+- code: FunctionInUse
+  status: 409
+  fault: client
+  description: Cannot delete the function because it's attached to one or more cache behaviors.
+  operations_count: 1
+  operations_sample:
+  - DeleteFunction
+- code: InvalidAssociation
+  status: 409
+  fault: client
+  description: The specified CloudFront resource can't be associated.
+  operations_count: 2
+  operations_sample:
+  - CreateDistributionTenant
+  - UpdateDistributionTenant
+- code: KeyGroupAlreadyExists
+  status: 409
+  fault: client
+  description: A key group with this name already exists. You must provide a unique name. To modify an existing
+    key group, use UpdateKeyGroup.
+  operations_count: 2
+  operations_sample:
+  - CreateKeyGroup
+  - UpdateKeyGroup
+- code: MonitoringSubscriptionAlreadyExists
+  status: 409
+  fault: client
+  description: A monitoring subscription already exists for the specified distribution.
+  operations_count: 1
+  operations_sample:
+  - CreateMonitoringSubscription
+- code: OriginAccessControlAlreadyExists
+  status: 409
+  fault: client
+  description: An origin access control with the specified parameters already exists.
+  operations_count: 2
+  operations_sample:
+  - CreateOriginAccessControl
+  - UpdateOriginAccessControl
+- code: OriginAccessControlInUse
+  status: 409
+  fault: client
+  description: Cannot delete the origin access control because it's in use by one or more distributions.
+  operations_count: 1
+  operations_sample:
+  - DeleteOriginAccessControl
+- code: OriginRequestPolicyAlreadyExists
+  status: 409
+  fault: client
+  description: An origin request policy with this name already exists. You must provide a unique name. To modify
+    an existing origin request policy, use UpdateOriginRequestPolicy.
+  operations_count: 2
+  operations_sample:
+  - CreateOriginRequestPolicy
+  - UpdateOriginRequestPolicy
+- code: OriginRequestPolicyInUse
+  status: 409
+  fault: client
+  description: Cannot delete the origin request policy because it is attached to one or more cache behaviors.
+  operations_count: 1
+  operations_sample:
+  - DeleteOriginRequestPolicy
+- code: PublicKeyAlreadyExists
+  status: 409
+  fault: client
+  description: The specified public key already exists.
+  operations_count: 1
+  operations_sample:
+  - CreatePublicKey
+- code: PublicKeyInUse
+  status: 409
+  fault: client
+  description: The specified public key is in use.
+  operations_count: 1
+  operations_sample:
+  - DeletePublicKey
+- code: RealtimeLogConfigAlreadyExists
+  status: 409
+  fault: client
+  description: A real-time log configuration with this name already exists. You must provide a unique name. To modify
+    an existing real-time log configuration, use UpdateRealtimeLogConfig.
+  operations_count: 1
+  operations_sample:
+  - CreateRealtimeLogConfig
+- code: ResourceInUse
+  status: 409
+  fault: client
+  description: Cannot delete this resource because it is in use.
+  operations_count: 3
+  operations_sample:
+  - DeleteDistribution
+  - DeleteKeyGroup
+  - UpdateConnectionGroup
+- code: ResourceNotDisabled
+  status: 409
+  fault: client
+  description: The specified CloudFront resource hasn't been disabled yet.
+  operations_count: 2
+  operations_sample:
+  - DeleteConnectionGroup
+  - DeleteDistributionTenant
+- code: ResponseHeadersPolicyAlreadyExists
+  status: 409
+  fault: client
+  description: A response headers policy with this name already exists. You must provide a unique name. To modify
+    an existing response headers policy, use UpdateResponseHeadersPolicy.
+  operations_count: 2
+  operations_sample:
+  - CreateResponseHeadersPolicy
+  - UpdateResponseHeadersPolicy
+- code: ResponseHeadersPolicyInUse
+  status: 409
+  fault: client
+  description: Cannot delete the response headers policy because it is attached to one or more cache behaviors in
+    a CloudFront distribution.
+  operations_count: 1
+  operations_sample:
+  - DeleteResponseHeadersPolicy
+- code: StagingDistributionInUse
+  status: 409
+  fault: client
+  description: A continuous deployment policy for this staging distribution already exists.
+  operations_count: 3
+  operations_sample:
+  - CreateContinuousDeploymentPolicy
+  - UpdateContinuousDeploymentPolicy
+  - UpdateDistribution
+- code: StreamingDistributionAlreadyExists
+  status: 409
+  fault: client
+  description: The caller reference you attempted to create the streaming distribution with is associated with another
+    distribution
+  operations_count: 2
+  operations_sample:
+  - CreateStreamingDistribution
+  - CreateStreamingDistributionWithTags
+- code: StreamingDistributionNotDisabled
+  status: 409
+  fault: client
+  description: The specified CloudFront distribution is not disabled. You must disable the distribution before you
+    can delete it.
+  operations_count: 1
+  operations_sample:
+  - DeleteStreamingDistribution
+- code: PreconditionFailed
+  status: 412
+  fault: client
+  description: The precondition in one or more of the request fields evaluated to false.
+  operations_count: 52
+  operations_sample:
+  - AssociateDistributionTenantWebACL
+  - AssociateDistributionWebACL
+  - CopyDistribution
+  - DeleteAnycastIpList
+  - DeleteCachePolicy
+- code: BatchTooLarge
+  status: 413
+  fault: client
+  description: Invalidation batch specified is too large.
+  operations_count: 2
+  operations_sample:
+  - CreateInvalidation
+  - CreateInvalidationForDistributionTenant
+- code: EntitySizeLimitExceeded
+  status: 413
+  fault: client
+  description: The entity size limit was exceeded.
+  operations_count: 3
+  operations_sample:
+  - CreateConnectionFunction
+  - CreateKeyValueStore
+  - UpdateConnectionFunction
+- code: FunctionSizeLimitExceeded
+  status: 413
+  fault: client
+  description: The function is too large. For more information, see Quotas (formerly known as limits) in the Amazon
+    CloudFront Developer Guide.
+  operations_count: 2
+  operations_sample:
+  - CreateFunction
+  - UpdateFunction
+- code: TestFunctionFailed
+  status: 500
+  fault: server
+  description: The CloudFront function failed.
+  operations_count: 2
+  operations_sample:
+  - TestConnectionFunction
+  - TestFunction

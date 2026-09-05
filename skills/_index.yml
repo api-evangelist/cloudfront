@@ -1,0 +1,21 @@
+generated: '2026-09-05'
+method: generated
+source: openapi/*.yml (operationIds verified against the specs) + conventions/, errors/, rate-limits/, lifecycle/
+note: >-
+  Every operationId referenced in these skills was grepped out of the OpenAPI
+  files in this repo; none is invented. The behavioural rules come from
+  conventions/cloudfront-conventions.yml and errors/cloudfront-error-codes.yml,
+  both derived from AWS's own first-party Smithy model.
+skills:
+  - file: cloudfront-update-distribution-safely.md
+    name: Update a CloudFront distribution safely
+    api: openapi/cloudfront-distributions-api-openapi.yml
+    operations: [getDistributionConfig, updateDistribution, getDistribution, listDistributions]
+  - file: cloudfront-invalidate-cached-content.md
+    name: Invalidate cached CloudFront content
+    api: openapi/cloudfront-invalidations-api-openapi.yml
+    operations: [createInvalidation, getInvalidation, listInvalidations]
+  - file: cloudfront-lock-origin-with-oac.md
+    name: Lock a CloudFront origin down with origin access control
+    api: openapi/cloudfront-originaccesscontrol-api-openapi.yml
+    operations: [createOriginAccessControl, listOriginAccessControls, getOriginAccessControl, getDistributionConfig, updateDistribution, deleteOriginAccessControl]

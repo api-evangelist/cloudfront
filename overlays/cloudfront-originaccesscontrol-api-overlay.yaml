@@ -1,0 +1,53 @@
+# generated: '2026-09-05'
+# method: generated
+# source: openapi/cloudfront-originaccesscontrol-api-openapi.yml + smithy/cloudfront-2020-05-31.json + conventions/cloudfront-conventions.yml
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon CloudFront CachePolicies Origin Access Control API
+  version: 1.0.0
+extends: openapi/cloudfront-originaccesscontrol-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: cloudfront
+      x-apievangelist-authoritative-contract: smithy/cloudfront-2020-05-31.json
+      x-apievangelist-note: >-
+        This OpenAPI is an API Evangelist best-effort description of a SUBSET of
+        the Amazon CloudFront REST API. The authoritative first-party contract is
+        the AWS Smithy model (167 operations) harvested from
+        github.com/aws/api-models-aws; treat this document as a convenience view,
+        not as the contract.
+  - target: $.info
+    update:
+      x-api-conventions:
+        protocol: REST-XML
+        concurrency: ETag + If-Match (RFC 7232)
+        idempotency:
+          mechanism: CallerReference
+          coverage: partial
+        pagination:
+          style: marker
+          request: [Marker, MaxItems]
+          response: [NextMarker, IsTruncated]
+        artifact: conventions/cloudfront-conventions.yml
+  - target: $.info
+    update:
+      x-api-errors:
+        format: aws-restxml
+        rfc9457: false
+        catalog: errors/cloudfront-error-codes.yml
+        modeled_error_types: 152
+  - target: $.info
+    update:
+      x-api-lifecycle:
+        version: '2020-05-31'
+        status_page: https://health.aws.amazon.com/health/status
+        sla: https://aws.amazon.com/cloudfront/sla/
+        artifact: lifecycle/cloudfront-lifecycle.yml
+  - target: $.servers
+    update:
+      x-apievangelist-additional-endpoints:
+        dualstack: https://cloudfront.global.api.aws
+        fips: https://cloudfront-fips.global.api.aws
+        china: https://cloudfront.cn-northwest-1.amazonaws.com.cn
+      x-apievangelist-endpoint-source: smithy/cloudfront-2020-05-31.json aws.endpoints#standardPartitionalEndpoints

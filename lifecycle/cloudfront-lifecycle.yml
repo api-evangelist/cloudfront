@@ -1,0 +1,53 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html,
+  https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/WhatsNew.html,
+  https://health.aws.amazon.com/health/status, https://aws.amazon.com/cloudfront/sla/
+versioning:
+  scheme: date-in-path
+  current: '2020-05-31'
+  stable_since: '2020-05-31'
+  docs: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  note: >-
+    Every request path carries the API version date (/2020-05-31/distribution).
+    AWS has added operations - Distribution Tenants, Connection Groups, VPC
+    Origins, Trust Stores, Anycast IP Lists, Key Value Stores - inside the same
+    dated version rather than cutting a new one, so the version string is not a
+    reliable freshness signal. The Smithy model is the freshness signal.
+deprecation:
+  policy_url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/WhatsNew.html
+  sunset_header: false
+  deprecation_header: false
+  deprecated_operations: []
+  note: >-
+    Honest finding: AWS publishes NO CloudFront-specific API deprecation policy,
+    and no operation in the first-party Smithy model carries the
+    smithy.api#deprecated trait - not even the streaming-distribution
+    (RTMP) surface, which AWS stopped supporting for new distributions. Retirement
+    is announced as prose in the document-history table and in AWS service
+    announcements, not signalled in the contract or in response headers. An agent
+    cannot learn from the API that an operation is on the way out.
+  legacy_surfaces:
+    - name: RTMP streaming distributions
+      operations: [CreateStreamingDistribution, CreateStreamingDistributionWithTags, UpdateStreamingDistribution, DeleteStreamingDistribution, GetStreamingDistribution, GetStreamingDistributionConfig, ListStreamingDistributions]
+      status: legacy
+      marked_deprecated_in_contract: false
+      note: Still fully modeled and callable; AWS discontinued RTMP delivery for new customers but the operations carry no deprecation marker.
+    - name: CloudFront origin access identity (OAI)
+      operations: [CreateCloudFrontOriginAccessIdentity, UpdateCloudFrontOriginAccessIdentity, DeleteCloudFrontOriginAccessIdentity, GetCloudFrontOriginAccessIdentity, ListCloudFrontOriginAccessIdentities]
+      status: superseded
+      superseded_by: Origin access control (OAC) - CreateOriginAccessControl and siblings
+      marked_deprecated_in_contract: false
+      docs: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html
+sla:
+  url: https://aws.amazon.com/cloudfront/sla/
+  uptime_target: '99.9%'
+  note: Monthly uptime percentage; service credits are the sole remedy.
+status_page: https://health.aws.amazon.com/health/status
+status_page_note: >-
+  AWS Health Dashboard, account-agnostic public view. There is no CloudFront-only
+  status page; CloudFront appears as a row in the global service list.
+changelog: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/WhatsNew.html
+changelog_feed: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/amazon-cf-doc-releases.rss
+artifact_changelog: changelog/cloudfront-changelog.yml
