@@ -1,19 +1,14 @@
 generated: '2026-09-05'
 method: searched
 status: published
-source: >-
-  https://github.com/awslabs/mcp (AWS Labs, first-party) and
-  https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html —
-  tool lists read live by anonymous JSON-RPC tools/list on 2026-09-05.
-note: >-
-  AWS ships NO CloudFront-specific MCP server. CloudFront is reachable through
-  AWS's general-purpose servers, which expose AWS APIs generically (a script /
-  boto3 execution tool and a documentation tool) rather than one tool per
-  CloudFront operation. That distinction matters for an agent: there is no
-  `create_distribution` tool to call, there is a sandboxed AWS API executor that
-  can call CloudFront's 167 operations. Recorded as published because the
-  servers are real, first-party, and answered tools/list anonymously — not
-  because CloudFront itself has a tool surface.
+source: https://github.com/awslabs/mcp (AWS Labs, first-party) and https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html
+  — tool lists read live by anonymous JSON-RPC tools/list on 2026-09-05.
+note: 'AWS ships NO CloudFront-specific MCP server. CloudFront is reachable through AWS''s general-purpose
+  servers, which expose AWS APIs generically (a script / boto3 execution tool and a documentation tool)
+  rather than one tool per CloudFront operation. That distinction matters for an agent: there is no `create_distribution`
+  tool to call, there is a sandboxed AWS API executor that can call CloudFront''s 167 operations. Recorded
+  as published because the servers are real, first-party, and answered tools/list anonymously — not because
+  CloudFront itself has a tool surface.'
 deployment:
   mode: both
   endpoint: https://aws-mcp.us-east-1.api.aws/mcp
@@ -21,82 +16,82 @@ deployment:
   package: https://pypi.org/project/awslabs.aws-api-mcp-server/
   auth: api-key
   verified: probed
-  note: >-
-    `auth: api-key` = AWS SigV4 / IAM credentials. tools/list answered
-    anonymously (HTTP 200, real inputSchemas) but every tool CALL is executed
-    against the caller's AWS credentials with IAM-based permissions and
-    CloudTrail logging. The remote endpoint is reached through the
-    `mcp-proxy-for-aws` local proxy, which performs SigV4; a bare MCP client
-    POSTing to the URL can list tools but cannot execute AWS operations.
+  note: '`auth: api-key` = AWS SigV4 / IAM credentials. tools/list answered anonymously (HTTP 200, real
+    inputSchemas) but every tool CALL is executed against the caller''s AWS credentials with IAM-based
+    permissions and CloudTrail logging. The remote endpoint is reached through the `mcp-proxy-for-aws`
+    local proxy, which performs SigV4; a bare MCP client POSTing to the URL can list tools but cannot
+    execute AWS operations.'
+  probe_prior: (never probed)
+  probe: live
+  probe_why: live
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 servers:
-  - name: AWS MCP Server
-    status: preview
-    transport: http
-    url: https://aws-mcp.us-east-1.api.aws/mcp
-    docs: https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html
-    hosted_by: AWS
-    tools_list_status: 200
-    tool_count: 8
-    tools_file: cloudfront-aws-mcp-tools-list.json
-    covers_cloudfront: true
-    coverage_note: >-
-      via aws___run_script, which executes Python with AWS API access through
-      call_boto3 — CloudFront operations are invoked as boto3 cloudfront calls.
-  - name: AWS Knowledge MCP Server
-    status: published
-    transport: http
-    url: https://knowledge-mcp.global.api.aws
-    hosted_by: AWS
-    tools_list_status: 200
-    tool_count: 5
-    tools_file: cloudfront-aws-knowledge-mcp-tools-list.json
-    covers_cloudfront: documentation-only
-    coverage_note: >-
-      Read-only AWS documentation search/fetch. Returns CloudFront developer
-      guide and API reference content; cannot call the CloudFront API.
-  - name: awslabs.aws-api-mcp-server
-    status: published
-    transport: stdio
-    install: uvx awslabs.aws-api-mcp-server@latest
-    package: https://pypi.org/project/awslabs.aws-api-mcp-server/
-    package_version: 1.5.4
-    package_published: '2026-09-01'
-    repository: https://github.com/awslabs/mcp/tree/main/src/aws-api-mcp-server
-    hosted_by: AWS Labs
-    covers_cloudfront: true
-    coverage_note: >-
-      Generates and executes AWS CLI commands, so `aws cloudfront <command>` is
-      in scope. Local install; not an agent-reachable endpoint on its own.
+- name: AWS MCP Server
+  status: preview
+  transport: http
+  url: https://aws-mcp.us-east-1.api.aws/mcp
+  docs: https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html
+  hosted_by: AWS
+  tools_list_status: 200
+  tool_count: 8
+  tools_file: cloudfront-aws-mcp-tools-list.json
+  covers_cloudfront: true
+  coverage_note: via aws___run_script, which executes Python with AWS API access through call_boto3 —
+    CloudFront operations are invoked as boto3 cloudfront calls.
+- name: AWS Knowledge MCP Server
+  status: published
+  transport: http
+  url: https://knowledge-mcp.global.api.aws
+  hosted_by: AWS
+  tools_list_status: 200
+  tool_count: 5
+  tools_file: cloudfront-aws-knowledge-mcp-tools-list.json
+  covers_cloudfront: documentation-only
+  coverage_note: Read-only AWS documentation search/fetch. Returns CloudFront developer guide and API
+    reference content; cannot call the CloudFront API.
+- name: awslabs.aws-api-mcp-server
+  status: published
+  transport: stdio
+  install: uvx awslabs.aws-api-mcp-server@latest
+  package: https://pypi.org/project/awslabs.aws-api-mcp-server/
+  package_version: 1.5.4
+  package_published: '2026-09-01'
+  repository: https://github.com/awslabs/mcp/tree/main/src/aws-api-mcp-server
+  hosted_by: AWS Labs
+  covers_cloudfront: true
+  coverage_note: Generates and executes AWS CLI commands, so `aws cloudfront <command>` is in scope. Local
+    install; not an agent-reachable endpoint on its own.
 tools:
-  - name: aws___run_script
-    description: Execute Python in a sandboxed environment with AWS API access via call_boto3.
-    server: AWS MCP Server
-    cloudfront_binding: generic-executor
-  - name: aws___get_tasks
-    description: Poll status of long-running tasks.
-    server: AWS MCP Server
-    cloudfront_binding: none
-  - name: aws___get_presigned_url
-    description: Generate pre-signed S3 URLs for uploading or downloading files.
-    server: AWS MCP Server
-    cloudfront_binding: none
-  - name: aws___get_regional_availability
-    description: AWS resource availability per region.
-    server: AWS MCP Server
-    cloudfront_binding: none
-  - name: aws___list_regions
-    description: Retrieve a list of all AWS regions.
-    server: AWS MCP Server
-    cloudfront_binding: none
-  - name: aws___read_documentation
-    description: Fetch full AWS doc pages as markdown.
-    server: AWS MCP Server, AWS Knowledge MCP Server
-    cloudfront_binding: documentation
-  - name: aws___search_documentation
-    description: AWS docs search.
-    server: AWS MCP Server, AWS Knowledge MCP Server
-    cloudfront_binding: documentation
-  - name: aws___retrieve_skill
-    description: Retrieve an AWS skill (workflows, references).
-    server: AWS MCP Server, AWS Knowledge MCP Server
-    cloudfront_binding: documentation
+- name: aws___run_script
+  description: Execute Python in a sandboxed environment with AWS API access via call_boto3.
+  server: AWS MCP Server
+  cloudfront_binding: generic-executor
+- name: aws___get_tasks
+  description: Poll status of long-running tasks.
+  server: AWS MCP Server
+  cloudfront_binding: none
+- name: aws___get_presigned_url
+  description: Generate pre-signed S3 URLs for uploading or downloading files.
+  server: AWS MCP Server
+  cloudfront_binding: none
+- name: aws___get_regional_availability
+  description: AWS resource availability per region.
+  server: AWS MCP Server
+  cloudfront_binding: none
+- name: aws___list_regions
+  description: Retrieve a list of all AWS regions.
+  server: AWS MCP Server
+  cloudfront_binding: none
+- name: aws___read_documentation
+  description: Fetch full AWS doc pages as markdown.
+  server: AWS MCP Server, AWS Knowledge MCP Server
+  cloudfront_binding: documentation
+- name: aws___search_documentation
+  description: AWS docs search.
+  server: AWS MCP Server, AWS Knowledge MCP Server
+  cloudfront_binding: documentation
+- name: aws___retrieve_skill
+  description: Retrieve an AWS skill (workflows, references).
+  server: AWS MCP Server, AWS Knowledge MCP Server
+  cloudfront_binding: documentation
