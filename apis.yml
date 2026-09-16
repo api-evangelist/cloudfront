@@ -1,13 +1,10 @@
 aid: cloudfront
 name: CloudFront
-description: >-
-  CloudFront is Amazon Web Services' content delivery network (CDN) for
-  delivering data, video, applications, and APIs globally with low latency.
-  This repository is the short-form profile for AWS CloudFront; the
-  canonical AWS service profile lives at amazon-cloudfront in the API
-  Evangelist Network. CloudFront's API is part of the AWS Service Reference
-  and exposes operations for distributions, origins, cache behaviors,
-  invalidations, origin access identities, functions, and Lambda@Edge.
+description: CloudFront is Amazon Web Services' content delivery network (CDN) for delivering data, video,
+  applications, and APIs globally with low latency. This repository is the short-form profile for AWS
+  CloudFront; the canonical AWS service profile lives at amazon-cloudfront in the API Evangelist Network.
+  CloudFront's API is part of the AWS Service Reference and exposes operations for distributions, origins,
+  cache behaviors, invalidations, origin access identities, functions, and Lambda@Edge.
 type: Index
 deliveryModel:
   model: saas
@@ -37,19 +34,19 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloudfront.png
 url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-09-05'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 kind: company
 x-alias-of: amazon-cloudfront
 tags:
-  - Alias
-  - AWS
-  - CDN
-  - Caching
-  - Content Delivery
-  - Edge Computing
-  - Lambda@Edge
-  - Network
+- Alias
+- AWS
+- CDN
+- Caching
+- Content Delivery
+- Edge Computing
+- Lambda@Edge
+- Network
 apis:
 - aid: cloudfront:canonical
   name: AWS CloudFront API (canonical)
@@ -70,11 +67,10 @@ apis:
   - url: smithy/cloudfront-2020-05-31.json
     type: Smithy
     name: AWS CloudFront Smithy 2.0 model (167 operations)
-  description: >-
-    The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution,
-    UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations,
-    origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations, real-time
-    log configs and field-level encryption. AWS Signature v4 authentication.
+  description: The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution,
+    GetDistribution, UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies,
+    invalidations, origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations,
+    real-time log configs and field-level encryption. AWS Signature v4 authentication.
 - aid: cloudfront:cloudfront-cachepolicies-api
   name: CloudFront CachePolicies API
   description: The CachePolicies API from CloudFront — 2 operation(s) for cachepolicies.
@@ -148,96 +144,96 @@ apis:
   - type: Overlay
     url: overlays/cloudfront-publickeys-api-overlay.yaml
 common:
-  - type: CapabilityMap
-    url: capabilities/cloudfront-capability-edges.yml
-    name: CloudFront Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/cloudfront-agentic-access.yml
-  - type: TrustCenter
-    url: security/cloudfront-trust-center.yml
-  - type: VulnerabilityDisclosure
-    url: security/cloudfront-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/cloudfront-domain-security.yml
-  - type: Authentication
-    url: authentication/cloudfront-authentication.yml
-  - type: Website
-    url: https://aws.amazon.com/cloudfront/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/cloudfront/
-  - type: Pricing
-    url: https://aws.amazon.com/cloudfront/pricing/
-  - type: StatusPage
-    url: https://health.aws.amazon.com/health/status
-  - type: Canonical
-    url: https://github.com/api-evangelist/amazon-cloudfront
-  - type: Packages
-    url: packages/cloudfront-packages.yml
-  - type: SDKs
-    url: packages/cloudfront-packages.yml
-    name: First-party AWS SDK clients for CloudFront
-  - type: WellKnown
-    url: well-known/cloudfront-well-known.yml
-  - type: SecurityTxt
-    url: https://aws.amazon.com/.well-known/security.txt
-  - type: MCPServer
-    url: mcp/cloudfront-mcp.yml
-  - type: ToolCrosswalk
-    url: mcp/cloudfront-tool-crosswalk.yml
-  - type: LLMsTxt
-    url: llms/cloudfront-llms.txt
-  - type: Conformance
-    url: conformance/cloudfront-conformance.yml
-  - type: Compliance
-    url: https://aws.amazon.com/compliance/programs/
-  - type: ErrorCatalog
-    url: errors/cloudfront-error-codes.yml
-  - type: Lifecycle
-    url: lifecycle/cloudfront-lifecycle.yml
-  - type: Conventions
-    url: conventions/cloudfront-conventions.yml
-  - type: Idempotency
-    url: conventions/cloudfront-conventions.yml
-    name: CallerReference replay protection (partial coverage) + ETag/If-Match concurrency
-  - type: ChangeLog
-    url: changelog/cloudfront-changelog.yml
-  - type: CLI
-    url: cli/cloudfront-cli.yml
-  - type: DataModel
-    url: data-model/cloudfront-data-model.yml
-  - type: Plans
-    url: plans/cloudfront-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/cloudfront-rate-limits.yml
-  - type: AgentSkill
-    url: skills/_index.yml
-  - type: Security
-    url: https://aws.amazon.com/security/vulnerability-reporting/
-  - type: DeveloperPortal
-    url: https://aws.amazon.com/developer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html
-  - type: Support
-    url: https://aws.amazon.com/contact-us/
-  - type: Blog
-    url: https://aws.amazon.com/blogs/networking-and-content-delivery/
-  - type: GitHubOrganization
-    url: https://github.com/aws
-  - type: SignUp
-    url: https://portal.aws.amazon.com/billing/signup
-  - type: TermsOfService
-    url: https://aws.amazon.com/service-terms/
-  - type: PrivacyPolicy
-    url: https://aws.amazon.com/privacy/
-  - type: SLA
-    url: https://aws.amazon.com/cloudfront/sla/
-  - type: FAQ
-    url: https://aws.amazon.com/cloudfront/faqs/
+- type: CapabilityMap
+  url: capabilities/cloudfront-capability-edges.yml
+  name: CloudFront Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/cloudfront-agentic-access.yml
+- type: TrustCenter
+  url: security/cloudfront-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/cloudfront-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/cloudfront-domain-security.yml
+- type: Authentication
+  url: authentication/cloudfront-authentication.yml
+- type: Website
+  url: https://aws.amazon.com/cloudfront/
+- type: Documentation
+  url: https://docs.aws.amazon.com/cloudfront/
+- type: Pricing
+  url: https://aws.amazon.com/cloudfront/pricing/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Canonical
+  url: https://github.com/api-evangelist/amazon-cloudfront
+- type: Packages
+  url: packages/cloudfront-packages.yml
+- type: SDKs
+  url: packages/cloudfront-packages.yml
+  name: First-party AWS SDK clients for CloudFront
+- type: WellKnown
+  url: well-known/cloudfront-well-known.yml
+- type: SecurityTxt
+  url: https://aws.amazon.com/.well-known/security.txt
+- type: MCPServer
+  url: mcp/cloudfront-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/cloudfront-tool-crosswalk.yml
+- type: LLMsTxt
+  url: llms/cloudfront-llms.txt
+- type: Conformance
+  url: conformance/cloudfront-conformance.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/programs/
+- type: ErrorCatalog
+  url: errors/cloudfront-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/cloudfront-lifecycle.yml
+- type: Conventions
+  url: conventions/cloudfront-conventions.yml
+- type: Idempotency
+  url: conventions/cloudfront-conventions.yml
+  name: CallerReference replay protection (partial coverage) + ETag/If-Match concurrency
+- type: ChangeLog
+  url: changelog/cloudfront-changelog.yml
+- type: CLI
+  url: cli/cloudfront-cli.yml
+- type: DataModel
+  url: data-model/cloudfront-data-model.yml
+- type: Plans
+  url: plans/cloudfront-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cloudfront-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Security
+  url: https://aws.amazon.com/security/vulnerability-reporting/
+- type: DeveloperPortal
+  url: https://aws.amazon.com/developer/
+- type: APIReference
+  url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+- type: GettingStarted
+  url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html
+- type: Support
+  url: https://aws.amazon.com/contact-us/
+- type: Blog
+  url: https://aws.amazon.com/blogs/networking-and-content-delivery/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: SignUp
+  url: https://portal.aws.amazon.com/billing/signup
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: SLA
+  url: https://aws.amazon.com/cloudfront/sla/
+- type: FAQ
+  url: https://aws.amazon.com/cloudfront/faqs/
 maintainers:
-  - FN: Kin Lane
-    email: kinlane@gmail.com
+- FN: Kin Lane
+  email: kinlane@gmail.com
 x-enrichment:
   date: '2026-09-05'
   status: enriched
@@ -245,3 +241,5 @@ x-enrichment:
   pass: local-v3
 x-parent: aws
 x-relationship: product
+x-aliases:
+- Amazon CloudFront
