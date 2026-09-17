@@ -67,10 +67,11 @@ apis:
   - url: smithy/cloudfront-2020-05-31.json
     type: Smithy
     name: AWS CloudFront Smithy 2.0 model (167 operations)
-  description: The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution,
-    GetDistribution, UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies,
-    invalidations, origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations,
-    real-time log configs and field-level encryption. AWS Signature v4 authentication.
+  description: >-
+    The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution,
+    UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations,
+    origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations, real-time
+    log configs and field-level encryption. AWS Signature v4 authentication.
 - aid: cloudfront:cloudfront-cachepolicies-api
   name: CloudFront CachePolicies API
   description: The CachePolicies API from CloudFront — 2 operation(s) for cachepolicies.
@@ -131,19 +132,19 @@ apis:
     url: openapi/cloudfront-originaccesscontrol-api-openapi.yml
   - type: Overlay
     url: overlays/cloudfront-originaccesscontrol-api-overlay.yaml
-- aid: cloudfront:cloudfront-publickeys-api
-  name: CloudFront PublicKeys API
-  description: The PublicKeys API from CloudFront — 1 operation(s) for publickeys.
+- aid: cloudfront:cloudfront-public-keys-api
+  name: CloudFront Public Keys API
+  description: The Public Keys API from CloudFront — 1 operation(s) for public keys.
   humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
   baseURL: https://cloudfront.amazonaws.com
   tags:
-  - PublicKeys
+  - Public Keys
   properties:
   - type: OpenAPI
-    url: openapi/cloudfront-publickeys-api-openapi.yml
-  - type: Overlay
-    url: overlays/cloudfront-publickeys-api-overlay.yaml
+    url: openapi/cloudfront-public-keys-api-openapi.yml
 common:
+- type: Overlay
+  url: overlays/cloudfront-publickeys-api-overlay.yaml
 - type: CapabilityMap
   url: capabilities/cloudfront-capability-edges.yml
   name: CloudFront Business Capability Map
