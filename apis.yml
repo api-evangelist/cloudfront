@@ -46,6 +46,15 @@ tags:
 - Content Delivery
 - Edge Computing
 - Lambda@Edge
+- Networks
+tags_raw:
+- Alias
+- AWS
+- CDN
+- Caching
+- Content Delivery
+- Edge Computing
+- Lambda@Edge
 - Network
 apis:
 - aid: cloudfront:canonical
@@ -138,6 +147,8 @@ apis:
   humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
   baseURL: https://cloudfront.amazonaws.com
   tags:
+  - PublicKeys
+  tags_raw:
   - Public Keys
   properties:
   - type: OpenAPI
