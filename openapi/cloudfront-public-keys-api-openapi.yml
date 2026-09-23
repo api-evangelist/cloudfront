@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon CloudFront CachePolicies Public Keys API
+  title: Amazon CloudFront Public Keys API
   description: 'Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront
 
     REST API (API version 2020-05-31). CloudFront is AWS''s global content
@@ -13,9 +13,7 @@ info:
 
     cache policy, function, and public key operations; CloudFront exposes
 
-    over 100 additional operations not enumerated here.
-
-    '
+    over 100 additional operations not enumerated here.'
   version: '2020-05-31'
   contact:
     name: AWS CloudFront
@@ -25,14 +23,14 @@ servers:
 security:
 - sigv4: []
 tags:
-- name: PublicKeys
+- name: Public Keys
 paths:
   /2020-05-31/public-key:
     get:
       summary: ListPublicKeys
       operationId: listPublicKeys
       tags:
-      - PublicKeys
+      - Public Keys
       responses:
         '200':
           description: List of public keys
@@ -40,7 +38,7 @@ paths:
       summary: CreatePublicKey
       operationId: createPublicKey
       tags:
-      - PublicKeys
+      - Public Keys
       responses:
         '201':
           description: Public key created

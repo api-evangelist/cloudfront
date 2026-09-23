@@ -1,12 +1,7 @@
 {
   "provider": "cloudfront",
   "sources": [
-    "cloudfront-cachepolicies-api-openapi.yml",
-    "cloudfront-distributions-api-openapi.yml",
-    "cloudfront-functions-api-openapi.yml",
-    "cloudfront-invalidations-api-openapi.yml",
-    "cloudfront-originaccesscontrol-api-openapi.yml",
-    "cloudfront-publickeys-api-openapi.yml"
+    "_original/cloudfront-openapi.yml"
   ],
   "outputs": [
     "cloudfront-cachepolicies-api-openapi.yml",
@@ -16,17 +11,29 @@
     "cloudfront-originaccesscontrol-api-openapi.yml",
     "cloudfront-publickeys-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "cloudfront-cachepolicies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cloudfront-distributions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cloudfront-functions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cloudfront-invalidations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cloudfront-originaccesscontrol-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cloudfront-publickeys-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cloudfront-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudfront-openapi.yml: declared missing tag: CachePolicies",
+    "cloudfront-openapi.yml: declared missing tag: Distributions",
+    "cloudfront-openapi.yml: declared missing tag: Functions",
+    "cloudfront-openapi.yml: declared missing tag: Invalidations",
+    "cloudfront-openapi.yml: declared missing tag: OriginAccessControl",
+    "cloudfront-openapi.yml: declared missing tag: PublicKeys",
+    "superseded outputs removed: cloudfront-public-keys-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "cloudfront-cachepolicies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudfront-distributions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudfront-functions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudfront-invalidations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudfront-originaccesscontrol-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudfront-public-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

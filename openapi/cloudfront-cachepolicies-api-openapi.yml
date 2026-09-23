@@ -13,9 +13,7 @@ info:
 
     cache policy, function, and public key operations; CloudFront exposes
 
-    over 100 additional operations not enumerated here.
-
-    '
+    over 100 additional operations not enumerated here.'
   version: '2020-05-31'
   contact:
     name: AWS CloudFront

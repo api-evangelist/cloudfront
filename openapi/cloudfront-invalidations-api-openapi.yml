@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon CloudFront CachePolicies Invalidations API
+  title: Amazon CloudFront Invalidations API
   description: 'Best-effort OpenAPI 3.1 description of a subset of the Amazon CloudFront
 
     REST API (API version 2020-05-31). CloudFront is AWS''s global content
@@ -13,9 +13,7 @@ info:
 
     cache policy, function, and public key operations; CloudFront exposes
 
-    over 100 additional operations not enumerated here.
-
-    '
+    over 100 additional operations not enumerated here.'
   version: '2020-05-31'
   contact:
     name: AWS CloudFront
