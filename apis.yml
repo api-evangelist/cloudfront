@@ -154,6 +154,8 @@ apis:
   - type: OpenAPI
     url: openapi/cloudfront-public-keys-api-openapi.yml
 common:
+- type: VendorFacets
+  url: vendor-facets/cloudfront-vendor-facets.yml
 - type: Overlay
   url: overlays/cloudfront-publickeys-api-overlay.yaml
 - type: CapabilityMap
