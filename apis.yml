@@ -37,9 +37,7 @@ created: '2024-01-01'
 modified: '2026-09-16'
 specificationVersion: '0.23'
 kind: company
-x-alias-of: amazon-cloudfront
 tags:
-- Alias
 - AWS
 - CDN
 - Caching
@@ -48,7 +46,6 @@ tags:
 - Lambda@Edge
 - Networks
 tags_raw:
-- Alias
 - AWS
 - CDN
 - Caching
@@ -147,8 +144,6 @@ apis:
   humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
   baseURL: https://cloudfront.amazonaws.com
   tags:
-  - PublicKeys
-  tags_raw:
   - Public Keys
   properties:
   - type: OpenAPI
@@ -253,7 +248,7 @@ x-enrichment:
   status: enriched
   artifacts_added: 29
   pass: local-v3
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
 x-aliases:
 - Amazon CloudFront
