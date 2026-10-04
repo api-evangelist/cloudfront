@@ -132,6 +132,8 @@ apis:
   humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
   baseURL: https://cloudfront.amazonaws.com
   tags:
+  - Origin Access Control
+  tags_raw:
   - OriginAccessControl
   properties:
   - type: OpenAPI
@@ -144,6 +146,8 @@ apis:
   humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
   baseURL: https://cloudfront.amazonaws.com
   tags:
+  - PublicKeys
+  tags_raw:
   - Public Keys
   properties:
   - type: OpenAPI
