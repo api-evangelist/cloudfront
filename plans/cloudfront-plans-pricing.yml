@@ -92,3 +92,41 @@ plans:
       custom pricing. Blocked DDoS traffic and requests blocked by AWS WAF do not
       count against the allowance.
 enterprise_contact: https://aws.amazon.com/contact-us/sales-support/
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units: []
+  plans:
+  - name: Pay-as-you-go
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
+  - name: Free
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Business
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
+  - name: Premium
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods: []
