@@ -52,5 +52,5 @@
     - connectors/applications/amazon-cloudfront
     vendor_link: https://aws.amazon.com/cloudfront/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
