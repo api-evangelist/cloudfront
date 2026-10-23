@@ -5,8 +5,15 @@
       "source": "https://aws.amazon.com/blogs/networking-and-content-delivery/",
       "feed_url": "https://aws.amazon.com/blogs/networking-and-content-delivery/feed/",
       "title": "",
-      "saved": 4,
+      "saved": 0,
       "method": "discovered"
+    },
+    {
+      "source": "https://aws.amazon.com/blogs/networking-and-content-delivery/feed/",
+      "feed_url": "https://aws.amazon.com/blogs/networking-and-content-delivery/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     },
     {
       "source": "https://aws.amazon.com/contact-us/",
@@ -16,6 +23,6 @@
       "method": "none"
     }
   ],
-  "post_count": 4,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 20,
+  "fetched": "2026-10-17T14:53:57Z"
 }
