@@ -1,4 +1,4 @@
-# CloudFront (cloudfront)
+# CloudFront
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,59 +66,184 @@
 
 CloudFront is Amazon Web Services' content delivery network (CDN) for delivering data, video, applications, and APIs globally with low latency. This repository is the short-form profile for AWS CloudFront; the canonical AWS service profile lives at amazon-cloudfront in the API Evangelist Network. CloudFront's API is part of the AWS Service Reference and exposes operations for distributions, origins, cache behaviors, invalidations, origin access identities, functions, and Lambda@Edge.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml)
+**Areas:** AWS · CDN · Caching · Content Delivery · Edge Computing · Lambda@Edge · Networks
 
-## Scope
+## CloudFront on APIs.io
 
-- **Type:** Index
+Everything profiled for CloudFront is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloudfront/](https://apis.io/providers/cloudfront/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (33)
 
-- Alias
-- AWS
-- CDN
-- Caching
-- Content Delivery
-- Edge Computing
-- Lambda@Edge
-- Network
+- [AWS CloudFront API (canonical)](https://apis.io/apis/cloudfront/canonical/) — The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution, UpdateDistribution, DeleteDistribution,…
+- [CloudFront CachePolicies API](https://apis.io/apis/cloudfront/cloudfront-cachepolicies-api/) — The CachePolicies API from CloudFront — 2 operation(s) for cachepolicies.
+- [CloudFront Distributions API](https://apis.io/apis/cloudfront/cloudfront-distributions-api/) — The Distributions API from CloudFront — 3 operation(s) for distributions.
+- [CloudFront Functions API](https://apis.io/apis/cloudfront/cloudfront-functions-api/) — The Functions API from CloudFront — 2 operation(s) for functions.
+- [CloudFront Invalidations API](https://apis.io/apis/cloudfront/cloudfront-invalidations-api/) — The Invalidations API from CloudFront — 2 operation(s) for invalidations.
+- [CloudFront OriginAccessControl API](https://apis.io/apis/cloudfront/cloudfront-originaccesscontrol-api/) — The OriginAccessControl API from CloudFront — 2 operation(s) for originaccesscontrol.
+- [CloudFront Public Keys API](https://apis.io/apis/cloudfront/cloudfront-public-keys-api/) — The Public Keys API from CloudFront — 1 operation(s) for public keys.
+- [CloudFront Anycast Ip List API](https://apis.io/apis/cloudfront/cloudfront-anycast-ip-list-api/) — The Anycast Ip List API from CloudFront — 2 operation(s) for anycast ip list.
+- [CloudFront Cache Policy API](https://apis.io/apis/cloudfront/cloudfront-cache-policy-api/) — The Cache Policy API from CloudFront — 3 operation(s) for cache policy.
+- [CloudFront Conflicting Alias API](https://apis.io/apis/cloudfront/cloudfront-conflicting-alias-api/) — The Conflicting Alias API from CloudFront — 1 operation(s) for conflicting alias.
+- [CloudFront Connection Function API](https://apis.io/apis/cloudfront/cloudfront-connection-function-api/) — The Connection Function API from CloudFront — 7 operation(s) for connection function.
+- [CloudFront Connection Group API](https://apis.io/apis/cloudfront/cloudfront-connection-group-api/) — The Connection Group API from CloudFront — 4 operation(s) for connection group.
+- [CloudFront Continuous Deployment Policy API](https://apis.io/apis/cloudfront/cloudfront-continuous-deployment-policy-api/) — The Continuous Deployment Policy API from CloudFront — 3 operation(s) for continuous deployment policy.
+- [CloudFront Delete Resource Policy API](https://apis.io/apis/cloudfront/cloudfront-delete-resource-policy-api/) — The Delete Resource Policy API from CloudFront — 1 operation(s) for delete resource policy.
+- [CloudFront Distribution Tenant API](https://apis.io/apis/cloudfront/cloudfront-distribution-tenant-api/) — The Distribution Tenant API from CloudFront — 9 operation(s) for distribution tenant.
+- [CloudFront Domain Association API](https://apis.io/apis/cloudfront/cloudfront-domain-association-api/) — The Domain Association API from CloudFront — 1 operation(s) for domain association.
+- [CloudFront Domain Conflicts API](https://apis.io/apis/cloudfront/cloudfront-domain-conflicts-api/) — The Domain Conflicts API from CloudFront — 1 operation(s) for domain conflicts.
+- [CloudFront Field Level Encryption API](https://apis.io/apis/cloudfront/cloudfront-field-level-encryption-api/) — The Field Level Encryption API from CloudFront — 3 operation(s) for field level encryption.
+- [CloudFront Field Level Encryption Profile API](https://apis.io/apis/cloudfront/cloudfront-field-level-encryption-profile-api/) — The Field Level Encryption Profile API from CloudFront — 3 operation(s) for field level encryption profile.
+- [CloudFront Get Resource Policy API](https://apis.io/apis/cloudfront/cloudfront-get-resource-policy-api/) — The Get Resource Policy API from CloudFront — 1 operation(s) for get resource policy.
+- [CloudFront Key Group API](https://apis.io/apis/cloudfront/cloudfront-key-group-api/) — The Key Group API from CloudFront — 3 operation(s) for key group.
+- [CloudFront Key Value Store API](https://apis.io/apis/cloudfront/cloudfront-key-value-store-api/) — The Key Value Store API from CloudFront — 2 operation(s) for key value store.
+- [CloudFront Managed Certificate API](https://apis.io/apis/cloudfront/cloudfront-managed-certificate-api/) — The Managed Certificate API from CloudFront — 1 operation(s) for managed certificate.
+- [CloudFront Origin Access Identity API](https://apis.io/apis/cloudfront/cloudfront-origin-access-identity-api/) — The Origin Access Identity API from CloudFront — 3 operation(s) for origin access identity.
+- [CloudFront Origin Request Policy API](https://apis.io/apis/cloudfront/cloudfront-origin-request-policy-api/) — The Origin Request Policy API from CloudFront — 3 operation(s) for origin request policy.
+- [CloudFront Put Resource Policy API](https://apis.io/apis/cloudfront/cloudfront-put-resource-policy-api/) — The Put Resource Policy API from CloudFront — 1 operation(s) for put resource policy.
+- [CloudFront Realtime Log Config API](https://apis.io/apis/cloudfront/cloudfront-realtime-log-config-api/) — The Realtime Log Config API from CloudFront — 3 operation(s) for realtime log config.
+- [CloudFront Response Headers Policy API](https://apis.io/apis/cloudfront/cloudfront-response-headers-policy-api/) — The Response Headers Policy API from CloudFront — 3 operation(s) for response headers policy.
+- [CloudFront Streaming Distribution API](https://apis.io/apis/cloudfront/cloudfront-streaming-distribution-api/) — The Streaming Distribution API from CloudFront — 3 operation(s) for streaming distribution.
+- [CloudFront Tagging API](https://apis.io/apis/cloudfront/cloudfront-tagging-api/) — The Tagging API from CloudFront — 1 operation(s) for tagging.
+- [CloudFront Trust Store API](https://apis.io/apis/cloudfront/cloudfront-trust-store-api/) — The Trust Store API from CloudFront — 4 operation(s) for trust store.
+- [CloudFront Verify Dns Configuration API](https://apis.io/apis/cloudfront/cloudfront-verify-dns-configuration-api/) — The Verify Dns Configuration API from CloudFront — 1 operation(s) for verify dns configuration.
+- [CloudFront Vpc Origin API](https://apis.io/apis/cloudfront/cloudfront-vpc-origin-api/) — The Vpc Origin API from CloudFront — 2 operation(s) for vpc origin.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-04-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### AWS CloudFront API (canonical)
+Model Context Protocol servers that expose the API to agents.
 
-The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution, UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations, origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations, real-time log configs and field-level encryption. AWS Signature v4 authentication.
+- [cloudfront-mcp.yml](https://apis.io/servers/cloudfront/cloudfront-mcp-yml/)
 
-- **Human URL:** [https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html](https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html)
-- **Base URL:** `https://cloudfront.amazonaws.com`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Canonical
-- REST
-- AWS
+- [Cloudfront Agentic Access](https://apis.io/agentic-access/cloudfront/cloudfront-agentic-access/)
 
-#### Properties
+#### Collections (7)
 
-- [Documentation](https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html)
-- [Developer  Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/)
-- [Postman Collection](collections/cloudfront.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudfront.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Amazon CloudFront API](https://apis.io/collections/cloudfront/open-cloudfront/)
+- [Amazon CloudFront CachePolicies API](https://apis.io/collections/cloudfront/open-cloudfront-cachepolicies-api/)
+- [Amazon CloudFront CachePolicies Distributions API](https://apis.io/collections/cloudfront/open-cloudfront-distributions-api/)
+- [Amazon CloudFront CachePolicies Functions API](https://apis.io/collections/cloudfront/open-cloudfront-functions-api/)
+- [Amazon CloudFront CachePolicies Invalidations API](https://apis.io/collections/cloudfront/open-cloudfront-invalidations-api/)
+- [Amazon CloudFront CachePolicies OriginAccessControl API](https://apis.io/collections/cloudfront/open-cloudfront-originaccesscontrol-api/)
+- [Amazon CloudFront CachePolicies PublicKeys API](https://apis.io/collections/cloudfront/open-cloudfront-publickeys-api/)
+
+#### Overlays (12)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Cloudfront Cachepolicies Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-cachepolicies-api-overlay/)
+- [Cloudfront Cachepolicies Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-cachepolicies-api-phrasing-overlay/)
+- [Cloudfront Distributions Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-distributions-api-overlay/)
+- [Cloudfront Distributions Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-distributions-api-phrasing-overlay/)
+- [Cloudfront Functions Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-functions-api-overlay/)
+- [Cloudfront Functions Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-functions-api-phrasing-overlay/)
+- [Cloudfront Invalidations Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-invalidations-api-overlay/)
+- [Cloudfront Invalidations Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-invalidations-api-phrasing-overlay/)
+- [Cloudfront Originaccesscontrol Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-originaccesscontrol-api-overlay/)
+- [Cloudfront Originaccesscontrol Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-originaccesscontrol-api-phrasing-overlay/)
+- [Cloudfront Public Keys Api Phrasing Overlay](https://apis.io/overlays/cloudfront/cloudfront-public-keys-api-phrasing-overlay/)
+- [Cloudfront Publickeys Api Overlay](https://apis.io/overlays/cloudfront/cloudfront-publickeys-api-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cloudfront Authentication](https://apis.io/security/cloudfront/cloudfront-authentication/)
+- [Cloudfront Domain Security](https://apis.io/security/cloudfront/cloudfront-domain-security/)
+- [Cloudfront Trust Center](https://apis.io/security/cloudfront/cloudfront-trust-center/)
+- [Cloudfront Vulnerability Disclosure](https://apis.io/security/cloudfront/cloudfront-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cloudfront Plans Pricing](https://apis.io/plans/cloudfront/cloudfront-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cloudfront Rate Limits](https://apis.io/rate-limits/cloudfront/cloudfront-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://aws.amazon.com/cloudfront/)
 - [Documentation](https://docs.aws.amazon.com/cloudfront/)
+- [Getting started](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html)
+- [API reference](https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html)
 - [Pricing](https://aws.amazon.com/cloudfront/pricing/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Canonical](https://github.com/api-evangelist/amazon-cloudfront)
+- [Sign up](https://portal.aws.amazon.com/billing/signup)
+- [Support](https://aws.amazon.com/contact-us/)
+- [Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/)
+- [Security](https://aws.amazon.com/security/vulnerability-reporting/)
+- [Compliance](https://aws.amazon.com/compliance/programs/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kinlane@gmail.com
+**Kin Score 67.3** — exemplar · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 85.0 |
+| Contract quality | 45.3 |
+| Contract governance | 18.2 |
+| Operational transparency | 76.3 |
+| Developer ergonomics | 73.2 |
+| Access clarity | 92.1 |
+
+**Agent readiness 28.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloudfront/](https://apis.io/providers/cloudfront/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CloudFront: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloudfront/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
