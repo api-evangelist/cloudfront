@@ -63,7 +63,7 @@ rate_limit_statements:
 - Requests 1M 10M 125M 500M (configurable up to 6B for a new flat-rate price) No Limit
 - Data Transfer 100GB 50TB 50TB 50TB (configurable up to 600TB for a new flat-rate price) No Limit
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
