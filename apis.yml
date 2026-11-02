@@ -1,0 +1,540 @@
+aid: cloudfront
+name: CloudFront
+description: CloudFront is Amazon Web Services' content delivery network (CDN) for delivering data, video,
+  applications, and APIs globally with low latency. This repository is the short-form profile for AWS
+  CloudFront; the canonical AWS service profile lives at amazon-cloudfront in the API Evangelist Network.
+  CloudFront's API is part of the AWS Service Reference and exposes operations for distributions, origins,
+  cache behaviors, invalidations, origin access identities, functions, and Lambda@Edge.
+type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloudfront.png
+url: https://raw.githubusercontent.com/api-evangelist/cloudfront/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-09-16'
+specificationVersion: '0.23'
+kind: company
+tags:
+- Amazon Web Services
+- CDN
+- Caching
+- Content Delivery
+- Edge Computing
+- Lambda@Edge
+- Networks
+tags_raw:
+- AWS
+- CDN
+- Caching
+- Content Delivery
+- Edge Computing
+- Lambda@Edge
+- Network
+apis:
+- aid: cloudfront:canonical
+  name: AWS CloudFront API (canonical)
+  tags:
+  - Canonical
+  - REST
+  - Amazon Web Services
+  tags_raw:
+  - Canonical
+  - REST
+  - AWS
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://cloudfront.amazonaws.com
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  properties:
+  - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+    type: Documentation
+  - url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
+    type: Developer Guide
+  - url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+    type: APIReference
+  - url: smithy/cloudfront-2020-05-31.json
+    type: Smithy
+    name: AWS CloudFront Smithy 2.0 model (167 operations)
+  description: >-
+    The AWS CloudFront REST API exposes operations for managing distributions (CreateDistribution, GetDistribution,
+    UpdateDistribution, DeleteDistribution, ListDistributions), origins, cache policies, invalidations,
+    origin access identities and OAC, key groups, CloudFront Functions, Lambda@Edge associations, real-time
+    log configs and field-level encryption. AWS Signature v4 authentication.
+- aid: cloudfront:cloudfront-cachepolicies-api
+  name: CloudFront CachePolicies API
+  description: The CachePolicies API from CloudFront — 2 operation(s) for cachepolicies.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - CachePolicies
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-cachepolicies-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-cachepolicies-api-overlay.yaml
+- aid: cloudfront:cloudfront-distributions-api
+  name: CloudFront Distributions API
+  description: The Distributions API from CloudFront — 3 operation(s) for distributions.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Distributions
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-distributions-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-distributions-api-overlay.yaml
+- aid: cloudfront:cloudfront-functions-api
+  name: CloudFront Functions API
+  description: The Functions API from CloudFront — 2 operation(s) for functions.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Functions
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-functions-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-functions-api-overlay.yaml
+- aid: cloudfront:cloudfront-invalidations-api
+  name: CloudFront Invalidations API
+  description: The Invalidations API from CloudFront — 2 operation(s) for invalidations.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Invalidations
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-invalidations-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-invalidations-api-overlay.yaml
+- aid: cloudfront:cloudfront-originaccesscontrol-api
+  name: CloudFront OriginAccessControl API
+  description: The OriginAccessControl API from CloudFront — 2 operation(s) for originaccesscontrol.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Origin Access Control
+  tags_raw:
+  - OriginAccessControl
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-originaccesscontrol-api-openapi.yml
+  - type: Overlay
+    url: overlays/cloudfront-originaccesscontrol-api-overlay.yaml
+- aid: cloudfront:cloudfront-public-keys-api
+  name: CloudFront Public Keys API
+  description: The Public Keys API from CloudFront — 1 operation(s) for public keys.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - PublicKeys
+  tags_raw:
+  - Public Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-public-keys-api-openapi.yml
+- aid: cloudfront:cloudfront-anycast-ip-list-api
+  name: CloudFront Anycast Ip List API
+  description: The Anycast Ip List API from CloudFront — 2 operation(s) for anycast ip list.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Anycast Ip List
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-anycast-ip-list-api-openapi.yml
+- aid: cloudfront:cloudfront-cache-policy-api
+  name: CloudFront Cache Policy API
+  description: The Cache Policy API from CloudFront — 3 operation(s) for cache policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Cache Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-cache-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-conflicting-alias-api
+  name: CloudFront Conflicting Alias API
+  description: The Conflicting Alias API from CloudFront — 1 operation(s) for conflicting alias.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Conflicting Alias
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-conflicting-alias-api-openapi.yml
+- aid: cloudfront:cloudfront-connection-function-api
+  name: CloudFront Connection Function API
+  description: The Connection Function API from CloudFront — 7 operation(s) for connection function.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Connection Function
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-connection-function-api-openapi.yml
+- aid: cloudfront:cloudfront-connection-group-api
+  name: CloudFront Connection Group API
+  description: The Connection Group API from CloudFront — 4 operation(s) for connection group.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Connection Group
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-connection-group-api-openapi.yml
+- aid: cloudfront:cloudfront-continuous-deployment-policy-api
+  name: CloudFront Continuous Deployment Policy API
+  description: >-
+    The Continuous Deployment Policy API from CloudFront — 3 operation(s) for continuous deployment policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Continuous Deployment Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-continuous-deployment-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-delete-resource-policy-api
+  name: CloudFront Delete Resource Policy API
+  description: >-
+    The Delete Resource Policy API from CloudFront — 1 operation(s) for delete resource policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - DeleteResourcePolicy
+  tags_raw:
+  - Delete Resource Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-delete-resource-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-distribution-tenant-api
+  name: CloudFront Distribution Tenant API
+  description: The Distribution Tenant API from CloudFront — 9 operation(s) for distribution tenant.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Distribution Tenant
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-distribution-tenant-api-openapi.yml
+- aid: cloudfront:cloudfront-domain-association-api
+  name: CloudFront Domain Association API
+  description: The Domain Association API from CloudFront — 1 operation(s) for domain association.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Domain Association
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-domain-association-api-openapi.yml
+- aid: cloudfront:cloudfront-domain-conflicts-api
+  name: CloudFront Domain Conflicts API
+  description: The Domain Conflicts API from CloudFront — 1 operation(s) for domain conflicts.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Domain Conflicts
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-domain-conflicts-api-openapi.yml
+- aid: cloudfront:cloudfront-field-level-encryption-api
+  name: CloudFront Field Level Encryption API
+  description: >-
+    The Field Level Encryption API from CloudFront — 3 operation(s) for field level encryption.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Field Level Encryption
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-field-level-encryption-api-openapi.yml
+- aid: cloudfront:cloudfront-field-level-encryption-profile-api
+  name: CloudFront Field Level Encryption Profile API
+  description: >-
+    The Field Level Encryption Profile API from CloudFront — 3 operation(s) for field level encryption
+    profile.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Field Level Encryption Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-field-level-encryption-profile-api-openapi.yml
+- aid: cloudfront:cloudfront-get-resource-policy-api
+  name: CloudFront Get Resource Policy API
+  description: The Get Resource Policy API from CloudFront — 1 operation(s) for get resource policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - GetResourcePolicy
+  tags_raw:
+  - Get Resource Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-get-resource-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-key-group-api
+  name: CloudFront Key Group API
+  description: The Key Group API from CloudFront — 3 operation(s) for key group.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Key Group
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-key-group-api-openapi.yml
+- aid: cloudfront:cloudfront-key-value-store-api
+  name: CloudFront Key Value Store API
+  description: The Key Value Store API from CloudFront — 2 operation(s) for key value store.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Key-Value Store
+  tags_raw:
+  - Key Value Store
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-key-value-store-api-openapi.yml
+- aid: cloudfront:cloudfront-managed-certificate-api
+  name: CloudFront Managed Certificate API
+  description: The Managed Certificate API from CloudFront — 1 operation(s) for managed certificate.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Managed Certificate
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-managed-certificate-api-openapi.yml
+- aid: cloudfront:cloudfront-origin-access-identity-api
+  name: CloudFront Origin Access Identity API
+  description: >-
+    The Origin Access Identity API from CloudFront — 3 operation(s) for origin access identity.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Origin Access Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-origin-access-identity-api-openapi.yml
+- aid: cloudfront:cloudfront-origin-request-policy-api
+  name: CloudFront Origin Request Policy API
+  description: >-
+    The Origin Request Policy API from CloudFront — 3 operation(s) for origin request policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Origin Request Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-origin-request-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-put-resource-policy-api
+  name: CloudFront Put Resource Policy API
+  description: The Put Resource Policy API from CloudFront — 1 operation(s) for put resource policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - PutResourcePolicy
+  tags_raw:
+  - Put Resource Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-put-resource-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-realtime-log-config-api
+  name: CloudFront Realtime Log Config API
+  description: The Realtime Log Config API from CloudFront — 3 operation(s) for realtime log config.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Realtime Log Config
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-realtime-log-config-api-openapi.yml
+- aid: cloudfront:cloudfront-response-headers-policy-api
+  name: CloudFront Response Headers Policy API
+  description: >-
+    The Response Headers Policy API from CloudFront — 3 operation(s) for response headers policy.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Response Headers Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-response-headers-policy-api-openapi.yml
+- aid: cloudfront:cloudfront-streaming-distribution-api
+  name: CloudFront Streaming Distribution API
+  description: >-
+    The Streaming Distribution API from CloudFront — 3 operation(s) for streaming distribution.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Streaming Distribution
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-streaming-distribution-api-openapi.yml
+- aid: cloudfront:cloudfront-tagging-api
+  name: CloudFront Tagging API
+  description: The Tagging API from CloudFront — 1 operation(s) for tagging.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Tagging
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-tagging-api-openapi.yml
+- aid: cloudfront:cloudfront-trust-store-api
+  name: CloudFront Trust Store API
+  description: The Trust Store API from CloudFront — 4 operation(s) for trust store.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Trust Store
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-trust-store-api-openapi.yml
+- aid: cloudfront:cloudfront-verify-dns-configuration-api
+  name: CloudFront Verify Dns Configuration API
+  description: >-
+    The Verify Dns Configuration API from CloudFront — 1 operation(s) for verify dns configuration.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Verify Dns Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-verify-dns-configuration-api-openapi.yml
+- aid: cloudfront:cloudfront-vpc-origin-api
+  name: CloudFront Vpc Origin API
+  description: The Vpc Origin API from CloudFront — 2 operation(s) for vpc origin.
+  humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Vpc Origin
+  properties:
+  - type: OpenAPI
+    url: openapi/cloudfront-vpc-origin-api-openapi.yml
+common:
+- type: VendorFacets
+  url: vendor-facets/cloudfront-vendor-facets.yml
+- type: Overlay
+  url: overlays/cloudfront-publickeys-api-overlay.yaml
+- type: CapabilityMap
+  url: capabilities/cloudfront-capability-edges.yml
+  name: CloudFront Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/cloudfront-agentic-access.yml
+- type: TrustCenter
+  url: security/cloudfront-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/cloudfront-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/cloudfront-domain-security.yml
+- type: Authentication
+  url: authentication/cloudfront-authentication.yml
+- type: Website
+  url: https://aws.amazon.com/cloudfront/
+- type: Documentation
+  url: https://docs.aws.amazon.com/cloudfront/
+- type: Pricing
+  url: https://aws.amazon.com/cloudfront/pricing/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Canonical
+  url: https://github.com/api-evangelist/amazon-cloudfront
+- type: Packages
+  url: packages/cloudfront-packages.yml
+- type: SDKs
+  url: packages/cloudfront-packages.yml
+  name: First-party AWS SDK clients for CloudFront
+- type: WellKnown
+  url: well-known/cloudfront-well-known.yml
+- type: SecurityTxt
+  url: https://aws.amazon.com/.well-known/security.txt
+- type: MCPServer
+  url: mcp/cloudfront-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/cloudfront-tool-crosswalk.yml
+- type: LLMsTxt
+  url: llms/cloudfront-llms.txt
+- type: Conformance
+  url: conformance/cloudfront-conformance.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/programs/
+- type: ErrorCatalog
+  url: errors/cloudfront-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/cloudfront-lifecycle.yml
+- type: Conventions
+  url: conventions/cloudfront-conventions.yml
+- type: Idempotency
+  url: conventions/cloudfront-conventions.yml
+  name: CallerReference replay protection (partial coverage) + ETag/If-Match concurrency
+- type: ChangeLog
+  url: changelog/cloudfront-changelog.yml
+- type: CLI
+  url: cli/cloudfront-cli.yml
+- type: DataModel
+  url: data-model/cloudfront-data-model.yml
+- type: Plans
+  url: plans/cloudfront-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cloudfront-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Security
+  url: https://aws.amazon.com/security/vulnerability-reporting/
+- type: DeveloperPortal
+  url: https://aws.amazon.com/developer/
+- type: APIReference
+  url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/Welcome.html
+- type: GettingStarted
+  url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html
+- type: Support
+  url: https://aws.amazon.com/contact-us/
+- type: Blog
+  url: https://aws.amazon.com/blogs/networking-and-content-delivery/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: SignUp
+  url: https://portal.aws.amazon.com/billing/signup
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: SLA
+  url: https://aws.amazon.com/cloudfront/sla/
+- type: FAQ
+  url: https://aws.amazon.com/cloudfront/faqs/
+maintainers:
+- FN: Kin Lane
+  email: kinlane@gmail.com
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 29
+  pass: local-v3
+x-parent: amazon-web-services
+x-relationship: product
+x-aliases:
+- Amazon CloudFront

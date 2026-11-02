@@ -1,0 +1,112 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/cloudfront/pricing/
+sources:
+- https://aws.amazon.com/cloudfront/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T120612
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+  managed_tier: Pro
+published: true
+note: Page shows CloudFront flat-rate monthly plans per distribution; pay-as-you-go pricing is linked
+  but not itemized here.
+plan_count: 5
+currency: USD
+plans:
+- name: Free
+  price_text: $0/month
+  price: 0
+  currency: USD
+  period: month
+  unit: per distribution
+  included_quota: 1M requests, 100GB data transfer, 5GB S3 storage, 5 WAF rules
+  overage: No overage charges
+- name: Pro
+  price_text: $15/month
+  price: 15
+  currency: USD
+  period: month
+  unit: per distribution
+  included_quota: 10M requests, 50TB data transfer, 50GB S3 storage, 25 WAF rules
+  overage: No overage charges
+- name: Business
+  price_text: $200/month
+  price: 200
+  currency: USD
+  period: month
+  unit: per distribution
+  included_quota: 125M requests, 50TB data transfer, 1TB S3 storage, 50 WAF rules
+  overage: No overage charges
+- name: Premium
+  price_text: $1,000/month
+  price: 1000
+  currency: USD
+  period: month
+  unit: per distribution
+  included_quota: 500M requests (configurable up to 6B for a new flat-rate price), 50TB data transfer
+    (configurable up to 600TB), 5TB S3 storage, 75 WAF rules
+  overage: No overage charges
+- name: Custom pricing
+  price_text: Custom
+  period: month
+  unit: per distribution
+  included_quota: No limit requests and data transfer, no limit WAF rules
+rate_limit_statements:
+- Requests 1M 10M 125M 500M (configurable up to 6B for a new flat-rate price) No Limit
+- Data Transfer 100GB 50TB 50TB 50TB (configurable up to 600TB for a new flat-rate price) No Limit
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Pro
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Business
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Premium
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Custom pricing
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
